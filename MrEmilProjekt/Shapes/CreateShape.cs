@@ -35,6 +35,7 @@ namespace MrEmilProjekt.Shapes
             rektangel.Area = rektangel.Base * rektangel.Hight;
             var omkrets = rektangel.Base + rektangel.Hight;
             rektangel.Circumference = omkrets * 2;
+            rektangel.Date = DateTime.Now;
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Area = {rektangel.Area}");

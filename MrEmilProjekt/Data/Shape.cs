@@ -20,6 +20,7 @@ namespace MrEmilProjekt.Data
             public double Area { get; set; }
             public double Circumference { get; set; }
 
+           public DateTime Date { get; set; }
 
 
 
