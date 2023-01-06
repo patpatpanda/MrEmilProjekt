@@ -15,7 +15,22 @@ namespace MrEmilProjekt
             var buildApp = new Builder();
             var myContext = buildApp.AppBuilder();
 
-
+            while (true)
+            {
+                try
+                {
+                    var input = MainMenu.ShowMenu();
+                    if (input == 1)
+                    {
+                        ShapesMenu.ShowShapesMenu();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
         }
     }
 }
