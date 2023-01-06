@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using MrEmilProjekt.Shapes;
 
 namespace MrEmilProjekt.Data
 {
     public class AppDbContext : DbContext
     {
+        public DbSet<Shape> Shapes { get; set; }
         public AppDbContext()
         {
 

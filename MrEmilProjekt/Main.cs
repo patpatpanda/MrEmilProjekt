@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MrEmilProjekt.Controllers;
+using MrEmilProjekt.Shapes;
 
 namespace MrEmilProjekt
 {
@@ -14,6 +15,7 @@ namespace MrEmilProjekt
 
             var buildApp = new Builder();
             var myContext = buildApp.AppBuilder();
+            var create = new CreateShape(myContext);
 
             while (true)
             {
@@ -22,7 +24,14 @@ namespace MrEmilProjekt
                     var input = MainMenu.ShowMenu();
                     if (input == 1)
                     {
-                        ShapesMenu.ShowShapesMenu();
+                        var test = new ShapesMenu();
+                      int ChoiseOfForm =  test.ShowShapesMenu();
+                      if (ChoiseOfForm == 1)
+                      {
+                          create.RektangelFormManeger();
+                      }
+
+
                     }
                 }
                 catch (Exception e)

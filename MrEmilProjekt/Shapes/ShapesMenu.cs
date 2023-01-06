@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MrEmilProjekt.Controllers;
 
 namespace MrEmilProjekt.Shapes
 {
     public class ShapesMenu
     {
-        public static void ShowShapesMenu()
+        
+        public  int ShowShapesMenu()
         {
+
+           
+
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
@@ -24,11 +29,7 @@ namespace MrEmilProjekt.Shapes
             Console.Write("                                                    Val : ");
             Console.ResetColor();
             var inuput = int.Parse(Console.ReadLine());
-
-            if (inuput == 1)
-            {
-
-            }
+            return inuput;
 
         }
     }
