@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MrEmilProjekt.Controllers;
+
 
 namespace MrEmilProjekt.Shapes
 {
@@ -23,6 +24,7 @@ namespace MrEmilProjekt.Shapes
             Console.WriteLine("                             |      ****         2:  Parallellogram    ****     |");
             Console.WriteLine("                             |      ****         3:  Triangel          ****     |");
             Console.WriteLine("                             |      ****         4:  Romb              ****     |");
+            Console.WriteLine("                             |      ****         5:  Lista Shapes      ****     |");
             Console.WriteLine("                             ----------------------------------------------------");
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.DarkBlue;

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MrEmilProjekt.Controllers;
+
+using MrEmilProjekt.Data;
 using MrEmilProjekt.Shapes;
 
 namespace MrEmilProjekt
@@ -16,7 +17,8 @@ namespace MrEmilProjekt
             var buildApp = new Builder();
             var myContext = buildApp.AppBuilder();
             var create = new CreateShape(myContext);
-
+            var read = new ShapeController(myContext);
+            
             while (true)
             {
                 try
@@ -25,11 +27,12 @@ namespace MrEmilProjekt
                     if (input == 1)
                     {
                         var test = new ShapesMenu();
-                      int ChoiseOfForm =  test.ShowShapesMenu();
-                      if (ChoiseOfForm == 1)
+                      int shapeInput =  test.ShowShapesMenu();
+                      if (shapeInput == 1)
                       {
                           create.RektangelFormManeger();
                       }
+                      
 
 
                     }
