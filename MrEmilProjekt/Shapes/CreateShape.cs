@@ -24,30 +24,30 @@ namespace MrEmilProjekt.Shapes
         {
 
             Console.Clear();
-            var shape = new Shape();
-            shape.Name = "Rektangel";
+            var triangel = new Triangel();
+            
 
 
 
             Console.Write("Ange längd : ");
 
-            shape.Base = Convert.ToDouble(Console.ReadLine());
+            triangel.Base = Convert.ToDouble(Console.ReadLine());
             Console.Write("Ange bredd : ");
-            shape.Hight = Convert.ToDouble(Console.ReadLine());
+            triangel.Hight = Convert.ToDouble(Console.ReadLine());
 
-            shape.Area = shape.Base * shape.Hight;
-            var omkrets = shape.Base + shape.Hight;
-            shape.Circumference = omkrets * 2;
-            shape.Date = DateTime.Now;
+            triangel.Area = triangel.Base * triangel.Hight;
+            var omkrets = triangel.Base + triangel.Hight;
+            triangel.Circumference = omkrets * 2;
+            triangel.Date = DateTime.Now;
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Area = {shape.Area}");
-            Console.WriteLine($"Omkrets = {shape.Circumference}");
+            Console.WriteLine($"Area = {triangel.Area}");
+            Console.WriteLine($"Omkrets = {triangel.Circumference}");
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("\nTryck valfri tangent för att fortsätta");
             Console.ReadKey();
 
-            myContext.Shapes.Add(shape);
+            myContext.Triangels.Add(triangel);
             myContext.SaveChanges();
 
 
@@ -95,34 +95,33 @@ namespace MrEmilProjekt.Shapes
 
         public void TriangelManeger()
         {
-
             Console.Clear();
-            var shape = new Shape();
-            shape.Name = "Triangel";
+            var triangel = new Triangel();
 
 
 
-            Console.Write("Ange Bas : ");
 
-            shape.Base = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Ange Höjd : ");
-            shape.Hight = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Ange Hypotenusa : ");
-            shape.Hypotenusa = Convert.ToDouble(Console.ReadLine());
-            var area = shape.Base * shape.Hight;
-            shape.Area = area / 2;
-            shape.Circumference = (double)(shape.Base + shape.Hight + shape.Hypotenusa);
+            Console.Write("Ange längd : ");
 
-            shape.Date = DateTime.Now;
+            triangel.Base = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Ange bredd : ");
+            triangel.Hight = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Ange Hypotenusa : ");
+            triangel.Hypotenusa = Convert.ToDouble(Console.ReadLine());
+
+            triangel.Area = triangel.Base * triangel.Hight / 2;
+
+            triangel.Circumference = triangel.Base + triangel.Hight + triangel.Hypotenusa;
+            triangel.Date = DateTime.Now;
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Area = {shape.Area}");
-            Console.WriteLine($"Omkrets = {shape.Circumference}");
+            Console.WriteLine($"Area = {triangel.Area}");
+            Console.WriteLine($"Omkrets = {triangel.Circumference}");
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("\nTryck valfri tangent för att fortsätta");
             Console.ReadKey();
 
-            myContext.Shapes.Add(shape);
+            myContext.Triangels.Add(triangel);
             myContext.SaveChanges();
 
         }

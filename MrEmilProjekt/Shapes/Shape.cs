@@ -15,8 +15,7 @@ namespace MrEmilProjekt.Shapes
         public string Name { get; set; }
         public double Base { get; set; }
         public double Hight { get; set; }
-        public double? Hypotenusa { get; set; }
-
+     
         public double Area { get; set; }
         public double Circumference { get; set; }
 
