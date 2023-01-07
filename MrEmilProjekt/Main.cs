@@ -1,48 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using MrEmilProjekt.Data;
+﻿using MrEmilProjekt.Data;
 using MrEmilProjekt.Shapes;
 
-namespace MrEmilProjekt
+namespace MrEmilProjekt;
+
+public class Main
 {
-    public class Main
+    public void run()
     {
-        public void run()
-        {
+        var buildApp = new Builder();
+        var myContext = buildApp.AppBuilder();
+        var createShape = new CreateShape(myContext);
+        var readShape = new ShapeController(myContext);
 
-            var buildApp = new Builder();
-            var myContext = buildApp.AppBuilder();
-            var create = new CreateShape(myContext);
-            var read = new ShapeController(myContext);
-            
-            while (true)
+        while (true)
+            try
             {
-                try
+                var input = MainMenu.ShowMenu();
+                if (input == 1)
                 {
-                    var input = MainMenu.ShowMenu();
-                    if (input == 1)
-                    {
-                        var test = new ShapesMenu();
-                      int shapeInput =  test.ShowShapesMenu();
-                      if (shapeInput == 1)
-                      {
-                          create.RektangelFormManeger();
-                      }
-                      
+                    var test = new ShapesMenu();
+                    var shapeInput = test.ShowShapesMenu();
+                    if (shapeInput == 1) createShape.RektangelFormManeger();
 
 
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                    throw;
+                    else if (shapeInput == 2) createShape.ParaelleogramManeger();
+
+
+                    else if (shapeInput == 3) createShape.TriangelManeger();
+                    else if (shapeInput == 4) createShape.RombManeger();
+                   // else if(shapeInput == 5) readShape.ListShape();
                 }
             }
-        }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
     }
 }

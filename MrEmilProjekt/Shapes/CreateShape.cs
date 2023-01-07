@@ -1,6 +1,7 @@
 ﻿using MrEmilProjekt.Data;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,28 +24,30 @@ namespace MrEmilProjekt.Shapes
         {
 
             Console.Clear();
-            var rektangel = new Shape();
-            rektangel.Name = "Rektangel";
+            var shape = new Shape();
+            shape.Name = "Rektangel";
+
+
 
             Console.Write("Ange längd : ");
 
-            rektangel.Base = Convert.ToDouble(Console.ReadLine());
+            shape.Base = Convert.ToDouble(Console.ReadLine());
             Console.Write("Ange bredd : ");
-            rektangel.Hight = Convert.ToDouble(Console.ReadLine());
+            shape.Hight = Convert.ToDouble(Console.ReadLine());
 
-            rektangel.Area = rektangel.Base * rektangel.Hight;
-            var omkrets = rektangel.Base + rektangel.Hight;
-            rektangel.Circumference = omkrets * 2;
-            rektangel.Date = DateTime.Now;
+            shape.Area = shape.Base * shape.Hight;
+            var omkrets = shape.Base + shape.Hight;
+            shape.Circumference = omkrets * 2;
+            shape.Date = DateTime.Now;
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Area = {rektangel.Area}");
-            Console.WriteLine($"Omkrets = {rektangel.Circumference}");
+            Console.WriteLine($"Area = {shape.Area}");
+            Console.WriteLine($"Omkrets = {shape.Circumference}");
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("\nTryck valfri tangent för att fortsätta");
             Console.ReadKey();
 
-            myContext.Shapes.Add(rektangel);
+            myContext.Shapes.Add(shape);
             myContext.SaveChanges();
 
 
@@ -53,13 +56,110 @@ namespace MrEmilProjekt.Shapes
 
 
         }
-
-        public void ParallelogramManeger()
+        public void ParaelleogramManeger()
         {
-            
+
+
+
+            Console.Clear();
+            var shape = new Shape();
+            shape.Name = "Paraellogram";
+
+
+
+            Console.Write("Ange längd : ");
+
+            shape.Base = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Ange bredd : ");
+            shape.Hight = Convert.ToDouble(Console.ReadLine());
+
+            shape.Area = shape.Base * shape.Hight;
+            var omkrets = shape.Base + shape.Hight;
+            shape.Circumference = omkrets * 2;
+            shape.Date = DateTime.Now;
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Area = {shape.Area}");
+            Console.WriteLine($"Omkrets = {shape.Circumference}");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\nTryck valfri tangent för att fortsätta");
+            Console.ReadKey();
+
+            myContext.Shapes.Add(shape);
+            myContext.SaveChanges();
+
+
+
+
         }
 
-      
-        
+        public void TriangelManeger()
+        {
+
+            Console.Clear();
+            var shape = new Shape();
+            shape.Name = "Triangel";
+
+
+
+            Console.Write("Ange längd : ");
+
+            shape.Base = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Ange bredd : ");
+            shape.Hight = Convert.ToDouble(Console.ReadLine());
+
+            shape.Area = shape.Base * shape.Hight;
+            var omkrets = shape.Base + shape.Hight;
+            shape.Circumference = omkrets * 2;
+            shape.Date = DateTime.Now;
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Area = {shape.Area}");
+            Console.WriteLine($"Omkrets = {shape.Circumference}");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\nTryck valfri tangent för att fortsätta");
+            Console.ReadKey();
+
+            myContext.Shapes.Add(shape);
+            myContext.SaveChanges();
+
+        }
+
+        public void RombManeger()
+        {
+            Console.Clear();
+            var shape = new Shape();
+            shape.Name = "Romb";
+
+
+
+            Console.Write("Ange längd : ");
+
+            shape.Base = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Ange bredd : ");
+            shape.Hight = Convert.ToDouble(Console.ReadLine());
+
+            shape.Area = shape.Base * shape.Hight;
+            var omkrets = shape.Base + shape.Hight;
+            shape.Circumference = omkrets * 2;
+            shape.Date = DateTime.Now;
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Area = {shape.Area}");
+            Console.WriteLine($"Omkrets = {shape.Circumference}");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\nTryck valfri tangent för att fortsätta");
+            Console.ReadKey();
+
+            myContext.Shapes.Add(shape);
+            myContext.SaveChanges();
+
+        }
+
+
+
+
+
+
     }
 }
