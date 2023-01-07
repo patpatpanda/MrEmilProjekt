@@ -102,15 +102,17 @@ namespace MrEmilProjekt.Shapes
 
 
 
-            Console.Write("Ange längd : ");
+            Console.Write("Ange Bas : ");
 
             shape.Base = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Ange bredd : ");
+            Console.Write("Ange Höjd : ");
             shape.Hight = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Ange Hypotenusa : ");
+            shape.Hypotenusa = Convert.ToDouble(Console.ReadLine());
+            var area = shape.Base * shape.Hight;
+            shape.Area = area / 2;
+            shape.Circumference = (double)(shape.Base + shape.Hight + shape.Hypotenusa);
 
-            shape.Area = shape.Base * shape.Hight;
-            var omkrets = shape.Base + shape.Hight;
-            shape.Circumference = omkrets * 2;
             shape.Date = DateTime.Now;
 
             Console.ForegroundColor = ConsoleColor.Green;
@@ -129,7 +131,7 @@ namespace MrEmilProjekt.Shapes
         {
             Console.Clear();
             var shape = new Shape();
-            shape.Name = "Romb";
+            shape.Name = "Romb.....";
 
 
 
