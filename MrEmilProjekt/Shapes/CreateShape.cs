@@ -55,19 +55,30 @@ namespace MrEmilProjekt.Shapes
        
         public void ParaelleogramManeger()
         {
-            Console.Clear();
-            var shape = new Shape();
-            var bas = ShapeSidesInput(out var hight);
+            while (true)
+            {
+                try
+                {
+                    Console.Clear();
+                    var shape = new Shape();
+                    var bas = ShapeSidesInput(out var hight);
+
+                    shape.Name = "Paraellegram";
+                    shape.Area = AreaCalculator(bas, hight);
+                    shape.Circumference = CircumferenceCalculator(bas, hight);
+
+                    shape.Date = DateTime.Now;
+                    myContext.Shapes.Add(shape);
+                    myContext.SaveChanges();
+
+                    ResultMessage(shape);
+                }
+                catch (Exception e)
+                {
+                    ErrorMessage(e);
+                }
+            }
             
-            shape.Name = "Paraellegram";
-            shape.Area = AreaCalculator(bas,hight);
-          shape.Circumference =  CircumferenceCalculator(bas, hight);
-
-            shape.Date = DateTime.Now;
-            myContext.Shapes.Add(shape);
-            myContext.SaveChanges();
-
-            ResultMessage(shape);
         }
 
       
