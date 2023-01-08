@@ -85,27 +85,38 @@ namespace MrEmilProjekt.Shapes
 
         public void TriangelManeger()
         {
+            while (true)
+            {
+                try
+                {
+                    var shape = new Shape();
+
+                    shape.Name = "Triangel";
+
+
+                    Console.Write("Ange längd : ");
+                    double bas = Convert.ToDouble(Console.ReadLine());
+                    Console.Write("Ange Höjd : ");
+                    double hight = Convert.ToDouble(Console.ReadLine());
+                    Console.Write("Ange Hypotenusa: ");
+                    double hypotenusa = Convert.ToDouble(Console.ReadLine());
+
+                    shape.Area = bas * hight / 2;
+                    shape.Circumference = bas + hypotenusa + hight;
+                    shape.Date = DateTime.Now;
+
+                    ResultMessage(shape);
+
+                    myContext.Shapes.Add(shape);
+                    myContext.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                   ErrorMessage(e);
+                }
+            }
             Console.Clear();
-            var shape = new Shape();
-
-            shape.Name = "Triangel";
             
-
-            Console.Write("Ange längd : ");
-            double bas = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Ange Höjd : ");
-            double hight = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Ange Hypotenusa: ");
-            double hypotenusa = Convert.ToDouble(Console.ReadLine());
-            
-            shape.Area = bas * hight / 2;
-            shape.Circumference = bas + hypotenusa + hight;
-            shape.Date = DateTime.Now;
-           
-            ResultMessage(shape);
-
-            myContext.Shapes.Add(shape);
-            myContext.SaveChanges();
 
         }
 
