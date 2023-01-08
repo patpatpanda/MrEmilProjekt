@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MrEmilProjekt.Shapes;
 
 namespace MrEmilProjekt.Data
 {
@@ -14,5 +15,9 @@ namespace MrEmilProjekt.Data
             myContext.Database.Migrate();
             myContext.SaveChanges();
         }
+
+
+       
+        
     }
 }

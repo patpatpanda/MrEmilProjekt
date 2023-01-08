@@ -1,13 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using MrEmilProjekt.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MrEmilProjekt.Controllers
+namespace MrEmilProjekt.Data
 {
     public class Builder
     {
@@ -22,7 +21,7 @@ namespace MrEmilProjekt.Controllers
             options.UseSqlServer(connectionString);
 
             var myContext = new AppDbContext(options.Options);
-            
+
             var dataSeeder = new DataSeeder();
             dataSeeder.MigrateAndSeed(myContext);
 
