@@ -13,9 +13,8 @@ namespace MrEmilProjekt.Shapes
 
         public int ShapeId { get; set; }
         public string Name { get; set; }
-        public double Base { get; set; }
-        public double Hight { get; set; }
-     
+
+
         public double Area { get; set; }
         public double Circumference { get; set; }
 
@@ -23,11 +22,10 @@ namespace MrEmilProjekt.Shapes
 
 
 
-        public void NewShapeName(string _name,double _base,double _hight,double _area,double _circumference)
+        public void NewShapeName(string _name,double _area,double _circumference)
         {
             Name = _name;
-            Base = _base;
-            Hight = _hight;
+            
             Area = _area;
             Circumference = _circumference;
         }

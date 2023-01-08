@@ -50,7 +50,12 @@ namespace MrEmilProjekt.Shapes
 
             else if (inuput == 3) createShape.TriangelManeger();
             else if (inuput == 4) createShape.RombManeger();
-            else if (inuput == 5) readShape.ListShape();
+            else if (inuput == 5)
+            {
+                readShape.ListShape();
+                Console.WriteLine("\nTryck valfri tanget för att fortsätta");
+                Console.ReadKey();
+            }
             else if(inuput == 6) readShape.UpdateShape();
             else if(inuput == 7) readShape.DeleteShape();
             else if (inuput == 0)

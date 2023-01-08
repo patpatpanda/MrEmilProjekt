@@ -17,43 +17,7 @@ namespace MrEmilProjekt.Data
         }
 
 
-        private void SeedRektangel(AppDbContext myContext)
-        {
-            if (!myContext.Shapes.Any())
-            {
-                myContext.Shapes.Add(new Shape()
-                {
-                    Name = "Triangel",
-                    Base = 10,
-                    Hight = 5,
-                    Area = 50,
-                    Circumference = 30
-                });
-                myContext.Shapes.Add(new Shape()
-                {
-                    Name = "Paraellogram",
-                    Base = 10,
-                    Hight = 5,
-                    Area = 50,
-                    Circumference = 30
-                });
-                myContext.Shapes.Add(new Shape()
-                {
-                    Name = "Rektangel",
-                    Base = 10,
-                    Hight = 5,
-                    Area = 50,
-                    Circumference = 30
-                });
-                myContext.Shapes.Add(new Shape()
-                {
-                    Name = "Romb",
-                    Base = 10,
-                    Hight = 5,
-                    Area = 50,
-                    Circumference = 30
-                });
-            }
-        }
+       
+        
     }
 }

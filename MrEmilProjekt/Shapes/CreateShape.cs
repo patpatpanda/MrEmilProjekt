@@ -22,35 +22,38 @@ namespace MrEmilProjekt.Shapes
         public AppDbContext myContext { get; set; }
         public void RektangelFormManeger()
         {
+            while (true)
+            {
+                try
+                {
+                    Console.Clear();
+                    var shape = new Shape();
+                    shape.Name = "Rektangel";
+                    Console.Write("Ange bas : ");
+                    double bas = Convert.ToDouble(Console.ReadLine());
+                    Console.Write("Ange Höjd : ");
+                    double hight = Convert.ToDouble(Console.ReadLine());
+                    shape.Area = bas * hight;
+                    shape.Circumference = bas + hight + bas + hight;
+                    shape.Date = DateTime.Now;
+                    myContext.Shapes.Add(shape);
+                    myContext.SaveChanges();
 
-            Console.Clear();
-            var triangel = new Triangel();
-            
-
-
-
-            Console.Write("Ange längd : ");
-
-            triangel.Base = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Ange bredd : ");
-            triangel.Hight = Convert.ToDouble(Console.ReadLine());
-
-            triangel.Area = triangel.Base * triangel.Hight;
-            var omkrets = triangel.Base + triangel.Hight;
-            triangel.Circumference = omkrets * 2;
-            triangel.Date = DateTime.Now;
-
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Area = {triangel.Area}");
-            Console.WriteLine($"Omkrets = {triangel.Circumference}");
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("\nTryck valfri tangent för att fortsätta");
-            Console.ReadKey();
-
-            myContext.Triangels.Add(triangel);
-            myContext.SaveChanges();
-
-
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"Area = {shape.Area}");
+                    Console.WriteLine($"Omkrets = {shape.Circumference}");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("\nTryck valfri tangent för att fortsätta");
+                    Console.ReadKey();
+                    break;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    
+                }
+            }   
+          
 
 
 
@@ -60,33 +63,7 @@ namespace MrEmilProjekt.Shapes
         {
 
 
-
-            Console.Clear();
-            var shape = new Shape();
-            shape.Name = "Paraellogram";
-
-
-
-            Console.Write("Ange längd : ");
-
-            shape.Base = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Ange bredd : ");
-            shape.Hight = Convert.ToDouble(Console.ReadLine());
-
-            shape.Area = shape.Base * shape.Hight;
-            var omkrets = shape.Base + shape.Hight;
-            shape.Circumference = omkrets * 2;
-            shape.Date = DateTime.Now;
-
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Area = {shape.Area}");
-            Console.WriteLine($"Omkrets = {shape.Circumference}");
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("\nTryck valfri tangent för att fortsätta");
-            Console.ReadKey();
-
-            myContext.Shapes.Add(shape);
-            myContext.SaveChanges();
+            
 
 
 
@@ -96,54 +73,23 @@ namespace MrEmilProjekt.Shapes
         public void TriangelManeger()
         {
             Console.Clear();
-            var triangel = new Triangel();
-
-
-
-
-            Console.Write("Ange längd : ");
-
-            triangel.Base = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Ange bredd : ");
-            triangel.Hight = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Ange Hypotenusa : ");
-            triangel.Hypotenusa = Convert.ToDouble(Console.ReadLine());
-
-            triangel.Area = triangel.Base * triangel.Hight / 2;
-
-            triangel.Circumference = triangel.Base + triangel.Hight + triangel.Hypotenusa;
-            triangel.Date = DateTime.Now;
-
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Area = {triangel.Area}");
-            Console.WriteLine($"Omkrets = {triangel.Circumference}");
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("\nTryck valfri tangent för att fortsätta");
-            Console.ReadKey();
-
-            myContext.Triangels.Add(triangel);
-            myContext.SaveChanges();
-
-        }
-
-        public void RombManeger()
-        {
-            Console.Clear();
             var shape = new Shape();
-            shape.Name = "Romb.....";
 
-
-
+            shape.Name = "Triangel";
+            
             Console.Write("Ange längd : ");
+            double bas = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Ange Höjd : ");
+            double hight = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Ange Hypotenusa: ");
+            double hypotenusa = Convert.ToDouble(Console.ReadLine());
 
-            shape.Base = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Ange bredd : ");
-            shape.Hight = Convert.ToDouble(Console.ReadLine());
 
-            shape.Area = shape.Base * shape.Hight;
-            var omkrets = shape.Base + shape.Hight;
-            shape.Circumference = omkrets * 2;
+
+            shape.Area = bas * hight / 2;
+            shape.Circumference = bas + hypotenusa + hight;
             shape.Date = DateTime.Now;
+           
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Area = {shape.Area}");
@@ -154,6 +100,12 @@ namespace MrEmilProjekt.Shapes
 
             myContext.Shapes.Add(shape);
             myContext.SaveChanges();
+
+        }
+
+        public void RombManeger()
+        {
+            
 
         }
 

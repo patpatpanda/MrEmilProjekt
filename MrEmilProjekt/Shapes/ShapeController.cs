@@ -24,19 +24,19 @@ namespace MrEmilProjekt.Shapes
         {
 
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Blue;
+            
             Console.WriteLine("****************** All Shapes **********************");
             Console.WriteLine();
-           Console.WriteLine("Id\tNamn\t\tBas\t\tHöjd\t\tArea\t\tOmkrets");
-            Console.WriteLine("======================================================================================================");
+           Console.WriteLine("Id\tNamn\t\t\tArea\t\tOmkrets");
+            Console.WriteLine("===========================================================================");
             foreach (var shape in myContext.Shapes.OrderBy(x => x.ShapeId))
             {
                 
-                Console.WriteLine($"{shape.ShapeId}\t{shape.Name}\t{shape.Base}\t\t{shape.Hight}\t\t{shape.Area}\t\t{shape.Circumference}");
+                Console.WriteLine($"{shape.ShapeId}\t{shape.Name}\t\t{shape.Area}\t\t{shape.Circumference}");
 
             }
 
-            Console.ReadKey();
+           
 
         }
 
@@ -45,28 +45,39 @@ namespace MrEmilProjekt.Shapes
             var shapeId = GetShapeId();
             Console.Write("Namn : ");
             var name = Console.ReadLine();
-            Console.Write("Bas : ");
-            var bas = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Höjd : ");
-            var height = Convert.ToDouble(Console.ReadLine());
             Console.Write("Area : ");
             var area = Convert.ToDouble(Console.ReadLine());
             Console.Write("Omkrets : ");
             var circumference = Convert.ToDouble(Console.ReadLine());
-            shapeId.NewShapeName(name,bas,height,area,circumference);
+            shapeId.NewShapeName(name,area,circumference);
             myContext.SaveChanges();
 
         }
         private Shape GetShapeId()
         {
+            while (true)
+            {
+                try
+                {
+                    ListShape();
+                    Console.Write("\nAnge (Id) för Shape du vill uppdatera : ");
+
+
+                    var shapeId = int.Parse(Console.ReadLine());
+                    var editShape = myContext.Shapes.First(x => x.ShapeId == shapeId);
+                    return editShape;
+                }
+                catch 
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\nDu kan endast ange ett befintligt (Id)");
+                    Console.WriteLine("\nTryck valfri tangent för att fortsätta");
+
+                    Console.ReadLine();
+                }
+            }
             
-            ListShape();
-            Console.Write("\nAnge (Id) för Shape du vill uppdatera : ");
-
-
-            var shapeId = int.Parse(Console.ReadLine());
-            var editShape = myContext.Shapes.First(x => x.ShapeId == shapeId);
-            return editShape;
         }
 
         public void DeleteShape()
@@ -88,7 +99,12 @@ namespace MrEmilProjekt.Shapes
                 }
                 catch
                 {
-                    
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\nDu kan endast ange ett befintligt (Id)");
+                    Console.WriteLine("\nTryck valfri tangent för att fortsätta");
+
+                    Console.ReadLine();
                 }
             }
         }
