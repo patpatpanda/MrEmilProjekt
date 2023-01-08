@@ -21,7 +21,8 @@ namespace MrEmilProjekt.Shapes
 
                 var buildApp = new Builder();
                 var myContext = buildApp.AppBuilder();
-                var createShape = new CreateShape(myContext);
+                ShapeFactory factory = new ShapeFactory();
+                var createShape = new CreateShape(factory, myContext);
                 var readShape = new ShapeController(myContext);
 
 
@@ -45,14 +46,14 @@ namespace MrEmilProjekt.Shapes
                 Console.ResetColor();
                 var inuput = int.Parse(Console.ReadLine());
 
-                if (inuput == 1) createShape.RektangelFormManeger();
+                if (inuput == 1) createShape.RektangelFormManager();
 
 
-                else if (inuput == 2) createShape.ParaelleogramManeger();
+                else if (inuput == 2) createShape.ParaelleogramManager();
 
 
-                else if (inuput == 3) createShape.TriangelManeger();
-                else if (inuput == 4) createShape.RombManeger();
+                else if (inuput == 3) createShape.TriangelManager();
+                else if (inuput == 4) createShape.RombManager();
                 else if (inuput == 5)
                 {
                     readShape.ListShape();

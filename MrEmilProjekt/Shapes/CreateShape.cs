@@ -10,31 +10,27 @@ namespace MrEmilProjekt.Shapes
 {
     internal class CreateShape
     {  
-        public CreateShape()
-        {
-        }
-
-        public CreateShape(AppDbContext context)
+        public CreateShape(IShapeFactory shapeFactory, AppDbContext context)
         {
             myContext = context;
+            myShapeFactory = shapeFactory;
         }
 
         public AppDbContext myContext { get; set; }
-        public void RektangelFormManeger()
+        public IShapeFactory myShapeFactory { get; set; }
+
+        public void RektangelFormManager()
         {
             while (true)
             {
                 try
                 {
                     Console.Clear();
-                    var shape = new Shape();
-                    var bas = ShapeSidesInput(out var hight);
+                    var bas = ShapeWidthInput();
+                    var height = ShapeHeightInput();
 
-                    shape.Name = "Rektangel";
-                    shape.Area = AreaCalculator(bas, hight);
-                    shape.Circumference = CircumferenceCalculator(bas, hight);
+                    var shape = myShapeFactory.CreateRectangel(bas, height);
 
-                    shape.Date = DateTime.Now;
                     myContext.Shapes.Add(shape);
                     myContext.SaveChanges();
 
@@ -53,25 +49,23 @@ namespace MrEmilProjekt.Shapes
         }
 
        
-        public void ParaelleogramManeger()
+        public void ParaelleogramManager()
         {
             while (true)
             {
                 try
                 {
                     Console.Clear();
-                    var shape = new Shape();
-                    var bas = ShapeSidesInput(out var hight);
+                    var bas = ShapeWidthInput();
+                    var height = ShapeHeightInput();
 
-                    shape.Name = "Paraellegram";
-                    shape.Area = AreaCalculator(bas, hight);
-                    shape.Circumference = CircumferenceCalculator(bas, hight);
+                    var shape = myShapeFactory.CreateParaellogram(bas, height);
 
-                    shape.Date = DateTime.Now;
                     myContext.Shapes.Add(shape);
                     myContext.SaveChanges();
 
                     ResultMessage(shape);
+                    break;
                 }
                 catch (Exception e)
                 {
@@ -83,12 +77,13 @@ namespace MrEmilProjekt.Shapes
 
       
 
-        public void TriangelManeger()
+        public void TriangelManager()
         {
             while (true)
             {
                 try
                 {
+                    Console.Clear();
                     var shape = new Shape();
 
                     shape.Name = "Triangel";
@@ -109,6 +104,7 @@ namespace MrEmilProjekt.Shapes
 
                     myContext.Shapes.Add(shape);
                     myContext.SaveChanges();
+                    break;
                 }
                 catch (Exception e)
                 {
@@ -120,21 +116,16 @@ namespace MrEmilProjekt.Shapes
 
         }
 
-        public void RombManeger()
+        public void RombManager()
         {
             while (true)
             {
                 try
                 {
                     Console.Clear();
-                    var shape = new Shape();
-                    var bas = ShapeSidesInput(out var hight);
-
-                    shape.Name = "Paraellegram";
-                    shape.Area = AreaCalculator(bas, hight);
-                    shape.Circumference = CircumferenceCalculator(bas, hight);
-
-                    shape.Date = DateTime.Now;
+                    var bas = ShapeWidthInput();
+                    var height = ShapeHeightInput();
+                    var shape = myShapeFactory.CreateRomb(bas, height);
                     myContext.Shapes.Add(shape);
                     myContext.SaveChanges();
 
@@ -149,29 +140,18 @@ namespace MrEmilProjekt.Shapes
 
         }
 
-
-
-        private static double AreaCalculator(double b, double h)
-        {
-            var area = b * h;
-            return area;
-
-        }
-
-        private static double CircumferenceCalculator(double b,double h)
-        {
-
-            var circumference = b + h + b + h; 
-           
-            return circumference;
-        }
-        private static double ShapeSidesInput(out double hight)
+        private static double ShapeWidthInput()
         {
             Console.Write("Ange bas : ");
             double bas = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Ange Höjd : ");
-            hight = Convert.ToDouble(Console.ReadLine());
             return bas;
+        }
+
+        private static double ShapeHeightInput()
+        {
+            Console.Write("Ange Höjd : ");
+            double height = Convert.ToDouble(Console.ReadLine());
+            return height;
         }
 
         private static void ResultMessage(Shape shape)

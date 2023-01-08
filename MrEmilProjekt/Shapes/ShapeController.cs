@@ -48,7 +48,7 @@ namespace MrEmilProjekt.Shapes
             Console.Write("Area : ");
             var area = Convert.ToDouble(Console.ReadLine());
             Console.Write("Omkrets : ");
-            var circumference = Convert.ToDouble(Console.ReadLine());
+            var circumference = Convert.ToDouble(Console.ReadLine()); 
             shapeId.NewShapeValues(name,area,circumference);
             myContext.SaveChanges();
 
