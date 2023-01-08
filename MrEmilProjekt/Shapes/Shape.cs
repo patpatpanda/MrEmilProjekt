@@ -22,7 +22,7 @@ namespace MrEmilProjekt.Shapes
 
 
 
-        public void NewShapeName(string _name,double _area,double _circumference)
+        public void NewShapeValues(string _name,double _area,double _circumference)
         {
             Name = _name;
             

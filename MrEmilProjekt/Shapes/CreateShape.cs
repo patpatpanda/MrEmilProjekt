@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace MrEmilProjekt.Shapes
 {
     internal class CreateShape
-    {
+    {  
         public CreateShape()
         {
         }
@@ -22,24 +22,37 @@ namespace MrEmilProjekt.Shapes
         public AppDbContext myContext { get; set; }
         public void RektangelFormManeger()
         {
+            while (true)
+            {
+                try
+                {
+                    Console.Clear();
+                    var shape = new Shape();
+                    var bas = ShapeSidesInput(out var hight);
 
-            Console.Clear();
-            var shape = new Shape();
-            var bas = ShapeSidesInput(out var hight);
+                    shape.Name = "Rektangel";
+                    shape.Area = AreaCalculator(bas, hight);
+                    shape.Circumference = CircumferenceCalculator(bas, hight);
 
-            shape.Name = "Rektangel";
-            shape.Area = AreaCalculator(bas, hight);
-            shape.Circumference = CircumferenceCalculator(bas, hight);
+                    shape.Date = DateTime.Now;
+                    myContext.Shapes.Add(shape);
+                    myContext.SaveChanges();
 
-            shape.Date = DateTime.Now;
-            myContext.Shapes.Add(shape);
-            myContext.SaveChanges();
-
-            ResultMessage(shape);
+                    ResultMessage(shape);
+                    break;
+                }
+                catch (Exception e)
+                {
+                    ErrorMessage(e);
+                }
+            }
+            
 
 
 
         }
+
+       
         public void ParaelleogramManeger()
         {
             Console.Clear();
@@ -78,12 +91,7 @@ namespace MrEmilProjekt.Shapes
             shape.Circumference = bas + hypotenusa + hight;
             shape.Date = DateTime.Now;
            
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Area = {shape.Area}");
-            Console.WriteLine($"Omkrets = {shape.Circumference}");
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("\nTryck valfri tangent för att fortsätta");
-            Console.ReadKey();
+            ResultMessage(shape);
 
             myContext.Shapes.Add(shape);
             myContext.SaveChanges();
@@ -142,5 +150,15 @@ namespace MrEmilProjekt.Shapes
             Console.WriteLine("\nTryck valfri tangent för att fortsätta");
             Console.ReadKey();
         }
+        private static void ErrorMessage(Exception e)
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(e);
+            Console.WriteLine("\nTryck valfri tangent för fortsätta");
+            Console.ReadKey();
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
     }
 }

@@ -7,8 +7,10 @@ public class Main
 {
     public void run()
     {
-
-
+       // var Variabel = 64; 
+       //var hej = System.Math.Sqrt(Variabel);
+       // Console.WriteLine(hej);
+       // Console.ReadLine();
 
         while (true)
         {
@@ -22,6 +24,7 @@ public class Main
 
 
                 }
+
             }
             catch (Exception e)
             {
@@ -30,6 +33,7 @@ public class Main
                 Console.ReadLine();
             }
         }
-            
+
+        
     }
 }

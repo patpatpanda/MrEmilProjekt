@@ -49,7 +49,7 @@ namespace MrEmilProjekt.Shapes
             var area = Convert.ToDouble(Console.ReadLine());
             Console.Write("Omkrets : ");
             var circumference = Convert.ToDouble(Console.ReadLine());
-            shapeId.NewShapeName(name,area,circumference);
+            shapeId.NewShapeValues(name,area,circumference);
             myContext.SaveChanges();
 
         }
@@ -69,12 +69,7 @@ namespace MrEmilProjekt.Shapes
                 }
                 catch 
                 {
-                    Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("\nDu kan endast ange ett befintligt (Id)");
-                    Console.WriteLine("\nTryck valfri tangent för att fortsätta");
-
-                    Console.ReadLine();
+                   NotValidIdMessage();
                 }
             }
             
@@ -99,16 +94,19 @@ namespace MrEmilProjekt.Shapes
                 }
                 catch
                 {
-                    Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("\nDu kan endast ange ett befintligt (Id)");
-                    Console.WriteLine("\nTryck valfri tangent för att fortsätta");
-
-                    Console.ReadLine();
+                    NotValidIdMessage();
                 }
             }
         }
 
-      
+        private static void NotValidIdMessage()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("\nDu kan endast ange ett befintligt (Id)");
+            Console.WriteLine("\nTryck valfri tangent för att fortsätta");
+
+            Console.ReadLine();
+        }
     }
 }
