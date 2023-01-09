@@ -24,5 +24,6 @@ namespace MrEmilProjekt.Calculator
             Console.WriteLine("\nTryck valfri tangent för att fortsätta");
             Console.ReadKey();
         }
+        
     }
 }

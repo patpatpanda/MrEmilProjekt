@@ -26,6 +26,7 @@ namespace MrEmilProjekt.Calculator
                     var sqrt = new Sqrt(myContext);
                     var divided = new Divided(myContext);
                     var modulo = new Modulo(myContext);
+                    var controllerCalc = new CalculatorController(myContext);
 
 
                     Console.Clear();
@@ -37,8 +38,9 @@ namespace MrEmilProjekt.Calculator
                     Console.WriteLine("                             |      ****           -          ****    |");
                     Console.WriteLine("                             |      ****           /          ****    |");
                     Console.WriteLine("                             |      ****           *          ****    |");
-                    Console.WriteLine("                             |      ****        S: √          ****    |");
+                    Console.WriteLine("                             |      ****        1: √          ****    |");
                     Console.WriteLine("                             |      ****           %          ****    |");
+                    Console.WriteLine("                             |      ****        2: ListAll    ****    |");
                     Console.WriteLine("                             |      ****        0: Mainmeny   ****    |");
                     Console.WriteLine("                             ---------------------------------------------");
                     Console.ResetColor();
@@ -58,6 +60,7 @@ namespace MrEmilProjekt.Calculator
 
                     else if (inuput == "S") sqrt.SqrtCalculator();
                     else if (inuput == "%") modulo.ModuloCalculator();
+                    else if(inuput == "2")  controllerCalc.ListCalculator();
 
                     else if (inuput == "0")
                     {
