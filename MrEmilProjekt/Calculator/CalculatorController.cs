@@ -34,7 +34,7 @@ namespace MrEmilProjekt.Calculator
 
             }
 
-            Console.ReadLine();
+            
 
         }
 

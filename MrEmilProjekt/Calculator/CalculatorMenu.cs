@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MrEmilProjekt.Data;
 using MrEmilProjekt.Migrations;
+using System.Xml;
 
 namespace MrEmilProjekt.Calculator
 {
@@ -60,7 +61,12 @@ namespace MrEmilProjekt.Calculator
 
                     else if (inuput == "S") sqrt.SqrtCalculator();
                     else if (inuput == "%") modulo.ModuloCalculator();
-                    else if(inuput == "2")  controllerCalc.ListCalculator();
+                    else if (inuput == "2")
+                    {
+                        controllerCalc.ListCalculator();
+                        Console.WriteLine("\nPress any key to continue");
+                        Console.ReadKey();
+                    }
 
                     else if (inuput == "0")
                     {
