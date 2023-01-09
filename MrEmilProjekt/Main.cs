@@ -1,4 +1,5 @@
-﻿using MrEmilProjekt.Data;
+﻿using MrEmilProjekt.Calculator.NewFolder.NewFolder;
+using MrEmilProjekt.Data;
 using MrEmilProjekt.Shapes;
 
 namespace MrEmilProjekt;
@@ -24,6 +25,12 @@ public class Main
 
 
                 }
+                else if (input == 2)
+                {
+                    var test = new CalculatorMenu();
+                    test.ShowCalculatorMenu();
+                }
+               
 
             }
             catch (Exception e)

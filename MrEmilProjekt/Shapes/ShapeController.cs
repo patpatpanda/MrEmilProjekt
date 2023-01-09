@@ -10,11 +10,9 @@ namespace MrEmilProjekt.Shapes
 {
     public class ShapeController
     {
-        private AppDbContext myContext;
+        private AppDbContext myContext { get; set; }
 
-        public ShapeController()
-        {
-        }
+        
 
         public ShapeController(AppDbContext context)
         {
@@ -48,7 +46,7 @@ namespace MrEmilProjekt.Shapes
             Console.Write("Area : ");
             var area = Convert.ToDouble(Console.ReadLine());
             Console.Write("Omkrets : ");
-            var circumference = Convert.ToDouble(Console.ReadLine());
+            var circumference = Convert.ToDouble(Console.ReadLine()); 
             shapeId.NewShapeValues(name,area,circumference);
             myContext.SaveChanges();
 
