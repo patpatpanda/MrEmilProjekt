@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MrEmilProjekt.Shapes
 {
-    internal class CreateShape
+    public class CreateShape
     {  
         public CreateShape(IShapeFactory shapeFactory, AppDbContext context)
         {
@@ -130,6 +130,7 @@ namespace MrEmilProjekt.Shapes
                     myContext.SaveChanges();
 
                     ResultMessage(shape);
+                    break;
                 }
                 catch (Exception e)
                 {

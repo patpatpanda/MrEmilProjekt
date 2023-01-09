@@ -10,11 +10,9 @@ namespace MrEmilProjekt.Shapes
 {
     public class ShapeController
     {
-        private AppDbContext myContext;
+        private AppDbContext myContext { get; set; }
 
-        public ShapeController()
-        {
-        }
+        
 
         public ShapeController(AppDbContext context)
         {

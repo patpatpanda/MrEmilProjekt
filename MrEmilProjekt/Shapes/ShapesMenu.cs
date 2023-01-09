@@ -38,7 +38,7 @@ namespace MrEmilProjekt.Shapes
                 Console.WriteLine("                             |      ****         5:  Lista Shapes      ****     |");
                 Console.WriteLine("                             |      ****         6:  Update Shapes     ****     |");
                 Console.WriteLine("                             |      ****         7:  Delete Shapes     ****     |");
-                Console.WriteLine("                             |      ****         0:  Huvudmeny         ****     |");
+                Console.WriteLine("                             |      ****         0:  Mainmeny         ****     |");
                 Console.WriteLine("                             ----------------------------------------------------");
                 Console.ResetColor();
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
