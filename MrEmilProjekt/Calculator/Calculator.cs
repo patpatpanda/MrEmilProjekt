@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MrEmilProjekt.Calculator.NewFolder
+namespace MrEmilProjekt.Calculator
 {
     public class Calculator
     {
@@ -16,5 +16,13 @@ namespace MrEmilProjekt.Calculator.NewFolder
         public DateTime Date { get; set; }
 
 
+        public void ResultMessage(Calculator calc)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Resultat = {calc.Result} ");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\nTryck valfri tangent för att fortsätta");
+            Console.ReadKey();
+        }
     }
 }

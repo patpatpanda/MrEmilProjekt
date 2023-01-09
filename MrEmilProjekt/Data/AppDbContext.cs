@@ -11,7 +11,8 @@ namespace MrEmilProjekt.Data
     public class AppDbContext : DbContext
     {
         public DbSet<Shape> Shapes { get; set; }
-        public DbSet<Calculator.NewFolder.Calculator> Calculators { get; set; }
+        public DbSet<Calculator.Calculator> Calculators { get; set; }
+      
      
         public AppDbContext()
         {

@@ -1,4 +1,5 @@
-﻿using MrEmilProjekt.Calculator.NewFolder.NewFolder;
+﻿
+using MrEmilProjekt.Calculator;
 using MrEmilProjekt.Data;
 using MrEmilProjekt.Shapes;
 
@@ -8,10 +9,12 @@ public class Main
 {
     public void run()
     {
-       // var Variabel = 64; 
-       //var hej = System.Math.Sqrt(Variabel);
-       // Console.WriteLine(hej);
-       // Console.ReadLine();
+        // var Variabel = 64; 
+        //var hej = System.Math.Sqrt(Variabel);
+        // Console.WriteLine(hej);
+        // Console.ReadLine();
+        var buildApp = new Builder();
+        var myContext = buildApp.AppBuilder();
 
         while (true)
         {
@@ -29,6 +32,8 @@ public class Main
                 {
                     var test = new CalculatorMenu();
                     test.ShowCalculatorMenu();
+
+
                 }
                
 

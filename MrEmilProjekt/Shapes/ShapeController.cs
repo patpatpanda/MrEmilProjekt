@@ -46,8 +46,9 @@ namespace MrEmilProjekt.Shapes
             Console.Write("Area : ");
             var area = Convert.ToDouble(Console.ReadLine());
             Console.Write("Omkrets : ");
-            var circumference = Convert.ToDouble(Console.ReadLine()); 
-            shapeId.NewShapeValues(name,area,circumference);
+            var circumference = Convert.ToDouble(Console.ReadLine());
+            var date = Convert.ToDateTime(Console.ReadLine());
+            shapeId.NewShapeValues(name,area,circumference,date);
             myContext.SaveChanges();
 
         }
@@ -58,7 +59,7 @@ namespace MrEmilProjekt.Shapes
                 try
                 {
                     ListShape();
-                    Console.Write("\nAnge (Id) för Shape du vill uppdatera : ");
+                    Console.Write("\nType (Id) for update shape : ");
 
 
                     var shapeId = int.Parse(Console.ReadLine());
@@ -80,7 +81,7 @@ namespace MrEmilProjekt.Shapes
                 try
                 {
                    ListShape();
-                    Console.Write("\nAnge (Id) för Shape du vill radera: ");
+                    Console.Write("\nType (Id) for update shape : ");
                     var roomId = int.Parse(Console.ReadLine());
                     var delete = myContext.Shapes.First(x => x.ShapeId == roomId);
 
@@ -101,8 +102,8 @@ namespace MrEmilProjekt.Shapes
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("\nDu kan endast ange ett befintligt (Id)");
-            Console.WriteLine("\nTryck valfri tangent för att fortsätta");
+            Console.WriteLine("\nNot valid (Id)");
+            Console.WriteLine("\nPress any key to continue");
 
             Console.ReadLine();
         }

@@ -19,7 +19,7 @@ namespace MrEmilProjekt.Shapes
 
         public Shape CreateRomb(double bas, double height)
         {
-            return CreateTwoSidedShape(bas, height, "Romb");
+            return CreateTwoSidedShape(bas, height, "Romb.....");
         }
 
         public Shape CreateParaellogram(double bas, double height)
@@ -30,8 +30,13 @@ namespace MrEmilProjekt.Shapes
         {
             return CreateThreeSidedShape(bas, height,"Triangel",hypotenusa);
         }
+        public Shape CreateNewShape(double bas, double height,string name)
+        {
+            
+            return CreateTwoSidedShape(bas, height, name);
+        }
 
-        
+
 
         private Shape CreateTwoSidedShape(double bas, double height, string name)
         {
