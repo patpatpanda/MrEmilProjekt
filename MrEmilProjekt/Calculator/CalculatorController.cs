@@ -51,6 +51,9 @@ namespace MrEmilProjekt.Calculator
             shapeId.NewShapeValues(name, area, circumference, date);
             myContext.SaveChanges();
 
+
+
+
         }
         private Shape GetShapeId()
         {

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MrEmilProjekt.Shapes;
 
 namespace MrEmilProjekt.Calculator
 {
@@ -21,15 +22,18 @@ namespace MrEmilProjekt.Calculator
 
         public void MultiplyCalculator()
         {
+
+
+
             var calculator = new Calculator();
             Console.Clear();
             Console.Write("Mata in ett tal : ");
             calculator.FirstInput = Convert.ToDecimal(Console.ReadLine());
             Console.Write("Mata in ett tal : ");
             calculator.SecondInput = Convert.ToDecimal(Console.ReadLine());
-            calculator.Operator = "+";
-            calculator.Result = calculator.FirstInput + calculator.SecondInput;
-           calculator.Date = DateTime.Now;
+            calculator.Operator = "*";
+            calculator.Result = calculator.FirstInput * calculator.SecondInput;
+            calculator.Date = DateTime.Now;
             myContext.Calculators.Add(calculator);
             myContext.SaveChanges();
 
