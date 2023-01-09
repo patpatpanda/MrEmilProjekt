@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MrEmilProjekt.Calculator.NewFolder
+namespace MrEmilProjekt.Calculator
 {
     public class Calculator
     {
@@ -14,7 +14,5 @@ namespace MrEmilProjekt.Calculator.NewFolder
         public string Operator { get; set; }
         public decimal Result { get; set; }
         public DateTime Date { get; set; }
-
-
     }
 }
