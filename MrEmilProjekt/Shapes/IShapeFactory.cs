@@ -7,6 +7,8 @@ namespace MrEmilProjekt.Shapes
 
         Shape CreateTriangel(double bas, double height,double hypotenusa);
 
+        Shape CreateNewShape(double bas, double height,string name);
+
 
     }
 }

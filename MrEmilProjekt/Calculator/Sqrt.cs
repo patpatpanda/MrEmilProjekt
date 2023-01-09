@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace MrEmilProjekt.Calculator
 {
-    public class Multiply : Calculator
+    internal class Sqrt : Calculator
     {
         
 
-        public Multiply(AppDbContext context)
+        public Sqrt(AppDbContext context)
         {
             myContext = context;
 
@@ -19,18 +19,20 @@ namespace MrEmilProjekt.Calculator
 
         public AppDbContext myContext { get; set; }
 
-        public void MultiplyCalculator()
+        public void SqrtCalculator()
         {
+            
+
             var calculator = new Calculator();
             Console.Clear();
             Console.Write("Mata in ett tal : ");
-            calculator.FirstInput = Convert.ToDecimal(Console.ReadLine());
-            calculator.Operator = "";
-            calculator.Result = calculator.FirstInput + calculator.SecondInput;
-           calculator.Date = DateTime.Now;
+            var input = Convert.ToDouble(Console.ReadLine());
+            calculator.FirstInput = Convert.ToDecimal(input);
+            calculator.Result = Convert.ToDecimal(System.Math.Sqrt(input));
+            calculator.Operator = "√";
+            calculator.Date = DateTime.Now;
             myContext.Calculators.Add(calculator);
             myContext.SaveChanges();
-
             calculator.ResultMessage(calculator);
             Console.ReadKey();
 

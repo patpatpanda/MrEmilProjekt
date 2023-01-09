@@ -22,12 +22,13 @@ namespace MrEmilProjekt.Shapes
 
 
 
-        public void NewShapeValues(string _name,double _area,double _circumference)
+        public void NewShapeValues(string _name,double _area,double _circumference,DateTime _date)
         {
             Name = _name;
             
             Area = _area;
             Circumference = _circumference;
+            Date = _date;
         }
 
 

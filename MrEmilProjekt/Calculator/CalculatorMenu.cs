@@ -22,7 +22,7 @@ namespace MrEmilProjekt.Calculator
                 var myContext = buildApp.AppBuilder();
                 var multiply = new Multiply(myContext);
                 var subtraction = new Subtraction(myContext);
-
+                var Sqrt = new Sqrt(myContext);
 
 
                 Console.ForegroundColor = ConsoleColor.White;
@@ -44,9 +44,14 @@ namespace MrEmilProjekt.Calculator
 
                 if (inuput == 1)
                 {
-                   multiply.MultuplyCalculator();
+                   multiply.MultiplyCalculator();
                 }
+                
                 else if(inuput == 2)  subtraction.SubtractionCalculator();
+
+                else if(inuput == 5) Sqrt.SqrtCalculator();
+                
+                   
             }
         }
     }

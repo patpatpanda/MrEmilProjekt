@@ -35,10 +35,11 @@ namespace MrEmilProjekt.Shapes
                 Console.WriteLine("                             |      ****         2:  Parallellogram    ****     |");
                 Console.WriteLine("                             |      ****         3:  Triangel          ****     |");
                 Console.WriteLine("                             |      ****         4:  Romb              ****     |");
-                Console.WriteLine("                             |      ****         5:  Lista Shapes      ****     |");
+                Console.WriteLine("                             |      ****         5:  List   Shapes     ****     |");
                 Console.WriteLine("                             |      ****         6:  Update Shapes     ****     |");
                 Console.WriteLine("                             |      ****         7:  Delete Shapes     ****     |");
-                Console.WriteLine("                             |      ****         0:  Mainmeny         ****     |");
+                Console.WriteLine("                             |      ****         8:  Create Shape      ****     |");
+                Console.WriteLine("                             |      ****         0:  Mainmeny          ****     |");
                 Console.WriteLine("                             ----------------------------------------------------");
                 Console.ResetColor();
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
@@ -57,11 +58,12 @@ namespace MrEmilProjekt.Shapes
                 else if (inuput == 5)
                 {
                     readShape.ListShape();
-                    Console.WriteLine("\nTryck valfri tanget för att fortsätta");
+                    Console.WriteLine("\nPress any key to continue");
                     Console.ReadKey();
                 }
                 else if (inuput == 6) readShape.UpdateShape();
                 else if (inuput == 7) readShape.DeleteShape();
+                else if(inuput == 8) createShape.NewShapeManager();
                 else if (inuput == 0)
                 {
                     var menu = new Main();

@@ -1,4 +1,5 @@
 ﻿using MrEmilProjekt.Data;
+using MrEmilProjekt.Shapes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace MrEmilProjekt.Calculator
         {
             var calc = new Calculator();
             Console.Clear();
+
             Console.Write("Mata in ett tal : ");
             calc.FirstInput = Convert.ToDecimal(Console.ReadLine());
             Console.Write("Mata in ett tal : ");
@@ -32,12 +34,13 @@ namespace MrEmilProjekt.Calculator
             calc.Date = DateTime.Now;
             myContext.Calculators.Add(calc);
             myContext.SaveChanges();
-            Console.WriteLine(calc.Result);
+            calc.ResultMessage(calc);
             Console.ReadKey();
 
 
 
 
         }
+       
     }
 }

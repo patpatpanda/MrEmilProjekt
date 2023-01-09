@@ -81,30 +81,27 @@ namespace MrEmilProjekt.Shapes
         {
             while (true)
             {
-                try
-                {
+                try{
+
                     Console.Clear();
-                    var shape = new Shape();
-
-                    shape.Name = "Triangel";
-
-
-                    Console.Write("Ange längd : ");
-                    double bas = Convert.ToDouble(Console.ReadLine());
-                    Console.Write("Ange Höjd : ");
-                    double hight = Convert.ToDouble(Console.ReadLine());
-                    Console.Write("Ange Hypotenusa: ");
+                    var bas = ShapeWidthInput();
+                    var height = ShapeHeightInput();
+                    Console.Write("Hypotenusa : ");
                     double hypotenusa = Convert.ToDouble(Console.ReadLine());
 
-                    shape.Area = bas * hight / 2;
-                    shape.Circumference = bas + hypotenusa + hight;
-                    shape.Date = DateTime.Now;
 
-                    ResultMessage(shape);
+                    var shape = myShapeFactory.CreateTriangel(bas, height,hypotenusa);
 
                     myContext.Shapes.Add(shape);
                     myContext.SaveChanges();
+
+                    ResultMessage(shape);
                     break;
+
+                    
+
+                    
+                    
                 }
                 catch (Exception e)
                 {
@@ -138,19 +135,33 @@ namespace MrEmilProjekt.Shapes
                 }
             }
             
+            
+        }
 
+        public void NewShapeManager()
+        {
+            Console.Clear();
+            Console.Write("Name for new Shape : ");
+            var name = Console.ReadLine();
+            var bas = ShapeWidthInput();
+            var height = ShapeHeightInput();
+            var shape = myShapeFactory.CreateNewShape(bas, height,name);
+            myContext.Shapes.Add(shape);
+            myContext.SaveChanges();
+
+            ResultMessage(shape);
         }
 
         private static double ShapeWidthInput()
         {
-            Console.Write("Ange bas : ");
+            Console.Write("Type bas : ");
             double bas = Convert.ToDouble(Console.ReadLine());
             return bas;
         }
 
         private static double ShapeHeightInput()
         {
-            Console.Write("Ange Höjd : ");
+            Console.Write("Type height : ");
             double height = Convert.ToDouble(Console.ReadLine());
             return height;
         }
@@ -161,7 +172,7 @@ namespace MrEmilProjekt.Shapes
             Console.WriteLine($"Area = {shape.Area}");
             Console.WriteLine($"Omkrets = {shape.Circumference}");
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("\nTryck valfri tangent för att fortsätta");
+            Console.WriteLine("\nPress any key to continue");
             Console.ReadKey();
         }
         private static void ErrorMessage(Exception e)
@@ -169,7 +180,7 @@ namespace MrEmilProjekt.Shapes
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(e);
-            Console.WriteLine("\nTryck valfri tangent för fortsätta");
+            Console.WriteLine("\nPress any key to continue");
             Console.ReadKey();
             Console.ForegroundColor = ConsoleColor.White;
         }

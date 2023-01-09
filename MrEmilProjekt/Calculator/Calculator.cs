@@ -14,5 +14,15 @@ namespace MrEmilProjekt.Calculator
         public string Operator { get; set; }
         public decimal Result { get; set; }
         public DateTime Date { get; set; }
+
+
+        public void ResultMessage(Calculator calc)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Resultat = {calc.Result} ");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\nTryck valfri tangent för att fortsätta");
+            Console.ReadKey();
+        }
     }
 }
