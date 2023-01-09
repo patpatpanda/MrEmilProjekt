@@ -24,5 +24,15 @@ namespace MrEmilProjekt.Calculator
             Console.WriteLine("\nTryck valfri tangent för att fortsätta");
             Console.ReadKey();
         }
+
+        public void NewCalculatorValues(decimal _firstInput, decimal _secondInput, string _operator, decimal _result,
+            DateTime _date)
+        {
+            FirstInput = _firstInput;
+            SecondInput = _secondInput;
+            Operator = _operator;
+            Result = _result;
+            Date = _date;
+        }
     }
 }

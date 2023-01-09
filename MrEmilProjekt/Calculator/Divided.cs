@@ -29,8 +29,8 @@ namespace MrEmilProjekt.Calculator
             calculator.FirstInput = Convert.ToDecimal(Console.ReadLine());
             Console.Write("Mata in ett tal : ");
             calculator.SecondInput = Convert.ToDecimal(Console.ReadLine());
-            calculator.Operator = "*";
-            calculator.Result = calculator.FirstInput * calculator.SecondInput;
+            calculator.Operator = "/";
+            calculator.Result = calculator.FirstInput / calculator.SecondInput;
             calculator.Date = DateTime.Now;
             myContext.Calculators.Add(calculator);
             myContext.SaveChanges();
