@@ -17,40 +17,60 @@ namespace MrEmilProjekt.Calculator
         {
             while (true)
             {
-
-                var buildApp = new Builder();
-                var myContext = buildApp.AppBuilder();
-                var multiply = new Multiply(myContext);
-                var subtraction = new Subtraction(myContext);
-                var Sqrt = new Sqrt(myContext);
-
-
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.BackgroundColor = ConsoleColor.Black;
-                Console.Clear();
-                Console.WriteLine("                             --------------------------------------------");
-                Console.WriteLine("                             |      ****         1:  +          ****    |");
-                Console.WriteLine("                             |      ****         2:  -          ****    |");
-                Console.WriteLine("                             |      ****         3:  *          ****    |");
-                Console.WriteLine("                             |      ****         4:  /          ****    |");
-                Console.WriteLine("                             |      ****         5:  √          ****    |");
-                Console.WriteLine("                             |      ****         6:  Mainmeny   ****    |");
-                Console.WriteLine("                             ---------------------------------------------");
-                Console.ResetColor();
-                Console.ForegroundColor = ConsoleColor.DarkBlue;
-                Console.Write("                                                    Val : ");
-                Console.ResetColor();
-                var inuput = int.Parse(Console.ReadLine());
-
-                if (inuput == 1)
+                try
                 {
-                   multiply.MultiplyCalculator();
-                }
-                
-                else if(inuput == 2)  subtraction.SubtractionCalculator();
+                    var buildApp = new Builder();
+                    var myContext = buildApp.AppBuilder();
+                    var multiply = new Multiply(myContext);
+                    var subtraction = new Subtraction(myContext);
+                    var sqrt = new Sqrt(myContext);
+                    var divided = new Divided(myContext);
+                    var modulo = new Modulo(myContext);
 
-                else if(inuput == 5) Sqrt.SqrtCalculator();
-                
+
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("                                    ********  VÄLJ OPERATOR *******");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("                             --------------------------------------------");
+                    Console.WriteLine("                             |      ****           +          ****    |");
+                    Console.WriteLine("                             |      ****           -          ****    |");
+                    Console.WriteLine("                             |      ****           /          ****    |");
+                    Console.WriteLine("                             |      ****           *          ****    |");
+                    Console.WriteLine("                             |      ****        S: √          ****    |");
+                    Console.WriteLine("                             |      ****           %          ****    |");
+                    Console.WriteLine("                             |      ****        0: Mainmeny   ****    |");
+                    Console.WriteLine("                             ---------------------------------------------");
+                    Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.DarkBlue;
+                    Console.Write("                                                    Val : ");
+                    Console.ResetColor();
+                    var inuput = Console.ReadLine();
+
+                    if (inuput == "+")
+                    {
+                        multiply.MultiplyCalculator();
+                    }
+
+                    else if (inuput == "-") subtraction.SubtractionCalculator();
+                    else if (inuput == "/") divided.DividedCalculator();
+
+
+                    else if (inuput == "S") sqrt.SqrtCalculator();
+                    else if (inuput == "%") modulo.ModuloCalculator();
+
+                    else if (inuput == "0")
+                    {
+                        new Main().run();
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    Console.ReadLine();
+                }
+               
                    
             }
         }
