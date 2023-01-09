@@ -70,7 +70,7 @@ namespace MrEmilProjekt.Calculator
                     Console.WriteLine(e);
                     Console.ReadLine();
                 }
-               
+               //
                    
             }
         }
