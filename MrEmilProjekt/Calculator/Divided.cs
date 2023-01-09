@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace MrEmilProjekt.Calculator
 {
-    public class Multiply : Calculator
+    internal class Divided
     {
-        
 
-        public Multiply(AppDbContext context)
+
+        public Divided(AppDbContext context)
         {
             myContext = context;
 
@@ -19,23 +19,24 @@ namespace MrEmilProjekt.Calculator
 
         public AppDbContext myContext { get; set; }
 
-        public void MultiplyCalculator()
+        public void DividedCalculator()
         {
+
+
             var calculator = new Calculator();
             Console.Clear();
             Console.Write("Mata in ett tal : ");
             calculator.FirstInput = Convert.ToDecimal(Console.ReadLine());
             Console.Write("Mata in ett tal : ");
             calculator.SecondInput = Convert.ToDecimal(Console.ReadLine());
-            calculator.Operator = "+";
-            calculator.Result = calculator.FirstInput + calculator.SecondInput;
-           calculator.Date = DateTime.Now;
+            calculator.Operator = "*";
+            calculator.Result = calculator.FirstInput * calculator.SecondInput;
+            calculator.Date = DateTime.Now;
             myContext.Calculators.Add(calculator);
             myContext.SaveChanges();
 
             calculator.ResultMessage(calculator);
             Console.ReadKey();
-
 
 
 

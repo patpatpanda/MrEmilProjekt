@@ -9,10 +9,7 @@ public class Main
 {
     public void run()
     {
-        // var Variabel = 64; 
-        //var hej = System.Math.Sqrt(Variabel);
-        // Console.WriteLine(hej);
-        // Console.ReadLine();
+       
         var buildApp = new Builder();
         var myContext = buildApp.AppBuilder();
 
@@ -23,27 +20,31 @@ public class Main
                 var input = MainMenu.ShowMenu();
                 if (input == 1)
                 {
-                    var test = new ShapesMenu();
-                    test.ShowShapesMenu();
+                    new ShapesMenu().ShowShapesMenu();
 
 
                 }
                 else if (input == 2)
                 {
-                    var test = new CalculatorMenu();
-                    test.ShowCalculatorMenu();
+                    new CalculatorMenu().ShowCalculatorMenu();
 
 
                 }
-               
-
+                else if (input == 0) break;
             }
-            catch (Exception e)
+            catch
             {
-                Console.WriteLine(e);
-                Console.WriteLine("\nTryck enter för att fortsäta");
-                Console.ReadLine();
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("Incorrect input");
+                Console.WriteLine("\nPress any key to continue");
+                Console.ReadKey();
+                
             }
+            
+
+           //
+           
         }
 
         

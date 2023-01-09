@@ -10,7 +10,7 @@ namespace MrEmilProjekt.Data
     {
         public static int ShowMenu()
         {
-            
+            try
             {
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.BackgroundColor = ConsoleColor.Black;
@@ -28,7 +28,11 @@ namespace MrEmilProjekt.Data
 
                 return inuput;
             }
-           
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
 
            
         }
