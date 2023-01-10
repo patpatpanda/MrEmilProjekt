@@ -12,7 +12,7 @@ namespace MrEmilProjekt.Shapes
     {  
         public ShapeFactory(){}
 
-        public Shape CreateRectangel(double bas, double height)
+        public Shape CreateRectangle(double bas, double height)
         {
             return CreateTwoSidedShape(bas, height, "Rektangel");
         }
@@ -30,10 +30,18 @@ namespace MrEmilProjekt.Shapes
         {
             return CreateThreeSidedShape(bas, height,"Triangel",hypotenusa);
         }
-        public Shape CreateNewShape(double bas, double height,string name)
+        public Shape CreateNewShape()
         {
-            
-            return CreateTwoSidedShape(bas, height, name);
+            Shape newShape = new Shape();
+            Console.Write("Name : ");
+            newShape.Name = Console.ReadLine();
+            Console.Write("Area : ");
+            newShape.Area = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Circumference : ");
+            newShape.Circumference = Convert.ToDouble(Console.ReadLine());
+            newShape.Date = Convert.ToDateTime(DateTime.Now);
+            return newShape;
+
         }
 
 
@@ -56,7 +64,7 @@ namespace MrEmilProjekt.Shapes
             newShape.Date = DateTime.Now;
             return newShape;
         }
-
+    
         private static double AreaCalculator(double b, double h)
         {
             var area = b * h;

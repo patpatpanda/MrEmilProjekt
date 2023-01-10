@@ -19,7 +19,7 @@ namespace MrEmilProjekt.Shapes
         public AppDbContext myContext { get; set; }
         public IShapeFactory myShapeFactory { get; set; }
 
-        public void RektangelFormManager()
+        public void RectangleFormManager()
         {
             while (true)
             {
@@ -29,7 +29,7 @@ namespace MrEmilProjekt.Shapes
                     var bas = ShapeWidthInput();
                     var height = ShapeHeightInput();
 
-                    var shape = myShapeFactory.CreateRectangel(bas, height);
+                    var shape = myShapeFactory.CreateRectangle(bas, height);
 
                     myContext.Shapes.Add(shape);
                     myContext.SaveChanges();
@@ -140,16 +140,18 @@ namespace MrEmilProjekt.Shapes
 
         public void NewShapeManager()
         {
-            Console.Clear();
-            Console.Write("Name for new Shape : ");
-            var name = Console.ReadLine();
-            var bas = ShapeWidthInput();
-            var height = ShapeHeightInput();
-            var shape = myShapeFactory.CreateNewShape(bas, height,name);
+
+
+
+            
+            var shape = myShapeFactory.CreateNewShape();
             myContext.Shapes.Add(shape);
             myContext.SaveChanges();
-
-            ResultMessage(shape);
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("Succeed!");
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
         }
 
         private static double ShapeWidthInput()

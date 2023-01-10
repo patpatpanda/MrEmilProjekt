@@ -26,11 +26,12 @@ namespace MrEmilProjekt.Shapes
             Console.WriteLine("****************** All Shapes **********************");
             Console.WriteLine();
            Console.WriteLine("Id\tNamn\t\t\tArea\t\tOmkrets");
-            Console.WriteLine("===========================================================================");
+            Console.WriteLine("=====================================================");
             foreach (var shape in myContext.Shapes.OrderBy(x => x.ShapeId))
             {
                 
                 Console.WriteLine($"{shape.ShapeId}\t{shape.Name}\t\t{shape.Area}\t\t{shape.Circumference}");
+               
 
             }
 
