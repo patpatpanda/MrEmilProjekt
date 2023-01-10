@@ -1,6 +1,7 @@
 ﻿
 using MrEmilProjekt.Calculator;
 using MrEmilProjekt.Data;
+using MrEmilProjekt.Game;
 using MrEmilProjekt.Shapes;
 
 namespace MrEmilProjekt;
@@ -29,6 +30,10 @@ public class Main
                     new CalculatorMenu().ShowCalculatorMenu();
 
 
+                }
+                else if (input == 3)
+                {
+                  new  Playgame().PlayGame();
                 }
                 else if (input == 0) break;
             }
