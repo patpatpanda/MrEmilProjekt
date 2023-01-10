@@ -33,18 +33,15 @@ public class Main
                 }
                 else if (input == 3)
                 {
-                  new  Playgame().PlayGame();
+                    new Playgame().PlayGame();
                 }
                 else if (input == 0) break;
             }
-            catch
+
+            catch (Exception e)
             {
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine("Incorrect input");
-                Console.WriteLine("\nPress any key to continue");
-                Console.ReadKey();
-                
+                Console.WriteLine(e);
+                Console.ReadLine();
             }
             
 

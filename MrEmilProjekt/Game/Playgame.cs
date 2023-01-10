@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
+using MrEmilProjekt.Migrations;
 
 namespace MrEmilProjekt.Game
 {
@@ -22,14 +23,17 @@ namespace MrEmilProjekt.Game
         }
         public void PlayGame()
         {
-           
 
+            var buildApp = new Builder();
+            var myContext = buildApp.AppBuilder();
 
             string computer;
 
             int randomNumber;
             int playerScore = 0;
             int computerScore = 0;
+            int draw = 0;
+            int totalGames = 0;
 
             while (true)
             {
@@ -59,6 +63,7 @@ namespace MrEmilProjekt.Game
                         {
                             Console.WriteLine("ITS A DRAW!");
                             ResultMessage();
+                            draw++;
 
                         }
                         else if (inputPlayer == "PAPER")
@@ -81,11 +86,13 @@ namespace MrEmilProjekt.Game
                         Console.WriteLine("Computer chose PAPER ");
                         if (inputPlayer == "PAPER")
                         {
+                            draw++;
                             Console.WriteLine("ITS A DRAW!");
                             ResultMessage();
                         }
                         else if (inputPlayer == "ROCK")
                         {
+                            
                             Console.WriteLine("YOU LOOSE!!");
                             computerScore++;
                             ResultMessage();
@@ -102,19 +109,23 @@ namespace MrEmilProjekt.Game
                         Console.WriteLine("Computer chose SCISSOR ");
                         if (inputPlayer == "PAPER")
                         {
+                            
                             Console.WriteLine("YOU LOOSE!");
+                            computerScore++;
                             ResultMessage();
                         }
                         else if (inputPlayer == "ROCK")
                         {
                             Console.WriteLine("YOU WIN!!");
-                            computerScore++;
+                            playerScore++;
+                            
                             ResultMessage();
                         }
                         else if (inputPlayer == "SCISSOR")
                         {
                             Console.WriteLine("ITS A DRAW!!");
-                            playerScore++;
+
+                            draw++;
                             ResultMessage();
                         }
 
@@ -123,11 +134,39 @@ namespace MrEmilProjekt.Game
 
             }
 
-            Console.WriteLine(playerScore);
+            Console.WriteLine(draw);
             Console.WriteLine(computerScore);
-            Console.ReadLine();
+            Console.WriteLine(playerScore);
+            totalGames = draw + computerScore + playerScore;
+            int avg = playerScore * 100 / totalGames;
+            int lol = avg;
+            Console.WriteLine(avg + "%");
 
+
+            var gameScore = new TheGame();
+            gameScore.Win = playerScore;
+            gameScore.Lost = computerScore;
+            gameScore.Average = lol;
+            gameScore.Date = DateTime.Now;
+            myContext.TheGames.Add(gameScore);
+            myContext.SaveChanges();
+
+
+
+            //Console.WriteLine("asdasd");
+            //var gameScore = new TheGame();
+            //gameScore.Win = playerScore;
+            //gameScore.Lost = computerScore;
+
+            //gameScore.Date = DateTime.Now;
+
+            //myContext.TheGames.Add(gameScore);
+            //myContext.SaveChanges();
+
+            //Console.ReadLine();
         }
+
+        
 
         public void ResultMessage()
         {

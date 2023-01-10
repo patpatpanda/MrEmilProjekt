@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace MrEmilProjekt.Game
 {
-    internal class RockPaperScissor
+    public class TheGame
     {
-        public int Result { get; set; }
-        public int AverageWin { get; set; }
+        public int Id { get; set; }
+        public int Win { get; set; }
+        public int Lost { get; set; }
+        public int Average { get; set; }
         public DateTime Date { get; set; }
     }
 }
