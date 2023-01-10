@@ -21,7 +21,7 @@ namespace MrEmilProjekt.Calculator
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Resultat = {calc.Result} ");
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("\nTryck valfri tangent för att fortsätta");
+            Console.WriteLine("\nPress any key to continue");
             Console.ReadKey();
         }
 

@@ -40,18 +40,22 @@ namespace MrEmilProjekt.Calculator
 
         public void UpdateCalculator()
         {
-            var shapeId = GetShapeId();
-            Console.Write("Namn : ");
-            var name = Console.ReadLine();
-            Console.Write("Area : ");
-            var area = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Omkrets : ");
-            var circumference = Convert.ToDouble(Console.ReadLine());
-            var date = Convert.ToDateTime(Console.ReadLine());
-            shapeId.NewShapeValues(name, area, circumference, date);
+            var calculatorId = GetCalculatorId();
+            Console.Write("First number : ");
+            decimal firstNumber = Convert.ToDecimal(Console.ReadLine());
+            Console.Write("Second number : ");
+            decimal secondNumber = Convert.ToDecimal(Console.ReadLine());
+            Console.Write("Operator : ");
+            string operatorChoise = Console.ReadLine();
+            Console.Write("Result : ");
+            decimal result = Convert.ToDecimal(Console.ReadLine());
+            Console.WriteLine("Datum (yyyy-mm-dd)");
+            DateTime date = Convert.ToDateTime(Console.ReadLine());
+            calculatorId.NewCalculatorValues(firstNumber,secondNumber,operatorChoise,result,date);
+
             myContext.SaveChanges();
 
-
+          SuccsessMessage();
 
 
         }
@@ -77,21 +81,19 @@ namespace MrEmilProjekt.Calculator
 
         }
 
-        public void DeleteShape()
+        public void DeleteCalculation()
         {
             while (true)
             {
                 try
                 {
+                   var delete = GetCalculatorId();
                     
-                    Console.Write("\nType (Id) for update shape : ");
-                    var roomId = int.Parse(Console.ReadLine());
-                    var delete = myContext.Shapes.First(x => x.ShapeId == roomId);
 
 
-                    myContext.Shapes.Remove(delete);
+                    myContext.Calculators.Remove(delete);
                     myContext.SaveChanges();
-
+                    SuccsessMessage();
                     break;
                 }
                 catch
@@ -110,6 +112,35 @@ namespace MrEmilProjekt.Calculator
 
             Console.ReadLine();
         }
+        private Calculator GetCalculatorId()
+        {
+            while (true)
+            {
+                try
+                {
+                    ListCalculator();
+                    Console.Write("\nType (Id) : ");
 
+
+                    var calculatorId = int.Parse(Console.ReadLine());
+                    var editCalculator = myContext.Calculators.First(x => x.Id == calculatorId);
+                    return editCalculator;
+                }
+                catch
+                {
+                    NotValidIdMessage();
+                }
+            }
+           
+        }
+        private static void SuccsessMessage()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Succeed ! ");
+            Console.WriteLine("\nPress any key to continue");
+            Console.ReadKey();
+            Console.WriteLine("S");
+        }
     }
 }
