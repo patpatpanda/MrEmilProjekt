@@ -31,13 +31,13 @@ namespace MrEmilProjekt.Calculator
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("                                    ********  MENU  *******");
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine("                             --------------------------------------------");
+                    Console.WriteLine("                             -----------------------------------------");
                     Console.WriteLine("                             |     ***  1 : Make Calculation   ****    |");
                     Console.WriteLine("                             |     ***  2 : List all           ****    |");
                     Console.WriteLine("                             |     ***  3 : Update             ****    |");
                     Console.WriteLine("                             |     ***  4 : Delete             ****    |");
                    
-                    Console.WriteLine("                             |     ***   0: Mainmeny            ****   |");
+                    Console.WriteLine("                             |     ***  0: Mainmeny            ****   |");
                     Console.WriteLine("                             ---------------------------------------------");
                     Console.ResetColor();
                     Console.ForegroundColor = ConsoleColor.DarkBlue;
