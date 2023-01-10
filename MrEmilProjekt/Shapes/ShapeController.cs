@@ -41,12 +41,13 @@ namespace MrEmilProjekt.Shapes
         public void UpdateShape()
         {
             var shapeId = GetShapeId();
-            Console.Write("Namn : ");
+            Console.Write("Name : ");
             var name = Console.ReadLine();
             Console.Write("Area : ");
             var area = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Omkrets : ");
+            Console.Write("Circumference : ");
             var circumference = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Date (yyyy-mm-dd)");
             var date = Convert.ToDateTime(Console.ReadLine());
             shapeId.NewShapeValues(name,area,circumference,date);
             myContext.SaveChanges();
@@ -88,7 +89,7 @@ namespace MrEmilProjekt.Shapes
 
                     myContext.Shapes.Remove(delete);
                     myContext.SaveChanges();
-                    
+                    SuccsessMessage();
                     break;
                 }
                 catch
@@ -106,6 +107,16 @@ namespace MrEmilProjekt.Shapes
             Console.WriteLine("\nPress any key to continue");
 
             Console.ReadLine();
+        }
+
+        private static void SuccsessMessage()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Succeed");
+            Console.WriteLine("\nPress any key to continue");
+            Console.ReadKey();
+            Console.WriteLine("S");
         }
     }
 }

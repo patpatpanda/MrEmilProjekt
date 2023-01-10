@@ -35,10 +35,10 @@ namespace MrEmilProjekt.Shapes
                 Console.WriteLine("                             |      ****         2:  Parallellogram    ****     |");
                 Console.WriteLine("                             |      ****         3:  Triangel          ****     |");
                 Console.WriteLine("                             |      ****         4:  Romb              ****     |");
-                Console.WriteLine("                             |      ****         5:  List   Shapes     ****     |");
-                Console.WriteLine("                             |      ****         6:  Update Shapes     ****     |");
-                Console.WriteLine("                             |      ****         7:  Delete Shapes     ****     |");
-                Console.WriteLine("                             |      ****         8:  Create Shape      ****     |");
+                Console.WriteLine("                             |      ****         5:  List              ****     |");
+                Console.WriteLine("                             |      ****         6:  Update            ****     |");
+                Console.WriteLine("                             |      ****         7:  Delete            ****     |");
+                Console.WriteLine("                             |      ****         8:  Create            ****     |");
                 Console.WriteLine("                             |      ****         0:  Mainmeny          ****     |");
                 Console.WriteLine("                             ----------------------------------------------------");
                 Console.ResetColor();

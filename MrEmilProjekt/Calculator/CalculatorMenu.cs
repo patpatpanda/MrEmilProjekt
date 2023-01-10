@@ -24,7 +24,7 @@ namespace MrEmilProjekt.Calculator
                     var myContext = buildApp.AppBuilder();
                     var controllerCalc = new CalculatorController(myContext);
                     var makeCalculation = new OperatorMenu();
-
+                    
 
 
                     Console.Clear();
@@ -34,8 +34,8 @@ namespace MrEmilProjekt.Calculator
                     Console.WriteLine("                             --------------------------------------------");
                     Console.WriteLine("                             |     ***  1 : Make Calculation   ****    |");
                     Console.WriteLine("                             |     ***  2 : List all           ****    |");
-                    Console.WriteLine("                             |     ***  3 : Delete             ****    |");
-                    Console.WriteLine("                             |     ***  4 : Update             ****    |");
+                    Console.WriteLine("                             |     ***  3 : Update             ****    |");
+                    Console.WriteLine("                             |     ***  4 : Delete             ****    |");
                    
                     Console.WriteLine("                             |     ***   0: Mainmeny            ****   |");
                     Console.WriteLine("                             ---------------------------------------------");
@@ -56,7 +56,8 @@ namespace MrEmilProjekt.Calculator
                         Console.WriteLine("\nPress any key to continue");
                         Console.ReadKey();
                     }
-
+                    else if(input == 3) controllerCalc.UpdateCalculator();
+                    else if(input == 4) controllerCalc.DeleteCalculation();
 
 
                 }
