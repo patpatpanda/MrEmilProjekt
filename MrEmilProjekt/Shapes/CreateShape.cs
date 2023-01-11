@@ -34,7 +34,7 @@ namespace MrEmilProjekt.Shapes
                     myContext.Shapes.Add(shape);
                     myContext.SaveChanges();
 
-                    ResultMessage(shape);
+                    ResultMessageShape(shape);
                     break;
                 }
                 catch (Exception e)
@@ -64,7 +64,7 @@ namespace MrEmilProjekt.Shapes
                     myContext.Shapes.Add(shape);
                     myContext.SaveChanges();
 
-                    ResultMessage(shape);
+                    ResultMessageShape(shape);
                     break;
                 }
                 catch (Exception e)
@@ -95,7 +95,7 @@ namespace MrEmilProjekt.Shapes
                     myContext.Shapes.Add(shape);
                     myContext.SaveChanges();
 
-                    ResultMessage(shape);
+                    ResultMessageShape(shape);
                     break;
 
                     
@@ -126,7 +126,7 @@ namespace MrEmilProjekt.Shapes
                     myContext.Shapes.Add(shape);
                     myContext.SaveChanges();
 
-                    ResultMessage(shape);
+                    ResultMessageShape(shape);
                     break;
                 }
                 catch (Exception e)
@@ -156,7 +156,7 @@ namespace MrEmilProjekt.Shapes
 
         private static double ShapeWidthInput()
         {
-            Console.Write("Type bas : ");
+            Console.Write("Type base : ");
             double bas = Convert.ToDouble(Console.ReadLine());
             return bas;
         }
@@ -168,7 +168,7 @@ namespace MrEmilProjekt.Shapes
             return height;
         }
 
-        private static void ResultMessage(Shape shape)
+        private static void ResultMessageShape(Shape shape)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Area = {shape.Area}");
