@@ -24,6 +24,16 @@ ShapeWidthInput() Retunerar en bas i form av en double som användaren matat in.
 ShapeHeightInput() Retunerar en höjd i from av en double som användaren matat in.
 ResultMessageShape() Skriver ut resultat av area och omkrets och navigerar användaren vidare.
 ErrorMessage() Skriver ut vilket  fel val av input som gjorts och navigerar användaren vidare.
+CreateRectangle() Skapar en rektangel och retunerar den.
+CreateParaellogram() Skapar ett paraellogram och retunerar den.
+CreateTriangle()  Skapar en triangel och retunerar den.
+CreateRomb()  Skapar en romb och retunerar den.
+CreateTwoSidedShape() Skapar en form med bas och höjd och retunerar den.
+CreateThreeSidedShape() Skapar en from med bas hypotenusa och höjd och retunerar den.
+AreaCalculator() Räknar ut area på form med bas och höjd.
+CircumferenceCalculator() Räknar ut omkrets på form med bas och höjd.
+AreaCalculatorTriangel() Räknar ut area på en triangel.
+CircumferenceCalculatorTriangel() Räknar ut omkrets på en triangel.
 
 
 
