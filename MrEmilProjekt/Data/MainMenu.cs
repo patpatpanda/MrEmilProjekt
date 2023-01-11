@@ -22,7 +22,7 @@ namespace MrEmilProjekt.Data
                 Console.WriteLine("                             ----------------------------------------------------");
                 Console.ResetColor();
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
-                Console.Write("                                                    Choise : ");
+                Console.Write("                                                    Choice : ");
                 Console.ResetColor();
                 var inuput = int.Parse(Console.ReadLine());
 

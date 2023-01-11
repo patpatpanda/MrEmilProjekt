@@ -25,11 +25,11 @@ internal class OperatorMenu
         Console.WriteLine("                             |      ****        1: √          ****    |");
         Console.WriteLine("                             |      ****           %          ****    |");
 
-        Console.WriteLine("                             |      ****        0: Mainmeny   ****    |");
+        Console.WriteLine("                             |      ****        0: Mainmenu   ****    |");
         Console.WriteLine("                             ---------------------------------------------");
         Console.ResetColor();
         Console.ForegroundColor = ConsoleColor.DarkBlue;
-        Console.Write("                                                    Val : ");
+        Console.Write("                                                    Choice : ");
         Console.ResetColor();
         var input = Console.ReadLine();
 

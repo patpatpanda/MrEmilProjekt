@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 namespace MrEmilProjekt.Shapes
 {
     internal class ShapeFactory: IShapeFactory
-    {  
+    {
+      
         public ShapeFactory(){}
 
         public Shape CreateRectangle(double bas, double height)
@@ -26,26 +27,12 @@ namespace MrEmilProjekt.Shapes
         {
             return CreateTwoSidedShape(bas, height, "Paraellogram");
         }
-        public Shape CreateTriangel(double bas, double height, double hypotenusa)
+        public Shape CreateTriangle(double bas, double height, double hypotenusa)
         {
             return CreateThreeSidedShape(bas, height,"Triangel",hypotenusa);
         }
-        public Shape CreateNewShape()
-        {
-            Shape newShape = new Shape();
-            Console.Write("Name : ");
-            newShape.Name = Console.ReadLine();
-            Console.Write("Area : ");
-            newShape.Area = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Circumference : ");
-            newShape.Circumference = Convert.ToDouble(Console.ReadLine());
-            newShape.Date = Convert.ToDateTime(DateTime.Now);
-            return newShape;
-
-        }
-
-
-
+       
+        
         private Shape CreateTwoSidedShape(double bas, double height, string name)
         {
             Shape newShape = new Shape();
@@ -94,5 +81,14 @@ namespace MrEmilProjekt.Shapes
             return circumference;
         }
 
+        public Shape CreateNewShape(string name, double area, double circumference, DateTime date)
+        {
+            var newShape = new Shape();
+            newShape.Name = name;
+            newShape.Area = area;
+            newShape.Circumference = circumference;
+            newShape.Date = DateTime.Now;
+            return newShape;
+        }
     }
 }

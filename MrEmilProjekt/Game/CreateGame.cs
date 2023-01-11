@@ -9,15 +9,15 @@ using MrEmilProjekt.Migrations;
 
 namespace MrEmilProjekt.Game
 {
-    public class Playgame
+    public class CreateGame
     {
         public AppDbContext myContext;
 
-        public Playgame()
+        public CreateGame()
         {
         }
 
-        public Playgame(AppDbContext context)
+        public CreateGame(AppDbContext context)
         {
             myContext = context;
         }

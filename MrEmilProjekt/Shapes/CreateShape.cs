@@ -90,7 +90,7 @@ namespace MrEmilProjekt.Shapes
                     double hypotenusa = Convert.ToDouble(Console.ReadLine());
 
 
-                    var shape = myShapeFactory.CreateTriangel(bas, height,hypotenusa);
+                    var shape = myShapeFactory.CreateTriangle(bas, height,hypotenusa);
 
                     myContext.Shapes.Add(shape);
                     myContext.SaveChanges();
@@ -138,21 +138,28 @@ namespace MrEmilProjekt.Shapes
             
         }
 
-        public void NewShapeManager()
-        {
+        //public void NewShapeManager()
+        //{
+        //    Console.WriteLine("Name : ");
+        //    var name = Console.ReadLine();
+        //    Console.Write("Area : ");
+        //    var area = Convert.ToDouble(Console.ReadLine());
+        //    Console.Write("Circumference : ");
+        //    var circumference = Convert.ToDouble(Console.ReadLine());
+        //    Console.Write("Datum (yyyy-mm-dd) : ");
+        //    var date = Convert.ToDateTime(Console.ReadLine());
 
 
 
-            
-            var shape = myShapeFactory.CreateNewShape();
-            myContext.Shapes.Add(shape);
-            myContext.SaveChanges();
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.WriteLine("Succeed!");
-            Console.WriteLine("Press any key to continue");
-            Console.ReadKey();
-        }
+        //    var shape = myShapeFactory.CreateNewShape(name,area,circumference,date);
+        //    myContext.Shapes.Add(shape);
+        //    myContext.SaveChanges();
+        //    Console.Clear();
+        //    Console.ForegroundColor = ConsoleColor.DarkGreen;
+        //    Console.WriteLine("Succeed!");
+        //    Console.WriteLine("Press any key to continue");
+        //    Console.ReadKey();
+        //}
 
         private static double ShapeWidthInput()
         {

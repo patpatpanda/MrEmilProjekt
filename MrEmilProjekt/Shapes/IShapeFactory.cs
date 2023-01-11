@@ -5,9 +5,10 @@ namespace MrEmilProjekt.Shapes
         Shape CreateRomb(double bas, double height);
         Shape CreateRectangle(double bas, double height);
 
-        Shape CreateTriangel(double bas, double height,double hypotenusa);
+        Shape CreateTriangle(double bas, double height,double hypotenusa);
 
-        Shape CreateNewShape();
+      //  Shape CreateNewShape(string name, double area, double circumference, DateTime date);
+
 
 
     }

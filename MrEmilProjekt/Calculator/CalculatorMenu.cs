@@ -41,7 +41,7 @@ namespace MrEmilProjekt.Calculator
                     Console.WriteLine("                             ---------------------------------------------");
                     Console.ResetColor();
                     Console.ForegroundColor = ConsoleColor.DarkBlue;
-                    Console.Write("                                                Val : ");
+                    Console.Write("                                                Choice : ");
                     Console.ResetColor();
                     var input = int.Parse(Console.ReadLine());
                     

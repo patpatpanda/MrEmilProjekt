@@ -33,14 +33,17 @@ public class Main
                 }
                 else if (input == 3)
                 {
-                    new Playgame().PlayGame();
+                    new CreateGame().PlayGame();
                 }
                 else if (input == 0) break;
             }
 
-            catch (Exception e)
+            catch 
             {
-                Console.WriteLine(e);
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("You can only put 1,2 or 3 as choice");
+                Console.WriteLine("\nPress any key to continue");
                 Console.ReadLine();
             }
             

@@ -16,8 +16,8 @@ namespace MrEmilProjekt.Data
             myContext.SaveChanges();
         }
 
-
-       
         
+
+
     }
 }

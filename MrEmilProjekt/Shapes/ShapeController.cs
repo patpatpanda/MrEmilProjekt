@@ -18,6 +18,11 @@ namespace MrEmilProjekt.Shapes
         {
             myContext = context;
         }
+
+        public ShapeController()
+        {
+        }
+
         public void ListShape()
         {
 

@@ -59,27 +59,7 @@ namespace MrEmilProjekt.Calculator
 
 
         }
-        private Shape GetShapeId()
-        {
-            while (true)
-            {
-                try
-                {
-                    
-                    Console.Write("\nType (Id) for update shape : ");
-
-
-                    var shapeId = int.Parse(Console.ReadLine());
-                    var editShape = myContext.Shapes.First(x => x.ShapeId == shapeId);
-                    return editShape;
-                }
-                catch
-                {
-                    NotValidIdMessage();
-                }
-            }
-
-        }
+        
 
         public void DeleteCalculation()
         {
@@ -129,6 +109,7 @@ namespace MrEmilProjekt.Calculator
                 catch
                 {
                     NotValidIdMessage();
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
             }
            
