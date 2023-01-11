@@ -19,9 +19,9 @@ public class ShapesMenu
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
             Console.WriteLine("                             ---------------------------------------------------");
-            Console.WriteLine("                             |      ****         1:  Rektangel         ****     |");
+            Console.WriteLine("                             |      ****         1:  Rectangle         ****     |");
             Console.WriteLine("                             |      ****         2:  Parallellogram    ****     |");
-            Console.WriteLine("                             |      ****         3:  Triangel          ****     |");
+            Console.WriteLine("                             |      ****         3:  Triangele         ****     |");
             Console.WriteLine("                             |      ****         4:  Romb              ****     |");
             Console.WriteLine("                             |      ****         5:  List              ****     |");
             Console.WriteLine("                             |      ****         6:  Update            ****     |");
@@ -31,13 +31,13 @@ public class ShapesMenu
             Console.WriteLine("                             ----------------------------------------------------");
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.Write("                                                    Val : ");
+            Console.Write("                                                    Choise : ");
             Console.ResetColor();
             var inuput = int.Parse(Console.ReadLine());
 
             if (inuput == 1)
             {
-                createShape.RektangelFormManager();
+                createShape.RectangleFormManager();
             }
 
 

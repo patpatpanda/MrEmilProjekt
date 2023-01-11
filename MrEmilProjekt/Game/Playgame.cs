@@ -139,31 +139,20 @@ namespace MrEmilProjekt.Game
             Console.WriteLine(playerScore);
             totalGames = draw + computerScore + playerScore;
             int avg = playerScore * 100 / totalGames;
-            int lol = avg;
-            Console.WriteLine(avg + "%");
-
+            Console.Clear();
 
             var gameScore = new TheGame();
             gameScore.Win = playerScore;
             gameScore.Lost = computerScore;
-            gameScore.Average = lol;
+            gameScore.WinPercentage = avg;
             gameScore.Date = DateTime.Now;
             myContext.TheGames.Add(gameScore);
             myContext.SaveChanges();
-
-
-
-            //Console.WriteLine("asdasd");
-            //var gameScore = new TheGame();
-            //gameScore.Win = playerScore;
-            //gameScore.Lost = computerScore;
-
-            //gameScore.Date = DateTime.Now;
-
-            //myContext.TheGames.Add(gameScore);
-            //myContext.SaveChanges();
-
-            //Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine($"You won {avg}% of total games played! ");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\nPress any key to continue");
+            Console.ReadLine();
         }
 
         

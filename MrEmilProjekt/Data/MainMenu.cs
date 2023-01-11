@@ -16,13 +16,13 @@ namespace MrEmilProjekt.Data
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.Clear();
                 Console.WriteLine("                             ---------------------------------------------------");
-                Console.WriteLine("                             |      ****         1:  Shapes         ****       |");
-                Console.WriteLine("                             |      ****         2:  Miniräknare    ****       |");
-                Console.WriteLine("                             |      ****         3:  Sten,Sax,Påse  ****       |");
+                Console.WriteLine("                             |      ****         1:  Shapes               ****  |");
+                Console.WriteLine("                             |      ****         2:  Calculator           ****  |");
+                Console.WriteLine("                             |      ****         3:  Rock,Paper,Scissors  ****  |");
                 Console.WriteLine("                             ----------------------------------------------------");
                 Console.ResetColor();
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
-                Console.Write("                                                    Val : ");
+                Console.Write("                                                    Choise : ");
                 Console.ResetColor();
                 var inuput = int.Parse(Console.ReadLine());
 

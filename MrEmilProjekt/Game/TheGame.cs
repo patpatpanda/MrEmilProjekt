@@ -12,7 +12,7 @@ namespace MrEmilProjekt.Game
         public int Id { get; set; }
         public int Win { get; set; }
         public int Lost { get; set; }
-        public int Average { get; set; }
+        public int WinPercentage { get; set; }
         public DateTime Date { get; set; }
     }
 }

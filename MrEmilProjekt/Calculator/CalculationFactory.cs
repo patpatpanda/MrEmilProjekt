@@ -13,9 +13,9 @@ namespace MrEmilProjekt.Calculator
         {
             var calculator = new Calculator();
             Console.Clear();
-            Console.Write("Mata in ett tal : ");
+            Console.Write("Enter a number : ");
             calculator.FirstInput = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Mata in ett tal : ");
+            Console.Write("Enter a number : ");
             calculator.SecondInput = Convert.ToDecimal(Console.ReadLine());
             calculator.Operator = "+";
             calculator.Result = calculator.FirstInput + calculator.SecondInput;
@@ -29,12 +29,13 @@ namespace MrEmilProjekt.Calculator
         {
             var calculator = new Calculator();
             Console.Clear();
-            Console.Write("Mata in ett tal : ");
+            Console.Write("Enter a number : ");
             var input = Convert.ToDouble(Console.ReadLine());
             calculator.FirstInput = Convert.ToDecimal(input);
             calculator.Result = Convert.ToDecimal(System.Math.Sqrt(input));
             calculator.Operator = "√";
             calculator.Date = DateTime.Now;
+            calculator.ResultMessage(calculator);
             return calculator;
         }
 
@@ -42,9 +43,9 @@ namespace MrEmilProjekt.Calculator
         {
             var calculator = new Calculator();
             Console.Clear();
-            Console.Write("Mata in ett tal : ");
+            Console.Write("Enter a number : ");
             calculator.FirstInput = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Mata in ett tal : ");
+            Console.Write("Enter a number : ");
             calculator.SecondInput = Convert.ToDecimal(Console.ReadLine());
             calculator.Operator = "/";
             calculator.Result = calculator.FirstInput / calculator.SecondInput;
@@ -57,9 +58,9 @@ namespace MrEmilProjekt.Calculator
         {
             var calculator = new Calculator();
             Console.Clear();
-            Console.Write("Mata in ett tal : ");
+            Console.Write("Enter a number : ");
             calculator.FirstInput = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Mata in ett tal : ");
+            Console.Write("Enter a number : ");
             calculator.SecondInput = Convert.ToDecimal(Console.ReadLine());
             calculator.Operator = "%";
             calculator.Result = calculator.FirstInput % calculator.SecondInput;
@@ -72,9 +73,9 @@ namespace MrEmilProjekt.Calculator
         {
             var calculator = new Calculator();
             Console.Clear();
-            Console.Write("Mata in ett tal : ");
+            Console.Write("Enter a number : ");
             calculator.FirstInput = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Mata in ett tal : ");
+            Console.Write("Enter a number : ");
             calculator.SecondInput = Convert.ToDecimal(Console.ReadLine());
             calculator.Operator = "*";
             calculator.Result = calculator.FirstInput * calculator.SecondInput;
@@ -88,9 +89,9 @@ namespace MrEmilProjekt.Calculator
             var calc = new Calculator();
             Console.Clear();
 
-            Console.Write("Mata in ett tal : ");
+            Console.Write("Enter a number : ");
             calc.FirstInput = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Mata in ett tal : ");
+            Console.Write("Enter a number : ");
             calc.SecondInput = Convert.ToDecimal(Console.ReadLine());
             calc.Operator = "-";
             calc.Result = calc.FirstInput - calc.SecondInput;
