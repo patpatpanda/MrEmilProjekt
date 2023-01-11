@@ -13,8 +13,8 @@ microsoft.entityframeworkcore.tools\6.0.0\ ---- microsoft.extensions.configurati
 
 
 # Metoder
-# Run() Görs valet vad man vill köra av shapes,calculator,rock,paper,scissors.
-# ShowMenu() Visar valen shapes,calculator,rock,paper,scissors och retunerar ett val.
+Run() Görs valet vad man vill köra av shapes,calculator,rock,paper,scissors.
+ShowMenu() Visar valen shapes,calculator,rock,paper,scissors och retunerar ett val.
 Run() Görs valet vad man vill köra av shapes,calculator,rock,paper,scissors.
 ShowMenu() Visar valen shapes,calculator,rock,paper,scissors och retunerar ett val.
 ShowShapesMenu() visar de val som finns att göra och skickar vidare till önskat val.
@@ -36,6 +36,14 @@ AreaCalculator() Räknar ut area på form med bas och höjd.
 CircumferenceCalculator() Räknar ut omkrets på form med bas och höjd.
 AreaCalculatorTriangel() Räknar ut area på en triangel.
 CircumferenceCalculatorTriangel() Räknar ut omkrets på en triangel.
+ListShape() Listar alla shapes.
+UpdateShape() Möjlighet att ändra värden i en shape som redan skapats.
+DeleteShape() Möjlighet att radera en shape som redan skapats.
+GetShapeId() Väljer ett shapeId från lista och retunerar det.
+NotValidIdMessage() Skriver ut felmeddelande.
+SuccsessMessage() Skriver ut ett lyckades meddelande.
+
+ 
 
 
 
