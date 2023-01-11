@@ -13,6 +13,8 @@ microsoft.entityframeworkcore.tools\6.0.0\ ---- microsoft.extensions.configurati
 
 
 # Metoder
+# Run() Görs valet vad man vill köra av shapes,calculator,rock,paper,scissors.
+# ShowMenu() Visar valen shapes,calculator,rock,paper,scissors och retunerar ett val.
 Run() Görs valet vad man vill köra av shapes,calculator,rock,paper,scissors.
 ShowMenu() Visar valen shapes,calculator,rock,paper,scissors och retunerar ett val.
 ShowShapesMenu() visar de val som finns att göra och skickar vidare till önskat val.
