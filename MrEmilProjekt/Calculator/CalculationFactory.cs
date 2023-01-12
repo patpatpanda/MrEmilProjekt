@@ -4,35 +4,46 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClassLibrary2;
+
 
 namespace MrEmilProjekt.Calculator
 {
     public class CalculationFactory : ICalculation
     {
-        public Calculator AdditonMaker()
+
+
+        public CalculationFactory(Calculator _calculator,MathOperators math)
         {
-            var calculator = new Calculator();
+            myMath = math;
+            calculator = _calculator;
+        }
+
+        public MathOperators myMath { get; set; }
+        public Calculator calculator { get; set; }
+        public Calculator AdditionMaker()
+        {
+           
+            
             Console.Clear();
-            Console.Write("Enter a number : ");
-            calculator.FirstInput = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Enter a number : ");
-            calculator.SecondInput = Convert.ToDecimal(Console.ReadLine());
+            calculator.Result = myMath.Addition(calculator.FirstInput, calculator.SecondInput);
             calculator.Operator = "+";
-            calculator.Result = calculator.FirstInput + calculator.SecondInput;
             calculator.Date = DateTime.Now;
             calculator.ResultMessage(calculator);
             return calculator;
 
         }
 
+
+
         public Calculator SqrtMaker()
         {
-            var calculator = new Calculator();
+           
             Console.Clear();
-            Console.Write("Enter a number : ");
-            var input = Convert.ToDouble(Console.ReadLine());
-            calculator.FirstInput = Convert.ToDecimal(input);
-            calculator.Result = Convert.ToDecimal(System.Math.Sqrt(input));
+
+
+
+            calculator.Result = myMath.Sqrt(calculator.FirstInput);
             calculator.Operator = "√";
             calculator.Date = DateTime.Now;
             calculator.ResultMessage(calculator);
@@ -41,14 +52,12 @@ namespace MrEmilProjekt.Calculator
 
         public Calculator DividedMaker()
         {
-            var calculator = new Calculator();
+           
             Console.Clear();
-            Console.Write("Enter a number : ");
-            calculator.FirstInput = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Enter a number : ");
-            calculator.SecondInput = Convert.ToDecimal(Console.ReadLine());
+           
+           
             calculator.Operator = "/";
-            calculator.Result = calculator.FirstInput / calculator.SecondInput;
+            calculator.Result = myMath.Divided(calculator.FirstInput, calculator.SecondInput);
             calculator.Date = DateTime.Now;
             calculator.ResultMessage(calculator);
             return calculator;
@@ -56,14 +65,12 @@ namespace MrEmilProjekt.Calculator
 
         public Calculator ModuloMaker()
         {
-            var calculator = new Calculator();
+
             Console.Clear();
-            Console.Write("Enter a number : ");
-            calculator.FirstInput = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Enter a number : ");
-            calculator.SecondInput = Convert.ToDecimal(Console.ReadLine());
+
+
             calculator.Operator = "%";
-            calculator.Result = calculator.FirstInput % calculator.SecondInput;
+            calculator.Result = myMath.Modulo(calculator.FirstInput, calculator.SecondInput);
             calculator.Date = DateTime.Now;
             calculator.ResultMessage(calculator);
             return calculator;
@@ -71,14 +78,12 @@ namespace MrEmilProjekt.Calculator
 
         public Calculator MultiplyMaker()
         {
-            var calculator = new Calculator();
+
             Console.Clear();
-            Console.Write("Enter a number : ");
-            calculator.FirstInput = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Enter a number : ");
-            calculator.SecondInput = Convert.ToDecimal(Console.ReadLine());
+
+
             calculator.Operator = "*";
-            calculator.Result = calculator.FirstInput * calculator.SecondInput;
+            calculator.Result = myMath.Multiply(calculator.FirstInput, calculator.SecondInput);
             calculator.Date = DateTime.Now;
             calculator.ResultMessage(calculator);
             return calculator;
@@ -86,20 +91,15 @@ namespace MrEmilProjekt.Calculator
 
         public Calculator SubtractionMaker()
         {
-            var calc = new Calculator();
+
             Console.Clear();
 
-            Console.Write("Enter a number : ");
-            calc.FirstInput = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Enter a number : ");
-            calc.SecondInput = Convert.ToDecimal(Console.ReadLine());
-            calc.Operator = "-";
-            calc.Result = calc.FirstInput - calc.SecondInput;
-            calc.Date = DateTime.Now;
-           
-            calc.ResultMessage(calc);
-            return calc;
 
+            calculator.Operator = "-";
+            calculator.Result = myMath.Subtraction(calculator.FirstInput, calculator.SecondInput);
+            calculator.Date = DateTime.Now;
+            calculator.ResultMessage(calculator);
+            return calculator;
         }
 
     }

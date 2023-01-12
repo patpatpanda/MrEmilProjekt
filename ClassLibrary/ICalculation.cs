@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MrEmilProjekt;
 
 namespace MrEmilProjekt.Calculator
 {
     public interface ICalculation
     {
-        Calculator AdditionMaker();
+        Calculator AdditonMaker();
         Calculator SqrtMaker();
         Calculator DividedMaker();
         Calculator ModuloMaker();
         Calculator MultiplyMaker();
         Calculator SubtractionMaker();
-        
     }
 }

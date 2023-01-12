@@ -8,6 +8,7 @@ namespace MrEmilProjekt;
 
 public class Main
 {
+    
     public void run()
     {
        
@@ -35,7 +36,7 @@ public class Main
                 {
                     new CreateGame().PlayGame();
                 }
-                else if (input == 0) break;
+                else   break;
             }
 
             catch 

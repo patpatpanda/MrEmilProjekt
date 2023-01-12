@@ -60,7 +60,8 @@ namespace MrEmilProjekt.Shapes
                     var height = ShapeHeightInput();
 
                     var shape = myShapeFactory.CreateParaellogram(bas, height);
-
+                    
+                    
                     myContext.Shapes.Add(shape);
                     myContext.SaveChanges();
 

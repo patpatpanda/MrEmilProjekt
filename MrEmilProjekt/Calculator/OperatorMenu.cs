@@ -1,4 +1,5 @@
-﻿using MrEmilProjekt.Data;
+﻿using ClassLibrary2;
+using MrEmilProjekt.Data;
 
 namespace MrEmilProjekt.Calculator;
 
@@ -8,8 +9,11 @@ internal class OperatorMenu
     {
         var buildApp = new Builder();
         var myContext = buildApp.AppBuilder();
-        var factory = new CalculationFactory();
+        var calc = new Calculator();
+        var math = new MathOperators();
+        var factory = new CalculationFactory(calc,math);
         var createCalculation = new CreateCalculation(factory, myContext);
+
 
         var controllerCalc = new CalculatorController(myContext);
 
@@ -35,7 +39,7 @@ internal class OperatorMenu
 
         if (input == "*")
             createCalculation.MultiplyCalculator();
-        else if (input == "+") createCalculation.AdditonCalculator();
+        else if (input == "+") createCalculation.AdditionCalculator();
         else if (input == "-") createCalculation.SubtractionCalculator();
         else if (input == "/") createCalculation.DividedCalculator();
 

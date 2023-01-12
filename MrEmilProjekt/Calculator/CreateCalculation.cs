@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClassLibrary2;
+
 
 namespace MrEmilProjekt.Calculator
 {
@@ -14,19 +16,21 @@ namespace MrEmilProjekt.Calculator
         {
             this.myContext = myContext;
             MyCalculation = calculationFactory;
+           
         }
 
-
+       
         public AppDbContext myContext { get; set; }
         public ICalculation MyCalculation { get; set; }
 
 
-        public void AdditonCalculator()
+        public void AdditionCalculator()
         {
-            var calculation = MyCalculation.AdditonMaker();
+           
+            var calculation = MyCalculation.AdditionMaker();
             myContext.Calculators.Add(calculation);
             myContext.SaveChanges();
-
+            
 
 
         }

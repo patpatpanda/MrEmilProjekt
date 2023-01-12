@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace MrEmilProjekt.Shapes
 {
     internal class ShapeFactory: IShapeFactory
@@ -16,6 +17,7 @@ namespace MrEmilProjekt.Shapes
         public Shape CreateRectangle(double bas, double height)
         {
             return CreateTwoSidedShape(bas, height, "Rektangel");
+            
         }
 
         public Shape CreateRomb(double bas, double height)

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using MrEmilProjekt.Data;
 using MrEmilProjekt.Migrations;
 using System.Xml;
+using ClassLibrary2;
 
 namespace MrEmilProjekt.Calculator
 {

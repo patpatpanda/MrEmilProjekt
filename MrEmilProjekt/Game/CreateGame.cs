@@ -39,7 +39,7 @@ namespace MrEmilProjekt.Game
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("\nDone playing? Type END");
+               
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write("\nROCK,PAPER or SCISSORS : ");
                 string inputPlayer = Console.ReadLine().ToUpper();
@@ -49,7 +49,7 @@ namespace MrEmilProjekt.Game
                 randomNumber = myRandom.Next(1, 4);
                 if (inputPlayer == "END")
                 {
-                    
+
                     break;
                 }
 
@@ -173,6 +173,7 @@ namespace MrEmilProjekt.Game
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("YOU WIN!!");
             Console.WriteLine("\nPress any key to play again");
+          
             Console.ReadKey();
 
           
