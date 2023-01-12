@@ -7,36 +7,27 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary2
 {
-    public class MathOperators
+    public class MathOperators : iMath
     {
 
         public decimal Addition(decimal numOne, decimal numTwo)
         {
-            Console.Write("Enter a number : ");
-            numOne = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Enter a number : ");
-
-            numTwo = Convert.ToDecimal(Console.ReadLine());
+           numOne = NumOne();
+            numTwo = NumTwo();
             return numOne + numTwo;
 
         }
         public decimal Subtraction(decimal numOne, decimal numTwo)
         {
-            Console.Write("Enter a number : ");
-            numOne = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Enter a number : ");
-
-            numTwo = Convert.ToDecimal(Console.ReadLine());
+            numOne = NumOne();
+            numTwo = NumTwo();
             return numOne - numTwo;
 
         }
         public decimal Divided(decimal numOne, decimal numTwo)
         {
-            Console.Write("Enter a number : ");
-            numOne = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Enter a number : ");
-
-            numTwo = Convert.ToDecimal(Console.ReadLine());
+            numOne = NumOne();
+            numTwo = NumTwo();
             return numOne / numTwo;
 
         }
@@ -54,23 +45,35 @@ namespace ClassLibrary2
 
         public decimal Modulo(decimal numOne, decimal numTwo)
         {
-            Console.Write("Enter a number : ");
-            numOne = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Enter a number : ");
+            numOne = NumOne();
+            numTwo = NumTwo();
 
-            numTwo = Convert.ToDecimal(Console.ReadLine());
             return numOne % numTwo;
 
         }
         public decimal Multiply(decimal numOne, decimal numTwo)
         {
-            Console.Write("Enter a number : ");
-            numOne = Convert.ToDecimal(Console.ReadLine());
+            numOne = NumOne();
+            numTwo = NumTwo();
+            return numOne % numTwo;
+
+        }
+
+        private static decimal NumTwo()
+        {
+            decimal numTwo;
             Console.Write("Enter a number : ");
 
             numTwo = Convert.ToDecimal(Console.ReadLine());
-            return numOne % numTwo;
+            return numTwo;
+        }
 
+        private static decimal NumOne()
+        {
+            decimal numOne;
+            Console.Write("Enter a number : ");
+            numOne = Convert.ToDecimal(Console.ReadLine());
+            return numOne;
         }
     }
 }

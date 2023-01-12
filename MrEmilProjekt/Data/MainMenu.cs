@@ -19,6 +19,7 @@ namespace MrEmilProjekt.Data
                 Console.WriteLine("                             |      ****         1:  Shapes               ****  |");
                 Console.WriteLine("                             |      ****         2:  Calculator           ****  |");
                 Console.WriteLine("                             |      ****         3:  Rock,Paper,Scissors  ****  |");
+                Console.WriteLine("                             |      ****         0:  Exit                 ****  |");
                 Console.WriteLine("                             ----------------------------------------------------");
                 Console.ResetColor();
                 Console.ForegroundColor = ConsoleColor.DarkBlue;

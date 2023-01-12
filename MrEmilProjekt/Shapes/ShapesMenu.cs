@@ -41,7 +41,7 @@ public class ShapesMenu
                 Console.WriteLine("                             ----------------------------------------------------");
                 Console.ResetColor();
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
-                Console.Write("                                                    Choice : ");
+                Console.Write("                                          Choice : ");
                 Console.ResetColor();
                 var inuput = int.Parse(Console.ReadLine());
 
@@ -85,6 +85,7 @@ public class ShapesMenu
                 ////}
                 else if (inuput == 0)
                 {
+                    break;
                     var menu = new Main();
                     menu.run();
                 }

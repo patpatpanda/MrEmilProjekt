@@ -36,16 +36,18 @@ public class Main
                 {
                     new CreateGame().PlayGame();
                 }
-                else   break;
+                else if (input == 0)
+                {
+                    Console.WriteLine("BYE!!!!!!!!!!!!!!!!");
+                    break;
+                }
             }
 
-            catch 
+            catch(Exception e)
             {
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("You can only put 1,2 or 3 as choice");
+                
                 Console.WriteLine("\nPress any key to continue");
-                Console.ReadLine();
+                Console.ReadKey();
             }
             
 

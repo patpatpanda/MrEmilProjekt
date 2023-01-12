@@ -59,7 +59,11 @@ namespace MrEmilProjekt.Calculator
                     }
                     else if(input == 3) controllerCalc.UpdateCalculator();
                     else if(input == 4) controllerCalc.DeleteCalculation();
-                    else if(input == 0) new Main().run();
+                    else if (input == 0)
+                    {
+                        break;
+                        new Main().run();
+                    }
 
 
                 }

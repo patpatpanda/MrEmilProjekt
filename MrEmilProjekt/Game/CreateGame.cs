@@ -39,7 +39,9 @@ namespace MrEmilProjekt.Game
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Blue;
-               
+
+                Console.WriteLine("Quit? Type END");
+                
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write("\nROCK,PAPER or SCISSORS : ");
                 string inputPlayer = Console.ReadLine().ToUpper();
@@ -49,8 +51,9 @@ namespace MrEmilProjekt.Game
                 randomNumber = myRandom.Next(1, 4);
                 if (inputPlayer == "END")
                 {
-
+                    NewMethod(draw, computerScore, playerScore, myContext);
                     break;
+
                 }
 
                 switch (randomNumber)
@@ -130,18 +133,27 @@ namespace MrEmilProjekt.Game
 
                         break;
                 }
+                
 
             }
 
+            
+
+
+        }
+
+        private static void NewMethod(int draw, int computerScore, int playerScore, AppDbContext myContext)
+        {
             var avg = Avg(draw, computerScore, playerScore);
 
             GameStats(playerScore, computerScore, avg, myContext);
-           
+
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine($"You won {avg}% of total games played! ");
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("\nPress any key to continue");
-            Console.ReadLine();
+            Console.ReadKey();
+            
         }
 
         private static void GameStats(int playerScore, int computerScore, int avg, AppDbContext myContext)
