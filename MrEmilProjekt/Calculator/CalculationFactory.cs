@@ -5,20 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ClassLibrary2;
+using MrEmilProjekt.Data;
 
 
 namespace MrEmilProjekt.Calculator
 {
-    public class CalculationFactory : ICalculation
+    public class CalculationFactory 
     {
 
 
-        public CalculationFactory(Calculator _calculator,MathOperators math)
+        public CalculationFactory(Calculator _calculator,MathOperators math,AppDbContext context)
         {
             myMath = math;
             calculator = _calculator;
+            myContext = context;
         }
 
+        public AppDbContext myContext { get; set; }
         public MathOperators myMath { get; set; }
         public Calculator calculator { get; set; }
         public Calculator AdditionMaker()
@@ -30,6 +33,9 @@ namespace MrEmilProjekt.Calculator
             calculator.Operator = "+";
             calculator.Date = DateTime.Now;
             calculator.ResultMessage(calculator);
+
+            myContext.Calculators.Add(calculator);
+            myContext.SaveChanges();
             return calculator;
 
         }
@@ -47,6 +53,9 @@ namespace MrEmilProjekt.Calculator
             calculator.Operator = "√";
             calculator.Date = DateTime.Now;
             calculator.ResultMessage(calculator);
+
+            myContext.Calculators.Add(calculator);
+            myContext.SaveChanges();
             return calculator;
         }
 
@@ -60,6 +69,9 @@ namespace MrEmilProjekt.Calculator
             calculator.Result = myMath.Divided(calculator.FirstInput, calculator.SecondInput);
             calculator.Date = DateTime.Now;
             calculator.ResultMessage(calculator);
+
+            myContext.Calculators.Add(calculator);
+            myContext.SaveChanges();
             return calculator;
         }
 
@@ -73,6 +85,9 @@ namespace MrEmilProjekt.Calculator
             calculator.Result = myMath.Modulo(calculator.FirstInput, calculator.SecondInput);
             calculator.Date = DateTime.Now;
             calculator.ResultMessage(calculator);
+
+            myContext.Calculators.Add(calculator);
+            myContext.SaveChanges();
             return calculator;
         }
 
@@ -86,6 +101,9 @@ namespace MrEmilProjekt.Calculator
             calculator.Result = myMath.Multiply(calculator.FirstInput, calculator.SecondInput);
             calculator.Date = DateTime.Now;
             calculator.ResultMessage(calculator);
+
+            myContext.Calculators.Add(calculator);
+            myContext.SaveChanges();
             return calculator;
         }
 
@@ -99,6 +117,10 @@ namespace MrEmilProjekt.Calculator
             calculator.Result = myMath.Subtraction(calculator.FirstInput, calculator.SecondInput);
             calculator.Date = DateTime.Now;
             calculator.ResultMessage(calculator);
+
+            myContext.Calculators.Add(calculator);
+            myContext.SaveChanges();
+
             return calculator;
         }
 

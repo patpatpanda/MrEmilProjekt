@@ -13,8 +13,8 @@ internal class OperatorMenu
             var myContext = buildApp.AppBuilder();
             var calc = new Calculator();
             var math = new MathOperators();
-            var factory = new CalculationFactory(calc, math);
-            var createCalculation = new CreateCalculation(factory, myContext);
+            var factory = new CalculationFactory(calc, math,myContext);
+            
 
 
             var controllerCalc = new CalculatorController(myContext);
@@ -40,14 +40,14 @@ internal class OperatorMenu
             var input = Console.ReadLine();
 
             if (input == "*")
-                createCalculation.MultiplyCalculator();
-            else if (input == "+") createCalculation.AdditionCalculator();
-            else if (input == "-") createCalculation.SubtractionCalculator();
-            else if (input == "/") createCalculation.DividedCalculator();
+               factory.MultiplyMaker();
+            else if (input == "+") factory.AdditionMaker();
+            else if (input == "-") factory.SubtractionMaker();
+            else if (input == "/") factory.DividedMaker(); 
 
 
-            else if (input == "%") createCalculation.ModuloCalculator();
-            else if (input == "1") createCalculation.SqrtCalculator();
+            else if (input == "%") factory.ModuloMaker();
+            else if (input == "1") factory.SqrtMaker();
 
 
             else if (input == "0")
