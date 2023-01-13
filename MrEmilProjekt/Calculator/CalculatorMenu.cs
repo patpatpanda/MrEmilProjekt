@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using MrEmilProjekt.Data;
 using MrEmilProjekt.Migrations;
 using System.Xml;
+using ClassLibrary2;
 
 namespace MrEmilProjekt.Calculator
 {
@@ -41,7 +42,7 @@ namespace MrEmilProjekt.Calculator
                     Console.WriteLine("                             ---------------------------------------------");
                     Console.ResetColor();
                     Console.ForegroundColor = ConsoleColor.DarkBlue;
-                    Console.Write("                                                Val : ");
+                    Console.Write("                                                Choice : ");
                     Console.ResetColor();
                     var input = int.Parse(Console.ReadLine());
                     
@@ -58,7 +59,11 @@ namespace MrEmilProjekt.Calculator
                     }
                     else if(input == 3) controllerCalc.UpdateCalculator();
                     else if(input == 4) controllerCalc.DeleteCalculation();
-                    else if(input == 0) new Main().run();
+                    else if (input == 0)
+                    {
+                        break;
+                        new Main().run();
+                    }
 
 
                 }

@@ -1,3 +1,4 @@
+using ClassLibrary2;
 using MrEmilProjekt.Data;
 using System;
 using System.Collections.Generic;
@@ -6,93 +7,108 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace MrEmilProjekt.Shapes
 {
-    internal class ShapeFactory: IShapeFactory
-    {  
+    internal class ShapeFactory
+    {
+      
         public ShapeFactory(){}
 
-        public Shape CreateRectangle(double bas, double height)
+        public ShapeFactory(Shape _shape, ShapeServices _shapeServices, AppDbContext context)
         {
-            return CreateTwoSidedShape(bas, height, "Rektangel");
+           myShapeServices = _shapeServices;
+            myContext = context;
+            myShape = _shape;
         }
 
-        public Shape CreateRomb(double bas, double height)
+        public AppDbContext myContext { get; set; }
+        public Shape myShape;
+        public ShapeServices myShapeServices { get; set; }
+
+       
+        public void CreateRectangle()
         {
-            return CreateTwoSidedShape(bas, height, "Romb.....");
+            Console.Clear();
+            myShape.Name = "Rectangle";
+            myShape.Bas = GetBas();
+            myShape.Height = GetHeight();
+            myShape.Area = myShapeServices.AreaCalculator(myShape.Bas, myShape.Height);
+            myShape.Circumference = myShapeServices.CircumferenceCalculator(myShape.Bas, myShape.Height);
+            
+            myShape.Date = DateTime.Now;
+           myShape.ResultMessage(myShape);
+            myContext.Shapes.Add(myShape);
+            myContext.SaveChanges();
+            
         }
 
-        public Shape CreateParaellogram(double bas, double height)
+        public void CreateParaellogram()
         {
-            return CreateTwoSidedShape(bas, height, "Paraellogram");
-        }
-        public Shape CreateTriangel(double bas, double height, double hypotenusa)
-        {
-            return CreateThreeSidedShape(bas, height,"Triangel",hypotenusa);
-        }
-        public Shape CreateNewShape()
-        {
-            Shape newShape = new Shape();
-            Console.Write("Name : ");
-            newShape.Name = Console.ReadLine();
-            Console.Write("Area : ");
-            newShape.Area = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Circumference : ");
-            newShape.Circumference = Convert.ToDouble(Console.ReadLine());
-            newShape.Date = Convert.ToDateTime(DateTime.Now);
-            return newShape;
+            Console.Clear();
+            myShape.Name = "Paraellogram";
+            myShape.Bas = GetBas();
+            myShape.Height = GetHeight();
+            myShape.Area = myShapeServices.AreaCalculator(myShape.Bas, myShape.Height);
+            myShape.Circumference = myShapeServices.CircumferenceCalculator(myShape.Bas, myShape.Height);
 
-        }
-
-
-
-        private Shape CreateTwoSidedShape(double bas, double height, string name)
-        {
-            Shape newShape = new Shape();
-            newShape.Name = name;
-            newShape.Area = AreaCalculator(bas, height);
-            newShape.Circumference = CircumferenceCalculator(bas, height);
-            newShape.Date = DateTime.Now;
-            return newShape;
-        }
-        private Shape CreateThreeSidedShape(double bas, double height, string name,double hypotenusa)
-        {
-            Shape newShape = new Shape();
-            newShape.Name = name;
-            newShape.Area = AreaCalculatorTriangel(bas, height);
-            newShape.Circumference = CircumferenceCalculatorTriangel(bas, height,hypotenusa);
-            newShape.Date = DateTime.Now;
-            return newShape;
-        }
-    
-        private static double AreaCalculator(double b, double h)
-        {
-            var area = b * h;
-            return area;
+            myShape.Date = DateTime.Now;
+            myShape.ResultMessage(myShape);
+            myContext.Shapes.Add(myShape);
+            myContext.SaveChanges();
 
         }
 
-        private static double CircumferenceCalculator(double b,double h)
+        public void CreateTriangle()
         {
-
-            var circumference = b + h + b + h; 
+            Console.Clear();
+            myShape.Name = "Triangle";
+            myShape.Bas = GetBas();
+            myShape.Height = GetHeight();
+            Console.Write("Enter hypotenusa : ");
+            var hypotenusa = Convert.ToDecimal(Console.ReadLine());
+            myShape.Area = myShapeServices.TriangleAreaCalculator(myShape.Bas, myShape.Height);
+            myShape.Circumference = myShapeServices.TriangelCircumferenceCalculator(myShape.Bas, hypotenusa, myShape.Height);
            
-            return circumference;
+
+            myShape.Date = DateTime.Now;
+            myShape.ResultMessage(myShape);
+            myContext.Shapes.Add(myShape);
+            myContext.SaveChanges();
+
         }
 
-        private static double AreaCalculatorTriangel(double bas, double height)
+        public void CreateRomb()
         {
-            var area = bas * height / 2;
-            return area;
+            Console.Clear();
+            myShape.Name = "Romb.....";
+            myShape.Bas = GetBas();
+            myShape.Height = GetHeight();
+            myShape.Area = myShapeServices.AreaCalculator(myShape.Bas, myShape.Height);
+            myShape.Circumference = myShapeServices.CircumferenceCalculator(myShape.Bas, myShape.Height);
+
+            myShape.Date = DateTime.Now;
+            myShape.ResultMessage(myShape);
+            myContext.Shapes.Add(myShape);
+            myContext.SaveChanges();
+
         }
 
-        private static double CircumferenceCalculatorTriangel(double bas, double hypotenusa,double height)
+        private static decimal GetBas()
         {
+            decimal numTwo;
+            Console.Write("Enter base : ");
 
-            var circumference = bas + hypotenusa + height;
-
-            return circumference;
+            numTwo = Convert.ToDecimal(Console.ReadLine());
+            return numTwo;
         }
 
+        private static decimal GetHeight()
+        {
+            decimal numOne;
+            Console.Write("Enter height : ");
+            numOne = Convert.ToDecimal(Console.ReadLine());
+            return numOne;
+        }
     }
 }

@@ -9,15 +9,15 @@ using MrEmilProjekt.Migrations;
 
 namespace MrEmilProjekt.Game
 {
-    public class Playgame
+    public class CreateGame
     {
         public AppDbContext myContext;
 
-        public Playgame()
+        public CreateGame()
         {
         }
 
-        public Playgame(AppDbContext context)
+        public CreateGame(AppDbContext context)
         {
             myContext = context;
         }
@@ -39,7 +39,9 @@ namespace MrEmilProjekt.Game
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("\nDone playing? Type END");
+
+                Console.WriteLine("Quit? Type END");
+                
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write("\nROCK,PAPER or SCISSORS : ");
                 string inputPlayer = Console.ReadLine().ToUpper();
@@ -49,8 +51,9 @@ namespace MrEmilProjekt.Game
                 randomNumber = myRandom.Next(1, 4);
                 if (inputPlayer == "END")
                 {
-                    
+                    NewMethod(draw, computerScore, playerScore, myContext);
                     break;
+
                 }
 
                 switch (randomNumber)
@@ -61,23 +64,23 @@ namespace MrEmilProjekt.Game
                         Console.WriteLine("Computer chose ROCK ");
                         if (inputPlayer == "ROCK")
                         {
-                            Console.WriteLine("ITS A DRAW!");
-                            ResultMessage();
+                            
+                            DrawMessage();
                             draw++;
 
                         }
                         else if (inputPlayer == "PAPER")
                         {
-                            Console.WriteLine("YOU WIN!!");
+                           
                             
                             playerScore++;
-                            ResultMessage();
+                            WinMessage();
                         }
                         else if (inputPlayer == "SCISSORS")
                         {
-                            Console.WriteLine("YOU LOOSE!!");
+                            
                             computerScore++;
-                            ResultMessage();
+                            LooseMessage();
                         }
                         
                         break;
@@ -87,21 +90,21 @@ namespace MrEmilProjekt.Game
                         if (inputPlayer == "PAPER")
                         {
                             draw++;
-                            Console.WriteLine("ITS A DRAW!");
-                            ResultMessage();
+                            
+                            DrawMessage();
                         }
                         else if (inputPlayer == "ROCK")
                         {
                             
-                            Console.WriteLine("YOU LOOSE!!");
+                          
                             computerScore++;
-                            ResultMessage();
+                            LooseMessage();
                         }
                         else if (inputPlayer == "SCISSOR")
                         {
-                            Console.WriteLine("YOU WIN!!");
+                            
                             playerScore++;
-                            ResultMessage();
+                            WinMessage();
                         }
                         break;
                     case 3:
@@ -109,38 +112,52 @@ namespace MrEmilProjekt.Game
                         Console.WriteLine("Computer chose SCISSOR ");
                         if (inputPlayer == "PAPER")
                         {
-                            
-                            Console.WriteLine("YOU LOOSE!");
+                           
                             computerScore++;
-                            ResultMessage();
+                            LooseMessage();
                         }
                         else if (inputPlayer == "ROCK")
                         {
-                            Console.WriteLine("YOU WIN!!");
+                           
                             playerScore++;
                             
-                            ResultMessage();
+                            WinMessage();
                         }
                         else if (inputPlayer == "SCISSOR")
                         {
-                            Console.WriteLine("ITS A DRAW!!");
+                        
 
                             draw++;
-                            ResultMessage();
+                            DrawMessage();
                         }
 
                         break;
                 }
+                
 
             }
 
-            Console.WriteLine(draw);
-            Console.WriteLine(computerScore);
-            Console.WriteLine(playerScore);
-            totalGames = draw + computerScore + playerScore;
-            int avg = playerScore * 100 / totalGames;
-            Console.Clear();
+            
 
+
+        }
+
+        private static void NewMethod(int draw, int computerScore, int playerScore, AppDbContext myContext)
+        {
+            var avg = Avg(draw, computerScore, playerScore);
+
+            GameStats(playerScore, computerScore, avg, myContext);
+
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine($"You won {avg}% of total games played! ");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\nPress any key to continue");
+            Console.ReadKey();
+            
+        }
+
+        private static void GameStats(int playerScore, int computerScore, int avg, AppDbContext myContext)
+        {
             var gameScore = new TheGame();
             gameScore.Win = playerScore;
             gameScore.Lost = computerScore;
@@ -148,17 +165,45 @@ namespace MrEmilProjekt.Game
             gameScore.Date = DateTime.Now;
             myContext.TheGames.Add(gameScore);
             myContext.SaveChanges();
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.WriteLine($"You won {avg}% of total games played! ");
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("\nPress any key to continue");
-            Console.ReadLine();
         }
 
-        
-
-        public void ResultMessage()
+        private static int Avg(int draw, int computerScore, int playerScore)
         {
+            int totalGames;
+            Console.WriteLine(draw);
+            Console.WriteLine(computerScore);
+            Console.WriteLine(playerScore);
+            totalGames = draw + computerScore + playerScore;
+            int avg = playerScore * 100 / totalGames;
+            Console.Clear();
+            return avg;
+        }
+
+
+        public void WinMessage()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("YOU WIN!!");
+            Console.WriteLine("\nPress any key to play again");
+          
+            Console.ReadKey();
+
+          
+        }
+        public void LooseMessage()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("YOU LOOSE!!");
+            Console.WriteLine("\nPress any key to play again");
+            Console.ReadKey();
+
+
+        }
+
+        public void DrawMessage()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("ITS A DRAW  !!");
             Console.WriteLine("\nPress any key to play again");
             Console.ReadKey();
         }

@@ -1,4 +1,5 @@
-﻿using MrEmilProjekt.Data;
+﻿using ClassLibrary2;
+using MrEmilProjekt.Data;
 
 namespace MrEmilProjekt.Shapes;
 
@@ -10,50 +11,60 @@ public class ShapesMenu
         {
             var buildApp = new Builder();
             var myContext = buildApp.AppBuilder();
-            var factory = new ShapeFactory();
-            var createShape = new CreateShape(factory, myContext);
+
+            var shapeService = new ShapeServices();
+            var shape = new Shape();
+            var factory = new ShapeFactory(shape, shapeService, myContext);
             var readShape = new ShapeController(myContext);
 
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
-            Console.WriteLine("                             ---------------------------------------------------");
-            Console.WriteLine("                             |      ****         1:  Rectangle         ****     |");
-            Console.WriteLine("                             |      ****         2:  Parallellogram    ****     |");
-            Console.WriteLine("                             |      ****         3:  Triangele         ****     |");
-            Console.WriteLine("                             |      ****         4:  Romb              ****     |");
-            Console.WriteLine("                             |      ****         5:  List              ****     |");
-            Console.WriteLine("                             |      ****         6:  Update            ****     |");
-            Console.WriteLine("                             |      ****         7:  Delete            ****     |");
-            Console.WriteLine("                             |      ****         8:  Create            ****     |");
-            Console.WriteLine("                             |      ****         0:  Mainmeny          ****     |");
+            Console.WriteLine(
+                "                             -------------------------------------------------------");
+            Console.WriteLine(
+                "                             |      ****         1:  Create Rectangle         **** |");
+            Console.WriteLine(
+                "                             |      ****         2:  Create Parallellogram    **** |");
+            Console.WriteLine(
+                "                             |      ****         3:  Create Triangele         **** |");
+            Console.WriteLine(
+                "                             |      ****         4:  Create Romb              **** |");
+            Console.WriteLine(
+                "                             |      ****         5:  List                     **** |");
+            Console.WriteLine(
+                "                             |      ****         6:  Update                   **** |");
+            Console.WriteLine(
+                "                             |      ****         7:  Delete                   **** |");
+            Console.WriteLine(
+                "                             |      ****         0:  Mainmenu                 **** |");
             Console.WriteLine("                             ----------------------------------------------------");
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.Write("                                                    Choise : ");
+            Console.Write("                                          Choice : ");
             Console.ResetColor();
             var inuput = int.Parse(Console.ReadLine());
 
             if (inuput == 1)
             {
-                createShape.RectangleFormManager();
+                factory.CreateRectangle();
             }
 
 
             else if (inuput == 2)
             {
-                createShape.ParaelleogramManager();
+                factory.CreateParaellogram();
             }
 
 
             else if (inuput == 3)
             {
-                createShape.TriangelManager();
+                factory.CreateTriangle();
             }
             else if (inuput == 4)
             {
-                createShape.RombManager();
+                factory.CreateRomb();
             }
             else if (inuput == 5)
             {
@@ -69,12 +80,10 @@ public class ShapesMenu
             {
                 readShape.DeleteShape();
             }
-            else if (inuput == 8)
-            {
-                createShape.NewShapeManager();
-            }
+
             else if (inuput == 0)
             {
+                break;
                 var menu = new Main();
                 menu.run();
             }

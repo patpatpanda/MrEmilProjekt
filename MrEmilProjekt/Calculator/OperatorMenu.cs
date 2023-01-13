@@ -1,4 +1,5 @@
-﻿using MrEmilProjekt.Data;
+﻿using ClassLibrary2;
+using MrEmilProjekt.Data;
 
 namespace MrEmilProjekt.Calculator;
 
@@ -6,44 +7,60 @@ internal class OperatorMenu
 {
     public void ChooseOperator()
     {
-        var buildApp = new Builder();
-        var myContext = buildApp.AppBuilder();
-        var factory = new CalculationFactory();
-        var createCalculation = new CreateCalculation(factory, myContext);
-
-        var controllerCalc = new CalculatorController(myContext);
-
-        Console.Clear();
-        Console.ForegroundColor = ConsoleColor.DarkRed;
-        Console.WriteLine("                                    ********  VÄLJ OPERATOR *******");
-        Console.ForegroundColor = ConsoleColor.White;
-        Console.WriteLine("                             --------------------------------------------");
-        Console.WriteLine("                             |      ****           +          ****    |");
-        Console.WriteLine("                             |      ****           -          ****    |");
-        Console.WriteLine("                             |      ****           /          ****    |");
-        Console.WriteLine("                             |      ****           *          ****    |");
-        Console.WriteLine("                             |      ****        1: √          ****    |");
-        Console.WriteLine("                             |      ****           %          ****    |");
-
-        Console.WriteLine("                             |      ****        0: Mainmeny   ****    |");
-        Console.WriteLine("                             ---------------------------------------------");
-        Console.ResetColor();
-        Console.ForegroundColor = ConsoleColor.DarkBlue;
-        Console.Write("                                                    Val : ");
-        Console.ResetColor();
-        var input = Console.ReadLine();
-
-        if (input == "*")
-            createCalculation.MultiplyCalculator();
-        else if (input == "+") createCalculation.AdditonCalculator();
-        else if (input == "-") createCalculation.SubtractionCalculator();
-        else if (input == "/") createCalculation.DividedCalculator();
+        while (true)
+        {
+            var buildApp = new Builder();
+            var myContext = buildApp.AppBuilder();
+            var calc = new Calculator();
+            var math = new MathOperators();
+            var factory = new CalculationFactory(calc, math,myContext);
+            
 
 
-        else if (input == "%") createCalculation.ModuloCalculator();
-        else if (input == "1") createCalculation.SqrtCalculator();
+            var controllerCalc = new CalculatorController(myContext);
+
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("                                    ********  VÄLJ OPERATOR *******");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("                             --------------------------------------------");
+            Console.WriteLine("                             |      ****           +          ****    |");
+            Console.WriteLine("                             |      ****           -          ****    |");
+            Console.WriteLine("                             |      ****           /          ****    |");
+            Console.WriteLine("                             |      ****           *          ****    |");
+            Console.WriteLine("                             |      ****        1: √          ****    |");
+            Console.WriteLine("                             |      ****           %          ****    |");
+
+            Console.WriteLine("                             |      ****        0: Exit       ****    |");
+            Console.WriteLine("                             ---------------------------------------------");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.Write("                                                    Choice : ");
+            Console.ResetColor();
+            var input = Console.ReadLine();
+
+            if (input == "*")
+               factory.MultiplyMaker();
+            else if (input == "+") factory.AdditionMaker();
+            else if (input == "-") factory.SubtractionMaker();
+            else if (input == "/") factory.DividedMaker(); 
 
 
-        else if (input == "0") new Main().run();
+            else if (input == "%") factory.ModuloMaker();
+            else if (input == "1") factory.SqrtMaker();
+
+
+            else if (input == "0")
+            {
+
+                break;
+                var menu = new CalculatorMenu();
+                menu.ShowCalculatorMenu();
+
+            }
+
+        }
+        
+        
     }
 }

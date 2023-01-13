@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MrEmilProjekt.Data;
 
@@ -11,9 +12,10 @@ using MrEmilProjekt.Data;
 namespace MrEmilProjekt.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230113103731_shapebashight")]
+    partial class shapebashight
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -84,20 +86,20 @@ namespace MrEmilProjekt.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ShapeId"), 1L, 1);
 
-                    b.Property<decimal>("Area")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("Area")
+                        .HasColumnType("float");
 
-                    b.Property<decimal>("Bas")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("Bas")
+                        .HasColumnType("float");
 
-                    b.Property<decimal>("Circumference")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("Circumference")
+                        .HasColumnType("float");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal>("Height")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("Height")
+                        .HasColumnType("float");
 
                     b.Property<string>("Name")
                         .IsRequired()

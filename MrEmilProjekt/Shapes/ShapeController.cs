@@ -18,6 +18,11 @@ namespace MrEmilProjekt.Shapes
         {
             myContext = context;
         }
+
+        public ShapeController()
+        {
+        }
+
         public void ListShape()
         {
 
@@ -45,9 +50,9 @@ namespace MrEmilProjekt.Shapes
             Console.Write("Name : ");
             var name = Console.ReadLine();
             Console.Write("Area : ");
-            var area = Convert.ToDouble(Console.ReadLine());
+            var area = Convert.ToDecimal(Console.ReadLine());
             Console.Write("Circumference : ");
-            var circumference = Convert.ToDouble(Console.ReadLine());
+            var circumference = Convert.ToDecimal(Console.ReadLine());
             Console.WriteLine("Date (yyyy-mm-dd)");
             var date = Convert.ToDateTime(Console.ReadLine());
             shapeId.NewShapeValues(name,area,circumference,date);

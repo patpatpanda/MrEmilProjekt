@@ -4,103 +4,146 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClassLibrary2;
+using MrEmilProjekt.Data;
+
 
 namespace MrEmilProjekt.Calculator
 {
-    public class CalculationFactory : ICalculation
+    public class CalculationFactory 
     {
-        public Calculator AdditonMaker()
+
+
+        public CalculationFactory(Calculator _calculator,MathOperators math,AppDbContext context)
         {
-            var calculator = new Calculator();
+            myMath = math;
+            calculator = _calculator;
+            myContext = context;
+        }
+
+        public AppDbContext myContext { get; set; }
+        public MathOperators myMath { get; set; }
+        public Calculator calculator { get; set; }
+        public void AdditionMaker()
+        {
             Console.Clear();
-            Console.Write("Enter a number : ");
-            calculator.FirstInput = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Enter a number : ");
-            calculator.SecondInput = Convert.ToDecimal(Console.ReadLine());
+            calculator.FirstInput = NumOne();
+            calculator.SecondInput = NumTwo();
+            
+            Console.Clear();
+            calculator.Result = myMath.Addition(calculator.FirstInput, calculator.SecondInput);
             calculator.Operator = "+";
-            calculator.Result = calculator.FirstInput + calculator.SecondInput;
             calculator.Date = DateTime.Now;
             calculator.ResultMessage(calculator);
-            return calculator;
+
+            myContext.Calculators.Add(calculator);
+            myContext.SaveChanges();
+           
 
         }
 
+
+
         public Calculator SqrtMaker()
         {
-            var calculator = new Calculator();
+           
             Console.Clear();
+            
             Console.Write("Enter a number : ");
             var input = Convert.ToDouble(Console.ReadLine());
             calculator.FirstInput = Convert.ToDecimal(input);
             calculator.Result = Convert.ToDecimal(System.Math.Sqrt(input));
             calculator.Operator = "√";
             calculator.Date = DateTime.Now;
-            calculator.ResultMessage(calculator);
+
+            myContext.Calculators.Add(calculator);
+            myContext.SaveChanges();
             return calculator;
         }
 
         public Calculator DividedMaker()
         {
-            var calculator = new Calculator();
+           
             Console.Clear();
-            Console.Write("Enter a number : ");
-            calculator.FirstInput = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Enter a number : ");
-            calculator.SecondInput = Convert.ToDecimal(Console.ReadLine());
+
+            calculator.FirstInput = NumOne();
+            calculator.SecondInput = NumTwo();
             calculator.Operator = "/";
-            calculator.Result = calculator.FirstInput / calculator.SecondInput;
+            calculator.Result = myMath.Divided(calculator.FirstInput, calculator.SecondInput);
             calculator.Date = DateTime.Now;
             calculator.ResultMessage(calculator);
+
+            myContext.Calculators.Add(calculator);
+            myContext.SaveChanges();
             return calculator;
         }
 
         public Calculator ModuloMaker()
         {
-            var calculator = new Calculator();
+
             Console.Clear();
-            Console.Write("Enter a number : ");
-            calculator.FirstInput = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Enter a number : ");
-            calculator.SecondInput = Convert.ToDecimal(Console.ReadLine());
+
+            calculator.FirstInput = NumOne();
+            calculator.SecondInput = NumTwo();
             calculator.Operator = "%";
-            calculator.Result = calculator.FirstInput % calculator.SecondInput;
+            calculator.Result = myMath.Modulo(calculator.FirstInput, calculator.SecondInput);
             calculator.Date = DateTime.Now;
             calculator.ResultMessage(calculator);
+
+            myContext.Calculators.Add(calculator);
+            myContext.SaveChanges();
             return calculator;
         }
 
         public Calculator MultiplyMaker()
         {
-            var calculator = new Calculator();
+
             Console.Clear();
-            Console.Write("Enter a number : ");
-            calculator.FirstInput = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Enter a number : ");
-            calculator.SecondInput = Convert.ToDecimal(Console.ReadLine());
+            calculator.FirstInput = NumOne();
+            calculator.SecondInput = NumTwo();
+
             calculator.Operator = "*";
-            calculator.Result = calculator.FirstInput * calculator.SecondInput;
+            calculator.Result = myMath.Multiply(calculator.FirstInput, calculator.SecondInput);
             calculator.Date = DateTime.Now;
             calculator.ResultMessage(calculator);
+
+            myContext.Calculators.Add(calculator);
+            myContext.SaveChanges();
             return calculator;
         }
 
         public Calculator SubtractionMaker()
         {
-            var calc = new Calculator();
+
             Console.Clear();
+            calculator.FirstInput = NumOne();
+            calculator.SecondInput = NumTwo();
 
-            Console.Write("Enter a number : ");
-            calc.FirstInput = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Enter a number : ");
-            calc.SecondInput = Convert.ToDecimal(Console.ReadLine());
-            calc.Operator = "-";
-            calc.Result = calc.FirstInput - calc.SecondInput;
-            calc.Date = DateTime.Now;
-           
-            calc.ResultMessage(calc);
-            return calc;
+            calculator.Operator = "-";
+            calculator.Result = myMath.Subtraction(calculator.FirstInput, calculator.SecondInput);
+            calculator.Date = DateTime.Now;
+            calculator.ResultMessage(calculator);
 
+            myContext.Calculators.Add(calculator);
+            myContext.SaveChanges();
+
+            return calculator;
+        }
+        private static decimal NumTwo()
+        {
+            decimal numTwo;
+            Console.Write("Enter a number : ");
+
+            numTwo = Convert.ToDecimal(Console.ReadLine());
+            return numTwo;
         }
 
+        private static decimal NumOne()
+        {
+            decimal numOne;
+            Console.Write("Enter a number : ");
+            numOne = Convert.ToDecimal(Console.ReadLine());
+            return numOne;
+        }
     }
 }

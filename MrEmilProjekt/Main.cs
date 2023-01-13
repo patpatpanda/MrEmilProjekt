@@ -8,6 +8,7 @@ namespace MrEmilProjekt;
 
 public class Main
 {
+    
     public void run()
     {
        
@@ -33,15 +34,20 @@ public class Main
                 }
                 else if (input == 3)
                 {
-                    new Playgame().PlayGame();
+                    new CreateGame().PlayGame();
                 }
-                else if (input == 0) break;
+                else if (input == 0)
+                {
+                    Console.WriteLine("BYE!!!!!!!!!!!!!!!!");
+                    break;
+                }
             }
 
-            catch (Exception e)
+            catch(Exception e)
             {
-                Console.WriteLine(e);
-                Console.ReadLine();
+                
+                Console.WriteLine("\nPress any key to continue");
+                Console.ReadKey();
             }
             
 
