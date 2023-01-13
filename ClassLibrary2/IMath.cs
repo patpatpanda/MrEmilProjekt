@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary2
 {
-    public interface iMath
+    public interface IMath
     {
         public decimal Addition(decimal numOne, decimal numTwo)
         {
@@ -25,14 +25,7 @@ namespace ClassLibrary2
             return numOne / numTwo;
 
         }
-        public decimal Sqrt(decimal numOne)
-        {
-
-
-            
-            return numOne;
-
-        }
+        
 
         public decimal Modulo(decimal numOne, decimal numTwo)
         {
