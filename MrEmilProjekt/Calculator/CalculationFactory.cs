@@ -44,7 +44,7 @@ namespace MrEmilProjekt.Calculator
 
 
 
-        public Calculator SqrtMaker()
+        public void SqrtMaker()
         {
            
             Console.Clear();
@@ -55,13 +55,13 @@ namespace MrEmilProjekt.Calculator
             calculator.Result = Convert.ToDecimal(System.Math.Sqrt(input));
             calculator.Operator = "√";
             calculator.Date = DateTime.Now;
-
+            calculator.ResultMessage(calculator);
             myContext.Calculators.Add(calculator);
             myContext.SaveChanges();
-            return calculator;
+            
         }
 
-        public Calculator DividedMaker()
+        public void DividedMaker()
         {
            
             Console.Clear();
@@ -75,10 +75,9 @@ namespace MrEmilProjekt.Calculator
 
             myContext.Calculators.Add(calculator);
             myContext.SaveChanges();
-            return calculator;
         }
 
-        public Calculator ModuloMaker()
+        public void ModuloMaker()
         {
 
             Console.Clear();
@@ -92,10 +91,10 @@ namespace MrEmilProjekt.Calculator
 
             myContext.Calculators.Add(calculator);
             myContext.SaveChanges();
-            return calculator;
+            
         }
 
-        public Calculator MultiplyMaker()
+        public void MultiplyMaker()
         {
 
             Console.Clear();
@@ -109,10 +108,10 @@ namespace MrEmilProjekt.Calculator
 
             myContext.Calculators.Add(calculator);
             myContext.SaveChanges();
-            return calculator;
+            
         }
 
-        public Calculator SubtractionMaker()
+        public void SubtractionMaker()
         {
 
             Console.Clear();
@@ -127,7 +126,7 @@ namespace MrEmilProjekt.Calculator
             myContext.Calculators.Add(calculator);
             myContext.SaveChanges();
 
-            return calculator;
+            
         }
         private static decimal NumTwo()
         {
