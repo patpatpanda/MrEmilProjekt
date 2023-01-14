@@ -44,7 +44,7 @@ namespace ClassLibrary2
         }
         public decimal Multiply(decimal numOne, decimal numTwo)
         {
-            return numOne % numTwo;
+            return numOne * numTwo;
 
         }
 
