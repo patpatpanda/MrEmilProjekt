@@ -27,7 +27,7 @@ namespace MrEmilProjekt.Data
                 {
                     Name = "Rectangle",
                     Area = 50,
-                    Circumference = 30,
+                    Perimeter = 30,
                     Date = DateTime.Now
 
                 });
@@ -35,7 +35,7 @@ namespace MrEmilProjekt.Data
                 {
                     Name = "Paraellogram",
                     Area = 50,
-                    Circumference = 30,
+                    Perimeter = 30,
                     Date = DateTime.Now
 
                 });
@@ -43,7 +43,7 @@ namespace MrEmilProjekt.Data
                 {
                     Name = "Triangle",
                     Area = 50,
-                    Circumference = 30,
+                    Perimeter = 30,
                     Date = DateTime.Now
 
                 });
@@ -51,7 +51,7 @@ namespace MrEmilProjekt.Data
                 {
                     Name = "Romb.....",
                     Area = 50,
-                    Circumference = 30,
+                    Perimeter = 30,
                     Date = DateTime.Now
 
                 });

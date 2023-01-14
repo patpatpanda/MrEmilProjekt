@@ -21,7 +21,7 @@ namespace ClassLibrary2
 
     }
 
-    public decimal CircumferenceCalculator(decimal b, decimal h)
+    public decimal PerimeterCalculator(decimal b, decimal h)
     {
 
         var circumference = b + h + b + h;
@@ -34,7 +34,7 @@ namespace ClassLibrary2
         return a * b / 2;
     }
 
-    public decimal TriangelCircumferenceCalculator(decimal a, decimal b, decimal c)
+    public decimal TrianglePerimeterCalculator(decimal a, decimal b, decimal c)
     {
         return a + b + c;
     }
