@@ -3,7 +3,7 @@ using MrEmilProjekt.Data;
 
 namespace MrEmilProjekt.Calculator;
 
-internal class OperatorMenu
+internal class OperatorMenu 
 {
     public void ChooseOperator()
     {

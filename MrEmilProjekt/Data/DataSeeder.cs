@@ -26,6 +26,8 @@ namespace MrEmilProjekt.Data
                 myContext.Shapes.Add(new Shape()
                 {
                     Name = "Rectangle",
+                    Height = 10,
+                    Lenght = 5,
                     Area = 50,
                     Perimeter = 30,
                     Date = DateTime.Now
@@ -34,6 +36,8 @@ namespace MrEmilProjekt.Data
                 myContext.Shapes.Add(new Shape()
                 {
                     Name = "Paraellogram",
+                    Lenght = 10,
+                    Height = 5,
                     Area = 50,
                     Perimeter = 30,
                     Date = DateTime.Now
@@ -42,14 +46,18 @@ namespace MrEmilProjekt.Data
                 myContext.Shapes.Add(new Shape()
                 {
                     Name = "Triangle",
-                    Area = 50,
-                    Perimeter = 30,
+                    Area = 25,
+                    Lenght = 10,
+                    Height = 5,
+                    Perimeter = 10,
                     Date = DateTime.Now
 
                 });
                 myContext.Shapes.Add(new Shape()
                 {
                     Name = "Romb.....",
+                    Height = 10,
+                    Lenght = 5,
                     Area = 50,
                     Perimeter = 30,
                     Date = DateTime.Now

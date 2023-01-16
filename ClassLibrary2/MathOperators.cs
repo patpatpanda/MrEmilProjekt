@@ -7,47 +7,44 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary2
 {
-    public class MathOperators : IMath
+    public class MathOperators 
+
+    {
+        
+        public decimal Addition(decimal numOne, decimal numTwo)
     {
 
-        public decimal Addition(decimal numOne, decimal numTwo)
-        {
-           
-            return numOne + numTwo;
+        return numOne + numTwo;
 
-        }
-        public decimal Subtraction(decimal numOne, decimal numTwo)
-        {
-            
-            return numOne - numTwo;
+    }
 
-        }
-        public decimal Divided(decimal numOne, decimal numTwo)
-        {
-            return numOne / numTwo;
+    public decimal Subtraction(decimal numOne, decimal numTwo)
+    {
 
-        }
-        public decimal Sqrt(decimal numOne)
-        {
-            
+        return numOne - numTwo;
+
+    }
+
+    public decimal Divided(decimal numOne, decimal numTwo)
+    {
+        return numOne / numTwo;
+
+    }
 
 
-            return numOne;
+    public decimal Modulo(decimal numOne, decimal numTwo)
+    {
 
-        }
+        return numOne % numTwo;
 
-        public decimal Modulo(decimal numOne, decimal numTwo)
-        {
-           
-            return numOne % numTwo;
+    }
 
-        }
-        public decimal Multiply(decimal numOne, decimal numTwo)
-        {
-            return numOne * numTwo;
+    public decimal Multiply(decimal numOne, decimal numTwo)
+    {
+        return numOne * numTwo;
 
-        }
+    }
 
-       
+
     }
 }

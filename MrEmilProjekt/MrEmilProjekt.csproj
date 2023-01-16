@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary2\Services.csproj" />
+    <ProjectReference Include="..\ClassLibrary2\MyClassLibrary.csproj" />
   </ItemGroup>
 
   <ItemGroup>

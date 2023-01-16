@@ -6,11 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Services;
 
 
 namespace MrEmilProjekt.Shapes
 {
-    internal class ShapeFactory
+   public class ShapeFactory 
     {
       
         public ShapeFactory(){}

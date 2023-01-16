@@ -27,13 +27,13 @@ namespace MrEmilProjekt.Game
             var buildApp = new Builder();
             var myContext = buildApp.AppBuilder();
 
-            string computer;
+            string computerInput;
 
             int randomNumber;
             int playerScore = 0;
             int computerScore = 0;
             int draw = 0;
-            int totalGames = 0;
+        
 
             while (true)
             {
@@ -51,7 +51,7 @@ namespace MrEmilProjekt.Game
                 randomNumber = myRandom.Next(1, 4);
                 if (inputPlayer == "END")
                 {
-                    NewMethod(draw, computerScore, playerScore, myContext);
+                    ShowGameStats(draw, computerScore, playerScore, myContext);
                     break;
 
                 }
@@ -60,7 +60,7 @@ namespace MrEmilProjekt.Game
                 {
                         
                     case 1:
-                        computer = "ROCK";
+                        computerInput = "ROCK";
                         Console.WriteLine("Computer chose ROCK ");
                         if (inputPlayer == "ROCK")
                         {
@@ -85,7 +85,7 @@ namespace MrEmilProjekt.Game
                         
                         break;
                     case 2:
-                        computer = "PAPER";
+                        computerInput = "PAPER";
                         Console.WriteLine("Computer chose PAPER ");
                         if (inputPlayer == "PAPER")
                         {
@@ -108,7 +108,7 @@ namespace MrEmilProjekt.Game
                         }
                         break;
                     case 3:
-                        computer = "SCISSORS";
+                        computerInput = "SCISSORS";
                         Console.WriteLine("Computer chose SCISSOR ");
                         if (inputPlayer == "PAPER")
                         {
@@ -142,9 +142,9 @@ namespace MrEmilProjekt.Game
 
         }
 
-        private static void NewMethod(int draw, int computerScore, int playerScore, AppDbContext myContext)
+        private static void ShowGameStats(int draw, int computerScore, int playerScore, AppDbContext myContext)
         {
-            var avg = Avg(draw, computerScore, playerScore);
+            var avg = Average(draw, computerScore, playerScore);
 
             GameStats(playerScore, computerScore, avg, myContext);
 
@@ -158,16 +158,16 @@ namespace MrEmilProjekt.Game
 
         private static void GameStats(int playerScore, int computerScore, int avg, AppDbContext myContext)
         {
-            var gameScore = new TheGame();
+            var gameScore = new RockPaperSissors();
             gameScore.Win = playerScore;
             gameScore.Lost = computerScore;
             gameScore.WinPercentage = avg;
             gameScore.Date = DateTime.Now;
-            myContext.TheGames.Add(gameScore);
+            myContext.Games.Add(gameScore);
             myContext.SaveChanges();
         }
 
-        private static int Avg(int draw, int computerScore, int playerScore)
+        private static int Average(int draw, int computerScore, int playerScore)
         {
             int totalGames;
             Console.WriteLine(draw);

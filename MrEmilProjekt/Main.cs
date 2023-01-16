@@ -38,6 +38,7 @@ public class Main
                 }
                 else if (input == 0)
                 {
+                    Console.Clear();
                     Console.WriteLine("BYE!!!!!!!!!!!!!!!!");
                     break;
                 }
@@ -45,8 +46,11 @@ public class Main
 
             catch(Exception e)
             {
-                
-                Console.WriteLine("\nPress any key to continue");
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(e);
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\nPress Any Key To Continue");
                 Console.ReadKey();
             }
             

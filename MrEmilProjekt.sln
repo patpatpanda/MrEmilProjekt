@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MrEmilProjekt", "MrEmilProjekt\MrEmilProjekt.csproj", "{9E4D1245-B979-4D78-B9F6-43E1A4DEFAA5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "ClassLibrary2\Services.csproj", "{D37B0175-1E28-4157-A915-7E245AAA1DC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyClassLibrary", "ClassLibrary2\MyClassLibrary.csproj", "{D37B0175-1E28-4157-A915-7E245AAA1DC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

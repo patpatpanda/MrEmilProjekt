@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using MrEmilProjekt.Game;
 using MrEmilProjekt.Shapes;
+using ClassLibrary2;
 
 namespace MrEmilProjekt.Data
 {
@@ -13,10 +14,10 @@ namespace MrEmilProjekt.Data
     {
         public DbSet<Shape> Shapes { get; set; }
         public DbSet<Calculator.Calculator> Calculators { get; set; }
-        public DbSet<TheGame> TheGames { get; set; }
-        
+        public DbSet<RockPaperSissors> Games { get; set; }
 
 
+       
 
         public AppDbContext()
         {
