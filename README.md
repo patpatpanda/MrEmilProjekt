@@ -1,4 +1,4 @@
-# MrEmilProjekt
+# MrEmilProjekt ![alt text](https://github.com/inessadl/readme/blob/master/img/ff_logo2013.png)
 
 # Beskrivning  
 Programmet går ut på att man ska kunna välja bland 3 alternativ.
