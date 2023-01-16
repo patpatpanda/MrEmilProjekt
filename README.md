@@ -17,6 +17,8 @@ microsoft.entityframeworkcore.tools\6.0.0\ ---- microsoft.extensions.configurati
 
 
 # Metoder
+
+
 ****Shapes****
 
 Run() Görs valet vad man vill köra av shapes,calculator,rock,paper,scissors.
@@ -50,12 +52,33 @@ LooseMessage()
 DrawMessage()
 
 
+
+Metoder        | Kort beskrivning           |
+| ------------- |:-------------:|
+| Run()| Här körs programmet ifrån. |
+| ShowMainMenu()      | Metoden visar huvudmenyn och dess val.     |
+| ShowShapesMenu(), ShowCalculatorMenu(), ShowRockPaperScissorsMenu() | Beroende på val så visas en ny meny och ett antal val att göra.      |
+| CalculationMenu() | Här visar vi en meny av olika operatorer eller former. t.ex "ADDITION", "RECTANGLE" |
+| PlayGame() | Här kör vi en spelomgång i Rock-Paper-Scissors och visar resultat som sedan sparas ner till en databas|
+| GetAllResults() | Här samlar vi upp alla resultat som lagrats och visar upp med resultatinfo och datum. |
+| HandleResult()      | Här ändras ett resultat om det blivit felaktigt samt updateras till databasen. |
+| DeleteResult()      | Här tas ett resultat bort från databasen.      |
+| InputMethod() | Här skriver vi in vare sig det är Bas/Höjd eller Tal1/Tal2      |
+| Do"OperatorName"Calculation() | Här görs en uträkning baserat på val du gjort t.ex "SUBTRACTION" eller "DIVISION" |
+| ScriptValuesToDatabase() | Här sparas uträkningen ner till databasen. |
+| Create"ShapeName"Calculation() | Här görs en uträkning baserat på val du gjort t.ex "RECTANGLE" eller "RHOMBUS" |
+| SetResults() | Här sparas uträkningen av Area och Omkrets på vald form ner till databasen. |
+
+
+
+
+
+
 Single-responsibility principle
 
 
 
  
-
 
 
 
