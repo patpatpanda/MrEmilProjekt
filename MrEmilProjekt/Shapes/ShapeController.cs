@@ -35,7 +35,7 @@ namespace MrEmilProjekt.Shapes
             foreach (var shape in myContext.Shapes.OrderBy(x => x.ShapeId))
             {
                 
-                Console.WriteLine($"{shape.ShapeId}\t{shape.Name}\t\t{shape.Area}\t\t{shape.Circumference}");
+                Console.WriteLine($"{shape.ShapeId}\t{shape.Name}\t\t{shape.Area}\t\t{shape.Perimeter}");
                
 
             }
@@ -52,10 +52,10 @@ namespace MrEmilProjekt.Shapes
             Console.Write("Area : ");
             var area = Convert.ToDecimal(Console.ReadLine());
             Console.Write("Circumference : ");
-            var circumference = Convert.ToDecimal(Console.ReadLine());
+            var Perimeter = Convert.ToDecimal(Console.ReadLine());
             Console.WriteLine("Date (yyyy-mm-dd)");
             var date = Convert.ToDateTime(Console.ReadLine());
-            shapeId.NewShapeValues(name,area,circumference,date);
+            shapeId.NewShapeValues(name,area, Perimeter, date);
             myContext.SaveChanges();
 
         }

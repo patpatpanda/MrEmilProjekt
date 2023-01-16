@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ClassLibrary2;
+
 using MrEmilProjekt.Data;
 
 
@@ -19,8 +20,10 @@ namespace MrEmilProjekt.Calculator
             myMath = math;
             calculator = _calculator;
             myContext = context;
-        }
+         
 
+        }
+      
         public AppDbContext myContext { get; set; }
         public MathOperators myMath { get; set; }
         public Calculator calculator { get; set; }

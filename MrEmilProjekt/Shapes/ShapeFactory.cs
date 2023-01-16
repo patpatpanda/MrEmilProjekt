@@ -6,11 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Services;
 
 
 namespace MrEmilProjekt.Shapes
 {
-    internal class ShapeFactory
+   public class ShapeFactory 
     {
       
         public ShapeFactory(){}
@@ -31,10 +32,10 @@ namespace MrEmilProjekt.Shapes
         {
             Console.Clear();
             myShape.Name = "Rectangle";
-            myShape.Bas = GetBas();
+            myShape.Lenght = GetLenght();
             myShape.Height = GetHeight();
-            myShape.Area = myShapeServices.AreaCalculator(myShape.Bas, myShape.Height);
-            myShape.Circumference = myShapeServices.CircumferenceCalculator(myShape.Bas, myShape.Height);
+            myShape.Area = myShapeServices.AreaCalculator(myShape.Lenght, myShape.Height);
+            myShape.Perimeter = myShapeServices.PerimeterCalculator(myShape.Lenght, myShape.Height);
             
             myShape.Date = DateTime.Now;
            myShape.ResultMessage(myShape);
@@ -47,10 +48,10 @@ namespace MrEmilProjekt.Shapes
         {
             Console.Clear();
             myShape.Name = "Paraellogram";
-            myShape.Bas = GetBas();
+            myShape.Lenght = GetLenght();
             myShape.Height = GetHeight();
-            myShape.Area = myShapeServices.AreaCalculator(myShape.Bas, myShape.Height);
-            myShape.Circumference = myShapeServices.CircumferenceCalculator(myShape.Bas, myShape.Height);
+            myShape.Area = myShapeServices.AreaCalculator(myShape.Lenght, myShape.Height);
+            myShape.Perimeter = myShapeServices.PerimeterCalculator(myShape.Lenght, myShape.Height);
 
             myShape.Date = DateTime.Now;
             myShape.ResultMessage(myShape);
@@ -63,12 +64,12 @@ namespace MrEmilProjekt.Shapes
         {
             Console.Clear();
             myShape.Name = "Triangle";
-            myShape.Bas = GetBas();
+            myShape.Lenght = GetLenght();
             myShape.Height = GetHeight();
             Console.Write("Enter hypotenusa : ");
             var hypotenusa = Convert.ToDecimal(Console.ReadLine());
-            myShape.Area = myShapeServices.TriangleAreaCalculator(myShape.Bas, myShape.Height);
-            myShape.Circumference = myShapeServices.TriangelCircumferenceCalculator(myShape.Bas, hypotenusa, myShape.Height);
+            myShape.Area = myShapeServices.TriangleAreaCalculator(myShape.Lenght, myShape.Height);
+            myShape.Perimeter = myShapeServices.TrianglePerimeterCalculator(myShape.Lenght, hypotenusa, myShape.Height);
            
 
             myShape.Date = DateTime.Now;
@@ -82,10 +83,10 @@ namespace MrEmilProjekt.Shapes
         {
             Console.Clear();
             myShape.Name = "Romb.....";
-            myShape.Bas = GetBas();
+            myShape.Lenght = GetLenght();
             myShape.Height = GetHeight();
-            myShape.Area = myShapeServices.AreaCalculator(myShape.Bas, myShape.Height);
-            myShape.Circumference = myShapeServices.CircumferenceCalculator(myShape.Bas, myShape.Height);
+            myShape.Area = myShapeServices.AreaCalculator(myShape.Lenght, myShape.Height);
+            myShape.Perimeter = myShapeServices.PerimeterCalculator(myShape.Lenght, myShape.Height);
 
             myShape.Date = DateTime.Now;
             myShape.ResultMessage(myShape);
@@ -94,10 +95,10 @@ namespace MrEmilProjekt.Shapes
 
         }
 
-        private static decimal GetBas()
+        private static decimal GetLenght()
         {
             decimal numTwo;
-            Console.Write("Enter base : ");
+            Console.Write("Enter lenght : "); 
 
             numTwo = Convert.ToDecimal(Console.ReadLine());
             return numTwo;

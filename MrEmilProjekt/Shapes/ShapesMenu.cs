@@ -15,7 +15,7 @@ public class ShapesMenu
             var shapeService = new ShapeServices();
             var shape = new Shape();
             var factory = new ShapeFactory(shape, shapeService, myContext);
-            var readShape = new ShapeController(myContext);
+            var controller = new ShapeController(myContext);
 
 
             Console.ForegroundColor = ConsoleColor.White;
@@ -68,17 +68,17 @@ public class ShapesMenu
             }
             else if (inuput == 5)
             {
-                readShape.ListShape();
+                controller.ListShape();
                 Console.WriteLine("\nPress any key to continue");
                 Console.ReadKey();
             }
             else if (inuput == 6)
             {
-                readShape.UpdateShape();
+                controller.UpdateShape();
             }
             else if (inuput == 7)
             {
-                readShape.DeleteShape();
+                controller.DeleteShape();
             }
 
             else if (inuput == 0)

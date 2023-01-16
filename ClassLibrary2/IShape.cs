@@ -11,7 +11,7 @@ namespace Services
         public decimal AreaCalculator(decimal b, decimal h);
 
 
-        public decimal CircumferenceCalculator(decimal b, decimal h);
+        public decimal PerimeterCalculator(decimal b, decimal h);
 
 
 
@@ -20,7 +20,7 @@ namespace Services
         public decimal TriangleAreaCalculator(decimal a, decimal b);
 
 
-        public decimal TriangelCircumferenceCalculator(decimal a, decimal b, decimal c);
+        public decimal TrianglePerimeterCalculator(decimal a, decimal b, decimal c);
 
         
     }
