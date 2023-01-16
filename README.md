@@ -3,11 +3,12 @@
 # Beskrivning  
 Programmet går ut på att man ska kunna välja bland 3 alternativ.
 
-Shapes : Räkna ut area och omkrets på oilka former + möjligt att använda CRUD på dessa beräknigar.
+Shapes : Räkna ut area och omkrets på oilka former + möjligt att använda CRUD på dessa beräkningar.
 
-Miniräknare : En fungerande miniräknare + möjligt att använda CRUD på dessa beräknigar.
+Miniräknare : En fungerande miniräknare + möjligt att använda CRUD på dessa beräkningar.
 
 Sten,sax,påse : Kunna spela spelet och även räkna ut genomsnittet av alla vinster vid den tidpunkten.
+
 All relevant information av dessa 3 alternativ sparas ner till samma databas.
 
 # Technologies
