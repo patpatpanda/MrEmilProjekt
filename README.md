@@ -55,9 +55,9 @@ DrawMessage()
 
 Metoder        | Kort beskrivning           |
 | ------------- |:-------------:|
-| Run()| Här körs programmet ifrån. |
-| ShowMainMenu()      | Metoden visar huvudmenyn och dess val.     |
-| ShowShapesMenu(), ShowCalculatorMenu(), ShowRockPaperScissorsMenu() | Beroende på val så visas en ny meny och ett antal val att göra.      |
+| Run()| Görs valet vad man vill köra av shapes,calculator,rock,paper,scissors. |
+| ShowMenu()     | Visar valen shapes,calculator,rock,paper,scissors och retunerar ett val.    |
+| ShowShapesMenu() | Visar de val som finns att göra och skickar vidare till önskat val. | Beroende på val så visas en ny meny och ett antal val att göra.      |
 | CalculationMenu() | Här visar vi en meny av olika operatorer eller former. t.ex "ADDITION", "RECTANGLE" |
 | PlayGame() | Här kör vi en spelomgång i Rock-Paper-Scissors och visar resultat som sedan sparas ner till en databas|
 | GetAllResults() | Här samlar vi upp alla resultat som lagrats och visar upp med resultatinfo och datum. |
