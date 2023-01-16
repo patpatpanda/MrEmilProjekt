@@ -11,7 +11,7 @@ Sten,sax,påse : Kunna spela spelet och även räkna ut genomsnittet av alla vin
 
 All relevant information av dessa 3 alternativ sparas ner till samma databas.
 
-# Technologies
+# Program
 :---- Console app .Net 6.0 ---- microsoft.entityframeworkcore.sqlserver\6.0.0\ ---- 
 microsoft.entityframeworkcore.tools\6.0.0\ ---- microsoft.extensions.configuration.json\6.0.0\
 
@@ -50,7 +50,7 @@ LooseMessage()
 DrawMessage()
 
 
-
+Single-responsibility principle
 
 
 
