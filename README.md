@@ -13,7 +13,8 @@ microsoft.entityframeworkcore.tools\6.0.0\ ---- microsoft.extensions.configurati
 
 
 # Metoder
-#Shapes
+****Shapes****
+
 Run() Görs valet vad man vill köra av shapes,calculator,rock,paper,scissors.
 ShowMenu() Visar valen shapes,calculator,rock,paper,scissors och retunerar ett val.
 ShowShapesMenu() Visar de val som finns att göra och skickar vidare till önskat val.
@@ -34,7 +35,8 @@ GetShapeId() Väljer ett shapeId från lista och retunerar det.
 NotValidIdMessage() Skriver ut felmeddelande.
 SuccsessMessage() Skriver ut ett lyckades meddelande.
 
-#RockPaperSissors
+****RockPaperSissors****
+
 PlayGame() Spelar spelet tills man väljer att avsluta.
 ShowGameStats() Visar hur mycket spelaren vunnit i procent.
 GameStats() Sparar all relevant iformation till databasen.
