@@ -13,7 +13,7 @@ microsoft.entityframeworkcore.tools\6.0.0\ ---- microsoft.extensions.configurati
 
 
 # Metoder
-# Shapes
+#Shapes
 Run() Görs valet vad man vill köra av shapes,calculator,rock,paper,scissors.
 ShowMenu() Visar valen shapes,calculator,rock,paper,scissors och retunerar ett val.
 ShowShapesMenu() Visar de val som finns att göra och skickar vidare till önskat val.
@@ -42,6 +42,7 @@ Average() Räknar ut hur mycket spelaren vunnit i procent.
 WinMessage() Visar att spelaren vunnit och frågar om den vill spela igen.
 LooseMessage() 
 DrawMessage()
+
 
 
 
