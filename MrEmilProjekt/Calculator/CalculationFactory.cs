@@ -16,7 +16,7 @@ public class CalculationFactory
     public MathOperators myMath { get; set; }
     public Calculator calculator { get; set; }
 
-    public void AdditionMaker()
+    public void AdditionCalculator()
     {
         Console.Clear();
         myContext.SetStrategy(new MathOperators.Add());
@@ -25,25 +25,13 @@ public class CalculationFactory
         calculator.Operator = "+";
 
         SaveCalcToDataBase();
-    }
-
-
-    public void SqrtMaker()
-    {
-        Console.Clear();
-
-        NumberInputOne();
-        var input = Convert.ToDouble(Console.ReadLine());
-        calculator.FirstInput = Convert.ToDecimal(input);
-        calculator.Result = Convert.ToDecimal(Math.Sqrt(input));
-        calculator.Operator = "√";
-        calculator.Date = DateTime.Now;
         calculator.ResultMessage(calculator);
-        myContext.Calculators.Add(calculator);
-        myContext.SaveChanges();
     }
 
-    public void DividedMaker()
+
+    
+
+    public void DividedCalculator()
     {
         Console.Clear();
         myContext.SetStrategy(new MathOperators.Divided());
@@ -51,9 +39,10 @@ public class CalculationFactory
         calculator.SecondInput = NumberInputTwo();
         calculator.Operator = "/";
         SaveCalcToDataBase();
+        calculator.ResultMessage(calculator);
     }
 
-    public void ModuloMaker()
+    public void ModuloCalculator()
     {
         Console.Clear();
         myContext.SetStrategy(new MathOperators.Modulo());
@@ -61,9 +50,10 @@ public class CalculationFactory
         calculator.SecondInput = NumberInputTwo();
         calculator.Operator = "%";
         SaveCalcToDataBase();
+        calculator.ResultMessage(calculator);
     }
 
-    public void MultiplyMaker()
+    public void MultiplyCalculator()
     {
         Console.Clear();
         myContext.SetStrategy(new MathOperators.Multiply());
@@ -71,9 +61,26 @@ public class CalculationFactory
         calculator.SecondInput = NumberInputTwo();
         calculator.Operator = "*";
         SaveCalcToDataBase();
+        calculator.ResultMessage(calculator);
     }
 
-    public void SubtractionMaker()
+
+    public void SqrtCalculator()
+    {
+        Console.Clear();
+
+        Console.Write("Enter a number : ");
+        var input = Convert.ToDouble(Console.ReadLine());
+        calculator.FirstInput = Convert.ToDecimal(input);
+        calculator.Result = Convert.ToDecimal(Math.Sqrt(input));
+        calculator.Operator = "√";
+        calculator.Date = DateTime.Now;
+        myContext.Calculators.Add(calculator);
+        myContext.SaveChanges();
+        calculator.ResultMessage(calculator);
+    }
+
+    public void SubtractionCalculator()
     {
         Console.Clear();
         myContext.SetStrategy(new MathOperators.Subtraction());
@@ -81,6 +88,7 @@ public class CalculationFactory
         calculator.SecondInput = NumberInputTwo();
         calculator.Operator = "-";
         SaveCalcToDataBase();
+        calculator.ResultMessage(calculator);
     }
 
     private void SaveCalcToDataBase()
@@ -88,7 +96,7 @@ public class CalculationFactory
         calculator.Result = myContext.ExecuteStrategy(calculator.FirstInput, calculator.SecondInput);
 
         calculator.Date = DateTime.Now;
-        calculator.ResultMessage(calculator);
+        
 
         myContext.Calculators.Add(calculator);
         myContext.SaveChanges();
