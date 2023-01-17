@@ -75,7 +75,6 @@ public class CalculationFactory
         calculator.Result = Convert.ToDecimal(Math.Sqrt(input));
         calculator.Operator = "√";
         calculator.Date = DateTime.Now;
-        calculator.ResultMessage(calculator);
         myContext.Calculators.Add(calculator);
         myContext.SaveChanges();
         calculator.ResultMessage(calculator);
