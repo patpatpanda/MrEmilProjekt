@@ -8,20 +8,20 @@ namespace Services
 {
     public interface IShape
     {
-        public decimal AreaCalculator(decimal b, decimal h);
+        public double AreaCalculator(double b, double h);
 
 
-        public decimal PerimeterCalculator(decimal b, decimal h);
+        public double PerimeterCalculator(double b, double h);
 
 
 
 
 
-        public decimal TriangleAreaCalculator(decimal a, decimal b);
+        public double TriangleAreaCalculator(double b, double h);
 
 
-        public decimal TrianglePerimeterCalculator(decimal a, decimal b, decimal c);
-        
+        public double TrianglePerimeterCalculator(double b, double h,double l);
+
 
 
     }

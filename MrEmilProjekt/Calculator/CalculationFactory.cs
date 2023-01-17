@@ -25,6 +25,7 @@ public class CalculationFactory
         calculator.Operator = "+";
 
         SaveCalcToDataBase();
+        calculator.ResultMessage(calculator);
     }
 
 
@@ -38,6 +39,7 @@ public class CalculationFactory
         calculator.SecondInput = NumberInputTwo();
         calculator.Operator = "/";
         SaveCalcToDataBase();
+        calculator.ResultMessage(calculator);
     }
 
     public void ModuloCalculator()
@@ -48,6 +50,7 @@ public class CalculationFactory
         calculator.SecondInput = NumberInputTwo();
         calculator.Operator = "%";
         SaveCalcToDataBase();
+        calculator.ResultMessage(calculator);
     }
 
     public void MultiplyCalculator()
@@ -58,6 +61,7 @@ public class CalculationFactory
         calculator.SecondInput = NumberInputTwo();
         calculator.Operator = "*";
         SaveCalcToDataBase();
+        calculator.ResultMessage(calculator);
     }
 
 
@@ -74,6 +78,7 @@ public class CalculationFactory
         calculator.ResultMessage(calculator);
         myContext.Calculators.Add(calculator);
         myContext.SaveChanges();
+        calculator.ResultMessage(calculator);
     }
 
     public void SubtractionCalculator()
@@ -84,6 +89,7 @@ public class CalculationFactory
         calculator.SecondInput = NumberInputTwo();
         calculator.Operator = "-";
         SaveCalcToDataBase();
+        calculator.ResultMessage(calculator);
     }
 
     private void SaveCalcToDataBase()
@@ -91,7 +97,7 @@ public class CalculationFactory
         calculator.Result = myContext.ExecuteStrategy(calculator.FirstInput, calculator.SecondInput);
 
         calculator.Date = DateTime.Now;
-        calculator.ResultMessage(calculator);
+        
 
         myContext.Calculators.Add(calculator);
         myContext.SaveChanges();

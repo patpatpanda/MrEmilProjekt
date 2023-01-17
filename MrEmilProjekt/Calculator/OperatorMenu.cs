@@ -21,7 +21,7 @@ internal class OperatorMenu
 
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("                                    ********  VÄLJ OPERATOR *******");
+            Console.WriteLine("                                    ********  CHOOSE OPERATOR *******");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("                             --------------------------------------------");
             Console.WriteLine("                             |      ****           +          ****    |");

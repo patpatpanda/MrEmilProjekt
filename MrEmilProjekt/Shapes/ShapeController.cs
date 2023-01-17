@@ -55,13 +55,17 @@ namespace MrEmilProjekt.Shapes
                     Console.Clear();
                     Console.Write("Name : ");
                     var name = Console.ReadLine();
+                    Console.Write("Height : ");
+                    var height = Convert.ToDouble(Console.ReadLine());
+                    Console.Write("Lenght : ");
+                    var lenght = Convert.ToDouble(Console.ReadLine());
                     Console.Write("Area : ");
-                    var area = Convert.ToDecimal(Console.ReadLine());
+                    var area = Convert.ToDouble(Console.ReadLine());
                     Console.Write("Peremiter : ");
-                    var Perimeter = Convert.ToDecimal(Console.ReadLine());
+                    var Perimeter = Convert.ToDouble(Console.ReadLine());
                     Console.WriteLine("Date (yyyy-mm-dd)");
                     var date = Convert.ToDateTime(Console.ReadLine());
-                    shapeId.NewShapeValues(name, area, Perimeter, date);
+                    shapeId.NewShapeValues(name,lenght,height, area, Perimeter, date);
                     myContext.SaveChanges();
 
                 }

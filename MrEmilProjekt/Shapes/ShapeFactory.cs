@@ -64,14 +64,14 @@ namespace MrEmilProjekt.Shapes
             myShape.Lenght = GetLenght();
             myShape.Height = GetHeight();
             Console.Write("Enter hypotenusa : ");
-            var hypotenusa = Convert.ToDecimal(Console.ReadLine());
+            var hypotenusa = Convert.ToDouble(Console.ReadLine());
             AreaPerimeterTriangle(hypotenusa);
             SaveShapeToDataBase();
         }
 
         
 
-        private void AreaPerimeterTriangle(decimal hypotenusa)
+        private void AreaPerimeterTriangle(double hypotenusa)
         {
             myShape.Area = myIShape.TriangleAreaCalculator(myShape.Lenght, myShape.Height);
             myShape.Perimeter = myIShape.TrianglePerimeterCalculator(myShape.Lenght, hypotenusa, myShape.Height);
@@ -89,16 +89,16 @@ namespace MrEmilProjekt.Shapes
         }
 
 
-        private static decimal GetLenght()
+        private static double GetLenght()
         {
             while (true)
             {
                 try
                 {
-                    decimal length;
+                    double length;
                     Console.Write("Enter length : ");
 
-                    length = Convert.ToDecimal(Console.ReadLine());
+                    length = Convert.ToDouble(Console.ReadLine());
                     return length;
                 }
                 catch (Exception e)
@@ -116,17 +116,17 @@ namespace MrEmilProjekt.Shapes
             
         }
 
-        private static decimal GetHeight()
+        private static double GetHeight()
         {
 
             while (true)
             {
                 try
                 {
-                    decimal height;
+                   double height;
                     Console.Write("Enter height : ");
 
-                    height = Convert.ToDecimal(Console.ReadLine());
+                    height = Convert.ToDouble(Console.ReadLine());
                     return height;
                 }
                 catch (Exception e)

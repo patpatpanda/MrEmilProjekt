@@ -14,14 +14,14 @@ namespace ClassLibrary2
 
 
 
-    public decimal AreaCalculator(decimal b, decimal h)
+    public double AreaCalculator(double b, double h)
     {
         var area = b * h;
         return area;
 
     }
 
-    public decimal PerimeterCalculator(decimal b, decimal h)
+    public double PerimeterCalculator(double b, double h)
     {
 
         var circumference = b + h + b + h;
@@ -29,15 +29,15 @@ namespace ClassLibrary2
         return circumference;
     }
 
-    public decimal TriangleAreaCalculator(decimal a, decimal b)
+    public double TriangleAreaCalculator(double a, double b)
     {
         return a * b / 2;
     }
 
-    public decimal TrianglePerimeterCalculator(decimal a, decimal b, decimal c)
+    public double TrianglePerimeterCalculator(double a, double b, double c)
     {
         return a + b + c;
     }
-    //
+    
     }
 }

@@ -15,22 +15,23 @@ namespace MrEmilProjekt.Shapes
         public int ShapeId { get; set; }
         public string Name { get; set; }
 
-        public decimal Lenght { get; set; }
-        public decimal Height { get; set; }
+        public double Lenght { get; set; }
+        public double Height { get; set; }
             
         
 
-        public decimal Area { get; set; }
-        public decimal Perimeter { get; set; }
+        public double Area { get; set; }
+        public double Perimeter { get; set; }
 
         public DateTime Date { get; set; }
 
 
 
-        public void NewShapeValues(string _name,decimal _area, decimal _perimeter, DateTime _date)
+        public void NewShapeValues(string _name,double _lenght,double _height,double _area, double _perimeter, DateTime _date)
         {
             Name = _name;
-            
+            Height = _height;
+            Lenght = _lenght;
             Area = _area;
             Perimeter = _perimeter;
            Date = _date;
