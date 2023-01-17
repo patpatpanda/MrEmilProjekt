@@ -40,14 +40,14 @@ internal class OperatorMenu
             var input = Console.ReadLine();
 
             if (input == "*")
-               factory.MultiplyMaker();
-            else if (input == "+") factory.AdditionMaker();
-            else if (input == "-") factory.SubtractionMaker();
-            else if (input == "/") factory.DividedMaker(); 
+               factory.MultiplyCalculator();
+            else if (input == "+") factory.AdditionCalculator();
+            else if (input == "-") factory.SubtractionCalculator();
+            else if (input == "/") factory.DividedCalculator(); 
 
 
-            else if (input == "%") factory.ModuloMaker();
-            else if (input == "1") factory.SqrtMaker();
+            else if (input == "%") factory.ModuloCalculator();
+            else if (input == "1") factory.SqrtCalculator();
 
 
             else if (input == "0")

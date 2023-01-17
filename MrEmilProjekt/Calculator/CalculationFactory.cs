@@ -16,7 +16,7 @@ public class CalculationFactory
     public MathOperators myMath { get; set; }
     public Calculator calculator { get; set; }
 
-    public void AdditionMaker()
+    public void AdditionCalculator()
     {
         Console.Clear();
         myContext.SetStrategy(new MathOperators.Add());
@@ -28,11 +28,44 @@ public class CalculationFactory
     }
 
 
-    public void SqrtMaker()
+    
+
+    public void DividedCalculator()
+    {
+        Console.Clear();
+        myContext.SetStrategy(new MathOperators.Divided());
+        calculator.FirstInput = NumberInputOne();
+        calculator.SecondInput = NumberInputTwo();
+        calculator.Operator = "/";
+        SaveCalcToDataBase();
+    }
+
+    public void ModuloCalculator()
+    {
+        Console.Clear();
+        myContext.SetStrategy(new MathOperators.Modulo());
+        calculator.FirstInput = NumberInputOne();
+        calculator.SecondInput = NumberInputTwo();
+        calculator.Operator = "%";
+        SaveCalcToDataBase();
+    }
+
+    public void MultiplyCalculator()
+    {
+        Console.Clear();
+        myContext.SetStrategy(new MathOperators.Multiply());
+        calculator.FirstInput = NumberInputOne();
+        calculator.SecondInput = NumberInputTwo();
+        calculator.Operator = "*";
+        SaveCalcToDataBase();
+    }
+
+
+    public void SqrtCalculator()
     {
         Console.Clear();
 
-        NumberInputOne();
+        Console.Write("Enter a number : ");
         var input = Convert.ToDouble(Console.ReadLine());
         calculator.FirstInput = Convert.ToDecimal(input);
         calculator.Result = Convert.ToDecimal(Math.Sqrt(input));
@@ -43,37 +76,7 @@ public class CalculationFactory
         myContext.SaveChanges();
     }
 
-    public void DividedMaker()
-    {
-        Console.Clear();
-        myContext.SetStrategy(new MathOperators.Divided());
-        calculator.FirstInput = NumberInputOne();
-        calculator.SecondInput = NumberInputTwo();
-        calculator.Operator = "/";
-        SaveCalcToDataBase();
-    }
-
-    public void ModuloMaker()
-    {
-        Console.Clear();
-        myContext.SetStrategy(new MathOperators.Modulo());
-        calculator.FirstInput = NumberInputOne();
-        calculator.SecondInput = NumberInputTwo();
-        calculator.Operator = "%";
-        SaveCalcToDataBase();
-    }
-
-    public void MultiplyMaker()
-    {
-        Console.Clear();
-        myContext.SetStrategy(new MathOperators.Multiply());
-        calculator.FirstInput = NumberInputOne();
-        calculator.SecondInput = NumberInputTwo();
-        calculator.Operator = "*";
-        SaveCalcToDataBase();
-    }
-
-    public void SubtractionMaker()
+    public void SubtractionCalculator()
     {
         Console.Clear();
         myContext.SetStrategy(new MathOperators.Subtraction());
