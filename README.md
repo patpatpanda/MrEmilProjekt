@@ -3,15 +3,75 @@
 
 
 # Beskrivning
-Detta är ett program där man får tre val. Dessa val består av Shapes,Calculator,RockPaperScissors. I Shapes kan vi skapa och räkna ut area + omkrets på oilka former.
-I Calculator kan vi skriva två tal och välja vilken operator vi vill använda och ett resultat skrivs ut. Vi spelar Rock Paper Scissors i det tredje valet. CRUD kan användas i Shapes och Calculator.
-Strategy Pattern finns med i Calculator mappen. Vi hittar prov på Dependency Injection i Shapes mappen. Ett ClassLibrary med fyra classer finns med. Hela Projektet strävar efter att hålla Single-responsibility principle.
+
+Detta är ett program där man får tre val. Dessa val består av Shapes,Calculator,RockPaperScissors :
 
 
 
+         
+         
+                                             |      ****         1:  Shapes               ****  |");
+                                             |      ****         2:  Calculator           ****  |");
+                                             |      ****         3:  Rock,Paper,Scissors  ****  |");
+                                             |      ****         0:  Exit                 ****  |");
+                                           ----------------------------------------------------");
 
 
+Väljer du Shapes får du dessa val :
 
+           
+                                         |      ****          1:  Create Rectangle         **** |");
+            
+                                          |      ****          2:  Create Parallellogram    **** |");
+           
+                                          |      ****          3:  Create Triangele         **** |");
+           
+                                          |      ****          4:  Create Romb              **** |");
+            
+                                         |      ****           5:  List                     **** |");
+         
+                                          |      ****          6:  Update                   **** |");
+            
+                                            |      ****        7:  Delete                   **** |");
+            
+                                            |      ****        0:  Mainmenu                 **** |");
+
+
+Create + namn på form skapar en form och räknar ut dess omkrets och area. List: listar alla former som finns i databasen. Update: Finns möjlighet att uppdatera datan som finns i en shape. Delete: Möjlighet att radera en shape.
+
+Väljer du Calculator får du dessa val: 
+
+                                                 |     ***  1 : Make Calculation   ****    |");
+                                                 |     ***  2 : List all           ****    |");
+                                                 |     ***  3 : Update             ****    |");
+                                                 |     ***  4 : Delete             ****    |");
+                   
+                                                 |     ***  0: Mainmeny            ****   |");
+                                                 ---------------------------------------------
+                                                 
+
+List,Update,Delete gör samma sak som dom gör i shapes fast med "Calculation datan".
+Väljer du Make Calculation får du dessa val:
+Du väljer vilken typ av uträkningen du vill göra genom att skriva in något av dessa tecken.
+
+                                        
+              
+                                              ******* Choose Operator *********
+                                       --------------------------------------------");
+                                         |      ****           +          ****    |");
+                                         |      ****           -          ****    |");
+                                         |      ****           /          ****    |");
+                                         |      ****           *          ****    |");
+                                         |      ****        1: √          ****    |");
+                                         |      ****           %          ****    |");
+
+                                         |      ****        0: Exit       ****    |");
+                                       ---------------------------------------------");
+                                       
+                                      
+                                   
+
+Väljer du att spela RockPaperScissors kommer du direkt att börja spela spelet. Vill du sluta spela, skriv end.
 
 
 # Program
@@ -96,7 +156,7 @@ Metoder        | Kort beskrivning           |
 | NumberInput() | Användaren får skriva in ett nummer som retuneras. |
 
 
-Single-responsibility principle
+
 
 
 
