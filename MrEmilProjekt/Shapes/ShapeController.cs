@@ -35,7 +35,7 @@ namespace MrEmilProjekt.Shapes
             foreach (var shape in myContext.Shapes.OrderBy(x => x.ShapeId))
             {
                 
-                Console.WriteLine($"{shape.ShapeId}\t{shape.Name}\t\t{shape.Area}\t\t{shape.Perimeter}");
+                Console.WriteLine($"{shape.ShapeId}\t{shape._Name}\t\t{shape.Area}\t\t{shape.Perimeter}");
                
 
             }

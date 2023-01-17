@@ -13,10 +13,10 @@ namespace MrEmilProjekt.Shapes
 
 
         public int ShapeId { get; set; }
-        public string Name { get; set; }
+        private string Name { get; set; }
 
-        public double Lenght { get; set; }
-        public double Height { get; set; }
+        private double Lenght { get; set; }
+        private double Height { get; set; }
             
         
 
@@ -25,7 +25,24 @@ namespace MrEmilProjekt.Shapes
 
         public DateTime Date { get; set; }
 
+        public string _Name
+        {
+            get => Name;
+            set => Name = value;
 
+
+        }
+
+        public double _Lenght
+        {
+            get => Lenght;
+            set => Lenght = value;
+        }
+        public double _Height
+        {
+            get => Height;
+            set => Height = value;
+        }
 
         public void NewShapeValues(string _name,double _lenght,double _height,double _area, double _perimeter, DateTime _date)
         {
