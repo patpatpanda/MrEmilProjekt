@@ -46,17 +46,37 @@ namespace MrEmilProjekt.Shapes
 
         public void UpdateShape()
         {
-            var shapeId = GetShapeId();
-            Console.Write("Name : ");
-            var name = Console.ReadLine();
-            Console.Write("Area : ");
-            var area = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Circumference : ");
-            var Perimeter = Convert.ToDecimal(Console.ReadLine());
-            Console.WriteLine("Date (yyyy-mm-dd)");
-            var date = Convert.ToDateTime(Console.ReadLine());
-            shapeId.NewShapeValues(name,area, Perimeter, date);
-            myContext.SaveChanges();
+            while (true)
+            {
+                try
+                {
+                    Console.Clear();
+                    var shapeId = GetShapeId();
+                    Console.Clear();
+                    Console.Write("Name : ");
+                    var name = Console.ReadLine();
+                    Console.Write("Area : ");
+                    var area = Convert.ToDecimal(Console.ReadLine());
+                    Console.Write("Peremiter : ");
+                    var Perimeter = Convert.ToDecimal(Console.ReadLine());
+                    Console.WriteLine("Date (yyyy-mm-dd)");
+                    var date = Convert.ToDateTime(Console.ReadLine());
+                    shapeId.NewShapeValues(name, area, Perimeter, date);
+                    myContext.SaveChanges();
+
+                }
+                catch (Exception e)
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine(e);
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("\n Press any key to continue");
+                    Console.ReadKey();
+                }
+               
+            }
+           
 
         }
         private Shape GetShapeId()
@@ -111,6 +131,7 @@ namespace MrEmilProjekt.Shapes
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("\nNot valid (Id)");
             Console.WriteLine("\nPress any key to continue");
+            Console.ForegroundColor = ConsoleColor.White;
 
             Console.ReadLine();
         }

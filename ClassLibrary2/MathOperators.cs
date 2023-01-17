@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MyClassLibrary;
+
 
 namespace ClassLibrary2
 {
@@ -11,40 +13,52 @@ namespace ClassLibrary2
 
     {
         
-        public decimal Addition(decimal numOne, decimal numTwo)
-    {
+        public class Add : IMathInput
+        {
+            public decimal Execute(decimal a, decimal b)
+            {
+                return a + b;
+            }
+        }
 
-        return numOne + numTwo;
+       
+
+       
+
+        public class Subtraction : IMathInput
+        {
+            public decimal Execute(decimal a, decimal b)
+            {
+                return a - b;
+            }
+        }
+        public class Divided : IMathInput
+        {
+            public decimal Execute(decimal a, decimal b)
+            {
+                return a / b;
+            }
+        }
+
+        public class Modulo : IMathInput
+        {
+            public decimal Execute(decimal a, decimal b)
+            {
+                return a % b;
+            }
+        }
+
+        public class Multiply : IMathInput
+        {
+            public decimal Execute(decimal a, decimal b)
+            {
+                return a * b;
+            }
+        }
+
+        
 
     }
 
-    public decimal Subtraction(decimal numOne, decimal numTwo)
-    {
-
-        return numOne - numTwo;
-
-    }
-
-    public decimal Divided(decimal numOne, decimal numTwo)
-    {
-        return numOne / numTwo;
-
-    }
-
-
-    public decimal Modulo(decimal numOne, decimal numTwo)
-    {
-
-        return numOne % numTwo;
-
-    }
-
-    public decimal Multiply(decimal numOne, decimal numTwo)
-    {
-        return numOne * numTwo;
-
-    }
-
-
-    }
+    
 }

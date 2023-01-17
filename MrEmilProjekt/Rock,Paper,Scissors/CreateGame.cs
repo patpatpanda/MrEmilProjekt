@@ -37,104 +37,108 @@ namespace MrEmilProjekt.Game
 
             while (true)
             {
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Blue;
+              
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Blue;
 
-                Console.WriteLine("Quit? Type END");
+                    Console.WriteLine("Quit? Type END");
+
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("\nROCK,PAPER or SCISSORS : ");
+                    string inputPlayer = Console.ReadLine().ToUpper();
+
+                    Random myRandom = new Random();
+
+                    randomNumber = myRandom.Next(1, 4);
+                    if (inputPlayer == "END")
+                    {
+                        ShowGameStats(draw, computerScore, playerScore, myContext);
+                        break;
+
+                    }
+
+                    switch (randomNumber)
+                    {
+
+                        case 1:
+                            computerInput = "ROCK";
+                            Console.WriteLine("Computer chose ROCK ");
+                            if (inputPlayer == "ROCK")
+                            {
+
+                                DrawMessage();
+                                draw++;
+
+                            }
+                            else if (inputPlayer == "PAPER")
+                            {
+
+
+                                playerScore++;
+                                WinMessage();
+                            }
+                            else if (inputPlayer == "SCISSORS")
+                            {
+
+                                computerScore++;
+                                LooseMessage();
+                            }
+
+                            break;
+                        case 2:
+                            computerInput = "PAPER";
+                            Console.WriteLine("Computer chose PAPER ");
+                            if (inputPlayer == "PAPER")
+                            {
+                                draw++;
+
+                                DrawMessage();
+                            }
+                            else if (inputPlayer == "ROCK")
+                            {
+
+
+                                computerScore++;
+                                LooseMessage();
+                            }
+                            else if (inputPlayer == "SCISSOR")
+                            {
+
+                                playerScore++;
+                                WinMessage();
+                            }
+                            break;
+                        case 3:
+                            computerInput = "SCISSORS";
+                            Console.WriteLine("Computer chose SCISSOR ");
+                            if (inputPlayer == "PAPER")
+                            {
+
+                                computerScore++;
+                                LooseMessage();
+                            }
+                            else if (inputPlayer == "ROCK")
+                            {
+
+                                playerScore++;
+
+                                WinMessage();
+                            }
+                            else if (inputPlayer == "SCISSOR")
+                            {
+
+
+                                draw++;
+                                DrawMessage();
+                            }
+
+                            break;
+                    }
                 
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.Write("\nROCK,PAPER or SCISSORS : ");
-                string inputPlayer = Console.ReadLine().ToUpper();
+               
 
-                Random myRandom = new Random();
 
-                randomNumber = myRandom.Next(1, 4);
-                if (inputPlayer == "END")
-                {
-                    ShowGameStats(draw, computerScore, playerScore, myContext);
-                    break;
-
-                }
-
-                switch (randomNumber)
-                {
-                        
-                    case 1:
-                        computerInput = "ROCK";
-                        Console.WriteLine("Computer chose ROCK ");
-                        if (inputPlayer == "ROCK")
-                        {
-                            
-                            DrawMessage();
-                            draw++;
-
-                        }
-                        else if (inputPlayer == "PAPER")
-                        {
-                           
-                            
-                            playerScore++;
-                            WinMessage();
-                        }
-                        else if (inputPlayer == "SCISSORS")
-                        {
-                            
-                            computerScore++;
-                            LooseMessage();
-                        }
-                        
-                        break;
-                    case 2:
-                        computerInput = "PAPER";
-                        Console.WriteLine("Computer chose PAPER ");
-                        if (inputPlayer == "PAPER")
-                        {
-                            draw++;
-                            
-                            DrawMessage();
-                        }
-                        else if (inputPlayer == "ROCK")
-                        {
-                            
-                          
-                            computerScore++;
-                            LooseMessage();
-                        }
-                        else if (inputPlayer == "SCISSOR")
-                        {
-                            
-                            playerScore++;
-                            WinMessage();
-                        }
-                        break;
-                    case 3:
-                        computerInput = "SCISSORS";
-                        Console.WriteLine("Computer chose SCISSOR ");
-                        if (inputPlayer == "PAPER")
-                        {
-                           
-                            computerScore++;
-                            LooseMessage();
-                        }
-                        else if (inputPlayer == "ROCK")
-                        {
-                           
-                            playerScore++;
-                            
-                            WinMessage();
-                        }
-                        else if (inputPlayer == "SCISSOR")
-                        {
-                        
-
-                            draw++;
-                            DrawMessage();
-                        }
-
-                        break;
-                }
-                
-
+               
             }
 
             
@@ -158,7 +162,7 @@ namespace MrEmilProjekt.Game
 
         private static void GameStats(int playerScore, int computerScore, int avg, AppDbContext myContext)
         {
-            var gameScore = new RockPaperSissors();
+            var gameScore = new RockPaperScissors();
             gameScore.Win = playerScore;
             gameScore.Lost = computerScore;
             gameScore.WinPercentage = avg;
