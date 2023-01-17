@@ -2,7 +2,10 @@
 
 
 
-
+# Beskrivning
+Detta är ett program där man får tre val. Dessa val består av Shapes,Calculator,RockPaperScissors. I Shapes kan vi skapa och räkna ut area + omkrets på oilka former.
+I Calculator kan vi skriva två tal och välja vilken operator vi vill använda och ett resultat skrivs ut. Vi spelar Rock Paper Scissors i det tredje valet. CRUD kan användas i Shapes och Calculator.
+Strategy Pattern finns med i Calculator mappen. Vi hittar prov på Dependency Injection i Shapes mappen. Ett ClassLibrary med fyra classer finns med. Hela Projektet strävar efter att hålla Single-responsibility principle.
 
 
 
@@ -16,11 +19,11 @@
 microsoft.entityframeworkcore.tools\6.0.0\ ---- microsoft.extensions.configuration.json\6.0.0\
 
 
+
+
+
+
 # Metoder
-
-
-
-
 
 
 
