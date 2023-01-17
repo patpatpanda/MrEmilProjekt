@@ -1,4 +1,5 @@
-# MrEmilProjekt ![alt text](https://github.com/inessadl/readme/blob/master/img/ff_logo2013.png)
+# MrEmilProjekt ![Juggernaut2](https://user-images.githubusercontent.com/113430950/212973417-6b43a90f-937c-4e04-b50c-9c535e349578.png)
+
 
 
 
@@ -81,7 +82,7 @@ microsoft.entityframeworkcore.tools\6.0.0\ ---- microsoft.extensions.configurati
 
 # Patterns/Principer
 I programmet använder vi Strategy Pattern i Calculator delen. Dependency Injection i Shapes delen. Programmet i helhet försöker hålla Single-principle responsibility.
-Inheritance, Använt mig av interface. Encapsulation, några properties i Shapes är private som exempel på den principen.
+Inheritance, Använt mig av två interfaces. Encapsulation, några properties i Shapes är private som exempel på den principen.
 
 
 
