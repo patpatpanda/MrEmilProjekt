@@ -81,7 +81,7 @@ microsoft.entityframeworkcore.tools\6.0.0\ ---- microsoft.extensions.configurati
 
 # Patterns/Principer
 I programmet använder vi Strategy Pattern i Calculator delen. Dependency Injection i Shapes delen. Programmet i helhet försöker hålla Single-principle responsibility.
-
+Inheritance, Använt mig av interface. Encapsulation, några properties i Shapes är private som exempel på den principen.
 
 
 
