@@ -79,6 +79,8 @@ Väljer du att spela RockPaperScissors kommer du direkt att börja spela spelet.
 microsoft.entityframeworkcore.tools\6.0.0\ ---- microsoft.extensions.configuration.json\6.0.0\
 
 
+# Patterns/Principer
+I programmet använder vi Strategy Pattern i Calculator delen. Dependency Injection i Shapes delen. Programmet i helhet försöker hålla Single-principle responsibility.
 
 
 
