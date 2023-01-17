@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MrEmilProjekt.Migrations;
 using Services;
 
 
@@ -16,33 +17,34 @@ namespace MrEmilProjekt.Shapes
       
         public ShapeFactory(){}
 
-        public ShapeFactory(Shape _shape, ShapeServices _shapeServices, AppDbContext context)
+        public ShapeFactory(Shape _shape, IShape iShape , AppDbContext context)
         {
-           myShapeServices = _shapeServices;
+          
             myContext = context;
             myShape = _shape;
+            myIShape = iShape;
         }
 
         public AppDbContext myContext { get; set; }
         public Shape myShape;
-        public ShapeServices myShapeServices { get; set; }
-
+        public IShape myIShape { get; set; }
        
         public void CreateRectangle()
         {
-            Console.Clear();
-            myShape.Name = "Rectangle";
-            myShape.Lenght = GetLenght();
-            myShape.Height = GetHeight();
-            myShape.Area = myShapeServices.AreaCalculator(myShape.Lenght, myShape.Height);
-            myShape.Perimeter = myShapeServices.PerimeterCalculator(myShape.Lenght, myShape.Height);
+
             
-            myShape.Date = DateTime.Now;
-           myShape.ResultMessage(myShape);
-            myContext.Shapes.Add(myShape);
-            myContext.SaveChanges();
-            
+                Console.Clear();
+                myShape.Name = "Rectangle";
+                myShape.Lenght = GetLenght();
+                myShape.Height = GetHeight();
+                AreaAndPerimeter();
+                SaveShapeToDataBase();
+
+
+
         }
+
+        
 
         public void CreateParaellogram()
         {
@@ -50,13 +52,8 @@ namespace MrEmilProjekt.Shapes
             myShape.Name = "Paraellogram";
             myShape.Lenght = GetLenght();
             myShape.Height = GetHeight();
-            myShape.Area = myShapeServices.AreaCalculator(myShape.Lenght, myShape.Height);
-            myShape.Perimeter = myShapeServices.PerimeterCalculator(myShape.Lenght, myShape.Height);
-
-            myShape.Date = DateTime.Now;
-            myShape.ResultMessage(myShape);
-            myContext.Shapes.Add(myShape);
-            myContext.SaveChanges();
+            AreaAndPerimeter();
+            SaveShapeToDataBase();
 
         }
 
@@ -68,15 +65,16 @@ namespace MrEmilProjekt.Shapes
             myShape.Height = GetHeight();
             Console.Write("Enter hypotenusa : ");
             var hypotenusa = Convert.ToDecimal(Console.ReadLine());
-            myShape.Area = myShapeServices.TriangleAreaCalculator(myShape.Lenght, myShape.Height);
-            myShape.Perimeter = myShapeServices.TrianglePerimeterCalculator(myShape.Lenght, hypotenusa, myShape.Height);
-           
+            AreaPerimeterTriangle(hypotenusa);
+            SaveShapeToDataBase();
+        }
 
-            myShape.Date = DateTime.Now;
-            myShape.ResultMessage(myShape);
-            myContext.Shapes.Add(myShape);
-            myContext.SaveChanges();
+        
 
+        private void AreaPerimeterTriangle(decimal hypotenusa)
+        {
+            myShape.Area = myIShape.TriangleAreaCalculator(myShape.Lenght, myShape.Height);
+            myShape.Perimeter = myIShape.TrianglePerimeterCalculator(myShape.Lenght, hypotenusa, myShape.Height);
         }
 
         public void CreateRomb()
@@ -85,31 +83,80 @@ namespace MrEmilProjekt.Shapes
             myShape.Name = "Romb.....";
             myShape.Lenght = GetLenght();
             myShape.Height = GetHeight();
-            myShape.Area = myShapeServices.AreaCalculator(myShape.Lenght, myShape.Height);
-            myShape.Perimeter = myShapeServices.PerimeterCalculator(myShape.Lenght, myShape.Height);
+            AreaAndPerimeter();
+            SaveShapeToDataBase();
+
+        }
+
+
+        private static decimal GetLenght()
+        {
+            while (true)
+            {
+                try
+                {
+                    decimal length;
+                    Console.Write("Enter length : ");
+
+                    length = Convert.ToDecimal(Console.ReadLine());
+                    return length;
+                }
+                catch (Exception e)
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine(e);
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("\n Press any key to continue");
+                    Console.ReadKey();
+
+                }
+            }
+           
+            
+        }
+
+        private static decimal GetHeight()
+        {
+
+            while (true)
+            {
+                try
+                {
+                    decimal height;
+                    Console.Write("Enter height : ");
+
+                    height = Convert.ToDecimal(Console.ReadLine());
+                    return height;
+                }
+                catch (Exception e)
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine(e);
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("\n Press any key to continue");
+                    Console.ReadKey();
+
+                }
+            }
+        }
+
+        private void SaveShapeToDataBase()
+        {
+            
 
             myShape.Date = DateTime.Now;
             myShape.ResultMessage(myShape);
             myContext.Shapes.Add(myShape);
             myContext.SaveChanges();
-
         }
 
-        private static decimal GetLenght()
+        private void AreaAndPerimeter()
         {
-            decimal numTwo;
-            Console.Write("Enter lenght : "); 
-
-            numTwo = Convert.ToDecimal(Console.ReadLine());
-            return numTwo;
-        }
-
-        private static decimal GetHeight()
-        {
-            decimal numOne;
-            Console.Write("Enter height : ");
-            numOne = Convert.ToDecimal(Console.ReadLine());
-            return numOne;
+            myShape.Area = myIShape.AreaCalculator(myShape.Lenght, myShape.Height);
+            myShape.Perimeter = myIShape.PerimeterCalculator(myShape.Lenght, myShape.Height);
         }
     }
+
 }

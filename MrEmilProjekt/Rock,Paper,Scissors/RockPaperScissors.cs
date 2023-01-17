@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MrEmilProjekt.Game
 {
-    public class RockPaperSissors
+    public class RockPaperScissors
     {
         public int Id { get; set; }
         public int Win { get; set; }

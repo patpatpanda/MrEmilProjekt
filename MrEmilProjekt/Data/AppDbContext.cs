@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using MrEmilProjekt.Game;
 using MrEmilProjekt.Shapes;
 using ClassLibrary2;
+using MyClassLibrary;
 
 namespace MrEmilProjekt.Data
 {
@@ -14,10 +15,20 @@ namespace MrEmilProjekt.Data
     {
         public DbSet<Shape> Shapes { get; set; }
         public DbSet<Calculator.Calculator> Calculators { get; set; }
-        public DbSet<RockPaperSissors> Games { get; set; }
+        public DbSet<RockPaperScissors> Games { get; set; }
 
+        public IMathInput _strategy { get; set; }
 
-       
+        public void SetStrategy(IMathInput strategy)
+        {
+            _strategy = strategy;
+        }
+
+        public decimal ExecuteStrategy(decimal a, decimal b)
+        {
+            return _strategy.Execute(a, b);
+        }
+
 
         public AppDbContext()
         {

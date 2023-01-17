@@ -41,23 +41,41 @@ namespace MrEmilProjekt.Calculator
 
         public void UpdateCalculator()
         {
-            var calculatorId = GetCalculatorId();
-            Console.Write("First number : ");
-            decimal firstNumber = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Second number : ");
-            decimal secondNumber = Convert.ToDecimal(Console.ReadLine());
-            Console.Write("Operator : ");
-            string operatorChoise = Console.ReadLine();
-            Console.Write("Result : ");
-            decimal result = Convert.ToDecimal(Console.ReadLine());
-            Console.WriteLine("Datum (yyyy-mm-dd)");
-            DateTime date = Convert.ToDateTime(Console.ReadLine());
-            calculatorId.NewCalculatorValues(firstNumber,secondNumber,operatorChoise,result,date);
+            while (true)
+            {
 
-            myContext.SaveChanges();
+                try
+                {
+                    var calculatorId = GetCalculatorId();
+                    Console.Clear();
+                    Console.Write("First number : ");
+                    decimal firstNumber = Convert.ToDecimal(Console.ReadLine());
+                    Console.Write("Second number : ");
+                    decimal secondNumber = Convert.ToDecimal(Console.ReadLine());
+                    Console.Write("Operator : ");
+                    string operatorChoise = Console.ReadLine();
+                    Console.Write("Result : ");
+                    decimal result = Convert.ToDecimal(Console.ReadLine());
+                    Console.WriteLine("Datum (yyyy-mm-dd)");
+                    DateTime date = Convert.ToDateTime(Console.ReadLine());
+                    calculatorId.NewCalculatorValues(firstNumber, secondNumber, operatorChoise, result, date);
 
-          SuccsessMessage();
+                    myContext.SaveChanges();
 
+                    SuccsessMessage();
+                }
+                catch (Exception e)
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine(e);
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("\n Press any key to continue");
+                    Console.ReadKey();
+                }
+                
+            }
+           
 
         }
         

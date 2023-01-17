@@ -13,7 +13,7 @@ internal class OperatorMenu
             var myContext = buildApp.AppBuilder();
             var calc = new Calculator();
             var math = new MathOperators();
-            var factory = new CalculationFactory(calc, math,myContext);
+            var factory = new CalculationFactory(math,myContext,calc);
             
 
 

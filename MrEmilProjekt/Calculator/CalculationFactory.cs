@@ -1,151 +1,140 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ClassLibrary2;
-
+﻿using ClassLibrary2;
 using MrEmilProjekt.Data;
 
+namespace MrEmilProjekt.Calculator;
 
-namespace MrEmilProjekt.Calculator
+public class CalculationFactory
 {
-    public class CalculationFactory 
+    public CalculationFactory(MathOperators math, AppDbContext context, Calculator _calculator)
     {
+        myMath = math;
+        myContext = context;
+        calculator = _calculator;
+    }
+
+    public AppDbContext myContext { get; set; }
+    public MathOperators myMath { get; set; }
+    public Calculator calculator { get; set; }
+
+    public void AdditionMaker()
+    {
+        Console.Clear();
+        myContext.SetStrategy(new MathOperators.Add());
+        calculator.FirstInput = NumberInputOne();
+        calculator.SecondInput = NumberInputTwo();
+        calculator.Operator = "+";
+
+        SaveCalcToDataBase();
+    }
 
 
-        public CalculationFactory(Calculator _calculator,MathOperators math,AppDbContext context)
-        {
-            myMath = math;
-            calculator = _calculator;
-            myContext = context;
-         
+    public void SqrtMaker()
+    {
+        Console.Clear();
 
-        }
-      
-        public AppDbContext myContext { get; set; }
-        public MathOperators myMath { get; set; }
-        public Calculator calculator { get; set; }
-        public void AdditionMaker()
-        {
-            Console.Clear();
-            calculator.FirstInput = NumOne();
-            calculator.SecondInput = NumTwo();
-            
-            Console.Clear();
-            calculator.Result = myMath.Addition(calculator.FirstInput, calculator.SecondInput);
-            calculator.Operator = "+";
-            calculator.Date = DateTime.Now;
-            calculator.ResultMessage(calculator);
+        NumberInputOne();
+        var input = Convert.ToDouble(Console.ReadLine());
+        calculator.FirstInput = Convert.ToDecimal(input);
+        calculator.Result = Convert.ToDecimal(Math.Sqrt(input));
+        calculator.Operator = "√";
+        calculator.Date = DateTime.Now;
+        calculator.ResultMessage(calculator);
+        myContext.Calculators.Add(calculator);
+        myContext.SaveChanges();
+    }
 
-            myContext.Calculators.Add(calculator);
-            myContext.SaveChanges();
-           
+    public void DividedMaker()
+    {
+        Console.Clear();
+        myContext.SetStrategy(new MathOperators.Divided());
+        calculator.FirstInput = NumberInputOne();
+        calculator.SecondInput = NumberInputTwo();
+        calculator.Operator = "/";
+        SaveCalcToDataBase();
+    }
 
-        }
+    public void ModuloMaker()
+    {
+        Console.Clear();
+        myContext.SetStrategy(new MathOperators.Modulo());
+        calculator.FirstInput = NumberInputOne();
+        calculator.SecondInput = NumberInputTwo();
+        calculator.Operator = "%";
+        SaveCalcToDataBase();
+    }
 
+    public void MultiplyMaker()
+    {
+        Console.Clear();
+        myContext.SetStrategy(new MathOperators.Multiply());
+        calculator.FirstInput = NumberInputOne();
+        calculator.SecondInput = NumberInputTwo();
+        calculator.Operator = "*";
+        SaveCalcToDataBase();
+    }
 
+    public void SubtractionMaker()
+    {
+        Console.Clear();
+        myContext.SetStrategy(new MathOperators.Subtraction());
+        calculator.FirstInput = NumberInputOne();
+        calculator.SecondInput = NumberInputTwo();
+        calculator.Operator = "-";
+        SaveCalcToDataBase();
+    }
 
-        public void SqrtMaker()
-        {
-           
-            Console.Clear();
-            
-            Console.Write("Enter a number : ");
-            var input = Convert.ToDouble(Console.ReadLine());
-            calculator.FirstInput = Convert.ToDecimal(input);
-            calculator.Result = Convert.ToDecimal(System.Math.Sqrt(input));
-            calculator.Operator = "√";
-            calculator.Date = DateTime.Now;
-            calculator.ResultMessage(calculator);
-            myContext.Calculators.Add(calculator);
-            myContext.SaveChanges();
-            
-        }
+    private void SaveCalcToDataBase()
+    {
+        calculator.Result = myContext.ExecuteStrategy(calculator.FirstInput, calculator.SecondInput);
 
-        public void DividedMaker()
-        {
-           
-            Console.Clear();
+        calculator.Date = DateTime.Now;
+        calculator.ResultMessage(calculator);
 
-            calculator.FirstInput = NumOne();
-            calculator.SecondInput = NumTwo();
-            calculator.Operator = "/";
-            calculator.Result = myMath.Divided(calculator.FirstInput, calculator.SecondInput);
-            calculator.Date = DateTime.Now;
-            calculator.ResultMessage(calculator);
+        myContext.Calculators.Add(calculator);
+        myContext.SaveChanges();
+    }
 
-            myContext.Calculators.Add(calculator);
-            myContext.SaveChanges();
-        }
+    private static decimal NumberInputOne()
+    {
+        while (true)
+            try
+            {
+                decimal numTwo;
+                Console.Write("Enter first number : ");
 
-        public void ModuloMaker()
-        {
+                numTwo = Convert.ToDecimal(Console.ReadLine());
+                return numTwo;
+            }
+            catch (Exception e)
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(e);
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\n Press any key to continue");
+                Console.ReadKey();
+            }
+    }
 
-            Console.Clear();
+    private static decimal NumberInputTwo()
+    {
+        while (true)
+            try
+            {
+                decimal numTwo;
+                Console.Write("Enter second number : ");
 
-            calculator.FirstInput = NumOne();
-            calculator.SecondInput = NumTwo();
-            calculator.Operator = "%";
-            calculator.Result = myMath.Modulo(calculator.FirstInput, calculator.SecondInput);
-            calculator.Date = DateTime.Now;
-            calculator.ResultMessage(calculator);
-
-            myContext.Calculators.Add(calculator);
-            myContext.SaveChanges();
-            
-        }
-
-        public void MultiplyMaker()
-        {
-
-            Console.Clear();
-            calculator.FirstInput = NumOne();
-            calculator.SecondInput = NumTwo();
-
-            calculator.Operator = "*";
-            calculator.Result = myMath.Multiply(calculator.FirstInput, calculator.SecondInput);
-            calculator.Date = DateTime.Now;
-            calculator.ResultMessage(calculator);
-
-            myContext.Calculators.Add(calculator);
-            myContext.SaveChanges();
-            
-        }
-
-        public void SubtractionMaker()
-        {
-
-            Console.Clear();
-            calculator.FirstInput = NumOne();
-            calculator.SecondInput = NumTwo();
-
-            calculator.Operator = "-";
-            calculator.Result = myMath.Subtraction(calculator.FirstInput, calculator.SecondInput);
-            calculator.Date = DateTime.Now;
-            calculator.ResultMessage(calculator);
-
-            myContext.Calculators.Add(calculator);
-            myContext.SaveChanges();
-
-            
-        }
-        private static decimal NumTwo()
-        {
-            decimal numTwo;
-            Console.Write("Enter a number : ");
-
-            numTwo = Convert.ToDecimal(Console.ReadLine());
-            return numTwo;
-        }
-
-        private static decimal NumOne()
-        {
-            decimal numOne;
-            Console.Write("Enter a number : ");
-            numOne = Convert.ToDecimal(Console.ReadLine());
-            return numOne;
-        }
+                numTwo = Convert.ToDecimal(Console.ReadLine());
+                return numTwo;
+            }
+            catch (Exception e)
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(e);
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\n Press any key to continue");
+                Console.ReadKey();
+            }
     }
 }
