@@ -93,7 +93,7 @@ public class CalculationFactory
 
     private void SaveCalcToDataBase()
     {
-        calculator.Result = myContext.ExecuteStrategy(calculator.FirstInput, calculator.SecondInput);
+        calculator.Result = myContext.PerformStrategy(calculator.FirstInput, calculator.SecondInput);
 
         calculator.Date = DateTime.Now;
         

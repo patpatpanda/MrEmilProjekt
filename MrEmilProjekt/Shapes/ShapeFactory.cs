@@ -17,11 +17,11 @@ namespace MrEmilProjekt.Shapes
       
         public ShapeFactory(){}
 
-        public ShapeFactory(Shape _shape, IShape iShape , AppDbContext context)
+        public ShapeFactory(Shape shape, IShape iShape , AppDbContext context)
         {
           
             myContext = context;
-            myShape = _shape;
+            myShape = shape;
             myIShape = iShape;
         }
 
@@ -34,9 +34,9 @@ namespace MrEmilProjekt.Shapes
 
             
                 Console.Clear();
-                myShape.Name = "Rectangle";
-                myShape.Lenght = GetLenght();
-                myShape.Height = GetHeight();
+                myShape._Name = "Rectangle";
+                myShape._Lenght = GetLenght();
+                myShape._Height = GetHeight();
                 AreaAndPerimeter();
                 SaveShapeToDataBase();
 
@@ -46,12 +46,12 @@ namespace MrEmilProjekt.Shapes
 
         
 
-        public void CreateParaellogram()
+        public void CreateParallelogram()
         {
             Console.Clear();
-            myShape.Name = "Paraellogram";
-            myShape.Lenght = GetLenght();
-            myShape.Height = GetHeight();
+            myShape._Name = "Parallelogram ";
+            myShape._Lenght = GetLenght();
+            myShape._Height = GetHeight();
             AreaAndPerimeter();
             SaveShapeToDataBase();
 
@@ -60,9 +60,9 @@ namespace MrEmilProjekt.Shapes
         public void CreateTriangle()
         {
             Console.Clear();
-            myShape.Name = "Triangle";
-            myShape.Lenght = GetLenght();
-            myShape.Height = GetHeight();
+            myShape._Name = "Triangle";
+            myShape._Lenght = GetLenght();
+            myShape._Height = GetHeight();
             Console.Write("Enter hypotenusa : ");
             var hypotenusa = Convert.ToDouble(Console.ReadLine());
             AreaPerimeterTriangle(hypotenusa);
@@ -73,16 +73,16 @@ namespace MrEmilProjekt.Shapes
 
         private void AreaPerimeterTriangle(double hypotenusa)
         {
-            myShape.Area = myIShape.TriangleAreaCalculator(myShape.Lenght, myShape.Height);
-            myShape.Perimeter = myIShape.TrianglePerimeterCalculator(myShape.Lenght, hypotenusa, myShape.Height);
+            myShape.Area = myIShape.TriangleAreaCalculator(myShape._Lenght, myShape._Height);
+            myShape.Perimeter = myIShape.TrianglePerimeterCalculator(myShape._Lenght, hypotenusa, myShape._Height);
         }
 
-        public void CreateRomb()
+        public void CreateRhombus()
         {
             Console.Clear();
-            myShape.Name = "Romb.....";
-            myShape.Lenght = GetLenght();
-            myShape.Height = GetHeight();
+            myShape._Name = "Rhombus";
+            myShape._Lenght = GetLenght();
+            myShape._Height = GetHeight();
             AreaAndPerimeter();
             SaveShapeToDataBase();
 
@@ -154,8 +154,8 @@ namespace MrEmilProjekt.Shapes
 
         private void AreaAndPerimeter()
         {
-            myShape.Area = myIShape.AreaCalculator(myShape.Lenght, myShape.Height);
-            myShape.Perimeter = myIShape.PerimeterCalculator(myShape.Lenght, myShape.Height);
+            myShape.Area = myIShape.AreaCalculator(myShape._Lenght, myShape._Height);
+            myShape.Perimeter = myIShape.PerimeterCalculator(myShape._Lenght, myShape._Height);
         }
     }
 

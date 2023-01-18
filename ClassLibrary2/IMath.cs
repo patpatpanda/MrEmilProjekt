@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace MyClassLibrary
 {
-    public interface IMathInput
+    public interface IMath
     {
+      
+       decimal Perform(decimal a, decimal b);
+           
+       
+      
 
-        decimal Execute(decimal a, decimal b);
-
-
-
-
-
+      
     }
 }

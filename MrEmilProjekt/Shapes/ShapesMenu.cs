@@ -26,11 +26,11 @@ public class ShapesMenu
             Console.WriteLine(
                 "                             |      ****         1:  Create Rectangle         **** |");
             Console.WriteLine(
-                "                             |      ****         2:  Create Parallellogram    **** |");
+                "                             |      ****         2:  Create Parallelogram     **** |");
             Console.WriteLine(
-                "                             |      ****         3:  Create Triangele         **** |");
+                "                             |      ****         3:  Create Triangle          **** |");
             Console.WriteLine(
-                "                             |      ****         4:  Create Romb              **** |");
+                "                             |      ****         4:  Create Rhombus           **** |");
             Console.WriteLine(
                 "                             |      ****         5:  List                     **** |");
             Console.WriteLine(
@@ -54,7 +54,7 @@ public class ShapesMenu
 
             else if (inuput == 2)
             {
-                factory.CreateParaellogram();
+                factory.CreateParallelogram();
             }
 
 
@@ -64,7 +64,7 @@ public class ShapesMenu
             }
             else if (inuput == 4)
             {
-                factory.CreateRomb();
+                factory.CreateRhombus();
             }
             else if (inuput == 5)
             {
