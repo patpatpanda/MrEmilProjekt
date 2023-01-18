@@ -38,7 +38,7 @@ Väljer du Shapes får du dessa val :
                                                  |  ****      0:  Mainmen   **** |");
                                                  -----------------------------------
                                            
- Namn på form skapar en form och räknar ut dess omkrets och area. Detta gör du igenom att skriva in de längder som kommer upp på skärmen. List: listar alla former som finns i databasen. Update: Finns möjlighet att uppdatera datan som finns i en shape. Delete: Möjlighet att radera en shape.
+ Du väljer en form igenom att skriva siffran som står framför. Efter du valt form får du möjlighet att räkna ut dess area och omkrets. Detta gör du igenom att skriva in de längder som kommer upp på skärmen. List: listar alla former som finns i databasen. Update: Finns möjlighet att uppdatera datan som finns i en form. Delete: Möjlighet att radera en form.
 
 Väljer du Calculator får du dessa val: 
 
@@ -51,9 +51,9 @@ Väljer du Calculator får du dessa val:
                                                  ---------------------------------------------
                                                  
 
-List,Update,Delete gör samma sak so i shapes fast med "Calculation datan".
+List,Update,Delete gör samma sak som i shapes fast med "Calculation datan".
 Väljer du Make Calculation får du dessa val:
-Du väljer vilken typ av uträkningen du vill göra genom att skriva in något av dessa tecken.
+
 
                                         
               
@@ -69,10 +69,14 @@ Du väljer vilken typ av uträkningen du vill göra genom att skriva in något a
                                          |      ****        0: Exit       ****    |");
                                        ---------------------------------------------");
                                        
-                                      
+                                       
+ Du väljer vilken typ av uträkningen du vill göra genom att skriva in något av dessa tecken ovanför...   
+ 
+ 
                                    
 
-Väljer du att spela RockPaperScissors kommer du direkt att börja spela spelet. Vill du sluta spela, skriv end.
+Väljer du att spela RockPaperScissors kommer du direkt att börja spela spelet. Vill du sluta spela, skriv end. Du spelar spelet igenom att skriva något
+utav dessa val: ROCK,PAPER eller SCISSORS
 
 
 # Program
