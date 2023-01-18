@@ -23,7 +23,7 @@ public class CalculationFactory
         calculator.FirstInput = NumberInputOne();
         calculator.SecondInput = NumberInputTwo();
         calculator.Operator = "+";
-
+        ResultAndDate();
         SaveCalcToDataBase();
         calculator.ResultMessage(calculator);
     }
@@ -38,6 +38,7 @@ public class CalculationFactory
         calculator.FirstInput = NumberInputOne();
         calculator.SecondInput = NumberInputTwo();
         calculator.Operator = "/";
+        ResultAndDate();
         SaveCalcToDataBase();
         calculator.ResultMessage(calculator);
     }
@@ -49,6 +50,7 @@ public class CalculationFactory
         calculator.FirstInput = NumberInputOne();
         calculator.SecondInput = NumberInputTwo();
         calculator.Operator = "%";
+        ResultAndDate();
         SaveCalcToDataBase();
         calculator.ResultMessage(calculator);
     }
@@ -60,6 +62,7 @@ public class CalculationFactory
         calculator.FirstInput = NumberInputOne();
         calculator.SecondInput = NumberInputTwo();
         calculator.Operator = "*";
+        ResultAndDate();
         SaveCalcToDataBase();
         calculator.ResultMessage(calculator);
     }
@@ -87,19 +90,24 @@ public class CalculationFactory
         calculator.FirstInput = NumberInputOne();
         calculator.SecondInput = NumberInputTwo();
         calculator.Operator = "-";
+        ResultAndDate();
         SaveCalcToDataBase();
         calculator.ResultMessage(calculator);
     }
 
     private void SaveCalcToDataBase()
     {
-        calculator.Result = myContext.PerformStrategy(calculator.FirstInput, calculator.SecondInput);
-
-        calculator.Date = DateTime.Now;
         
 
         myContext.Calculators.Add(calculator);
         myContext.SaveChanges();
+    }
+
+    private void ResultAndDate()
+    {
+        calculator.Result = myContext.PerformStrategy(calculator.FirstInput, calculator.SecondInput);
+
+        calculator.Date = DateTime.Now;
     }
 
     private static decimal NumberInputOne()

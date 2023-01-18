@@ -38,6 +38,7 @@ namespace MrEmilProjekt.Shapes
                 myShape._Lenght = GetLenght();
                 myShape._Height = GetHeight();
                 AreaAndPerimeter();
+                ResultAndDate();
                 SaveShapeToDataBase();
 
 
@@ -53,6 +54,7 @@ namespace MrEmilProjekt.Shapes
             myShape._Lenght = GetLenght();
             myShape._Height = GetHeight();
             AreaAndPerimeter();
+            ResultAndDate();
             SaveShapeToDataBase();
 
         }
@@ -67,6 +69,7 @@ namespace MrEmilProjekt.Shapes
             var hypotenusa = Convert.ToDouble(Console.ReadLine());
             AreaPerimeterTriangle(hypotenusa);
             SaveShapeToDataBase();
+            ResultAndDate();
         }
 
         
@@ -84,6 +87,7 @@ namespace MrEmilProjekt.Shapes
             myShape._Lenght = GetLenght();
             myShape._Height = GetHeight();
             AreaAndPerimeter();
+            ResultAndDate();
             SaveShapeToDataBase();
 
         }
@@ -146,10 +150,14 @@ namespace MrEmilProjekt.Shapes
         {
             
 
-            myShape.Date = DateTime.Now;
-            myShape.ResultMessage(myShape);
             myContext.Shapes.Add(myShape);
             myContext.SaveChanges();
+        }
+
+        private void ResultAndDate()
+        {
+            myShape.Date = DateTime.Now;
+            myShape.ResultMessage(myShape);
         }
 
         private void AreaAndPerimeter()
