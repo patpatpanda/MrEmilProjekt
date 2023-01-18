@@ -17,16 +17,16 @@ namespace MrEmilProjekt.Data
         public DbSet<Calculator.Calculator> Calculators { get; set; }
         public DbSet<RockPaperScissors> Games { get; set; }
 
-        public IMathInput _strategy { get; set; }
+        public IMath myStrategy { get; set; }
 
-        public void SetStrategy(IMathInput strategy)
+        public void SetStrategy(IMath strategy)
         {
-            _strategy = strategy;
+            myStrategy = strategy;
         }
 
-        public decimal ExecuteStrategy(decimal a, decimal b)
+        public decimal PerformStrategy(decimal a, decimal b)
         {
-            return _strategy.Execute(a, b);
+            return myStrategy.Perform(a, b);
         }
 
 

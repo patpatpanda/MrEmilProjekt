@@ -17,11 +17,11 @@ namespace MrEmilProjekt.Shapes
       
         public ShapeFactory(){}
 
-        public ShapeFactory(Shape _shape, IShape iShape , AppDbContext context)
+        public ShapeFactory(Shape shape, IShape iShape , AppDbContext context)
         {
           
             myContext = context;
-            myShape = _shape;
+            myShape = shape;
             myIShape = iShape;
         }
 
@@ -46,10 +46,10 @@ namespace MrEmilProjekt.Shapes
 
         
 
-        public void CreateParaellogram()
+        public void CreateParallelogram()
         {
             Console.Clear();
-            myShape._Name = "Paraellogram";
+            myShape._Name = "Parallelogram ";
             myShape._Lenght = GetLenght();
             myShape._Height = GetHeight();
             AreaAndPerimeter();
@@ -77,10 +77,10 @@ namespace MrEmilProjekt.Shapes
             myShape.Perimeter = myIShape.TrianglePerimeterCalculator(myShape._Lenght, hypotenusa, myShape._Height);
         }
 
-        public void CreateRomb()
+        public void CreateRhombus()
         {
             Console.Clear();
-            myShape._Name = "Romb.....";
+            myShape._Name = "Rhombus";
             myShape._Lenght = GetLenght();
             myShape._Height = GetHeight();
             AreaAndPerimeter();

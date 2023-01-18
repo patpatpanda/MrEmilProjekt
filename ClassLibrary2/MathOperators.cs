@@ -13,9 +13,9 @@ namespace ClassLibrary2
 
     {
         
-        public class Add : IMathInput
+        public class Add : IMath
         {
-            public decimal Execute(decimal a, decimal b)
+            public decimal Perform(decimal a, decimal b)
             {
                 return a + b;
             }
@@ -25,32 +25,32 @@ namespace ClassLibrary2
 
        
 
-        public class Subtraction : IMathInput
+        public class Subtraction : IMath
         {
-            public decimal Execute(decimal a, decimal b)
+            public decimal Perform(decimal a, decimal b)
             {
                 return a - b;
             }
         }
-        public class Divided : IMathInput
+        public class Divided : IMath
         {
-            public decimal Execute(decimal a, decimal b)
+            public decimal Perform(decimal a, decimal b)
             {
                 return a / b;
             }
         }
 
-        public class Modulo : IMathInput
+        public class Modulo : IMath
         {
-            public decimal Execute(decimal a, decimal b)
+            public decimal Perform(decimal a, decimal b)
             {
                 return a % b;
             }
         }
 
-        public class Multiply : IMathInput
+        public class Multiply : IMath
         {
-            public decimal Execute(decimal a, decimal b)
+            public decimal Perform(decimal a, decimal b)
             {
                 return a * b;
             }

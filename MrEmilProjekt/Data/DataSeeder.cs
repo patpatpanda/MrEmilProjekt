@@ -55,7 +55,7 @@ namespace MrEmilProjekt.Data
                 });
                 myContext.Shapes.Add(new Shape()
                 {
-                    _Name = "Romb.....",
+                    _Name = "Rhombus",
                     _Height = 10,
                     _Lenght = 5,
                     Area = 50,
