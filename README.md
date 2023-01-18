@@ -38,7 +38,7 @@ Väljer du Shapes får du dessa val :
                                                  |  ****      0:  Mainmen   **** |");
                                                  -----------------------------------
                                            
-Create + namn på form skapar en form och räknar ut dess omkrets och area.Detta gör du igenom att skriva in de längder som kommer upp på skärmen. List: listar alla former som finns i databasen. Update: Finns möjlighet att uppdatera datan som finns i en shape. Delete: Möjlighet att radera en shape.
+ Namn på form skapar en form och räknar ut dess omkrets och area. Detta gör du igenom att skriva in de längder som kommer upp på skärmen. List: listar alla former som finns i databasen. Update: Finns möjlighet att uppdatera datan som finns i en shape. Delete: Möjlighet att radera en shape.
 
 Väljer du Calculator får du dessa val: 
 
