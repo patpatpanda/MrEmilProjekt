@@ -150,7 +150,7 @@ namespace MrEmilProjekt.Game
         {
             var avg = Average(draw, computerScore, playerScore);
 
-            GameStats(playerScore, computerScore, avg, myContext);
+            SaveGameStats(playerScore, computerScore, avg, myContext);
 
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine($"You won {avg}% of total games played! ");
@@ -160,7 +160,7 @@ namespace MrEmilProjekt.Game
             
         }
 
-        private static void GameStats(int playerScore, int computerScore, int avg, AppDbContext myContext)
+        private static void SaveGameStats(int playerScore, int computerScore, int avg, AppDbContext myContext)
         {
             var gameScore = new RockPaperScissors();
             gameScore.Win = playerScore;

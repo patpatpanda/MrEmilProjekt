@@ -35,7 +35,7 @@ namespace MrEmilProjekt.Data
                 });
                 myContext.Shapes.Add(new Shape()
                 {
-                    _Name = "Paraellogram",
+                    _Name = "Parallelogram ",
                     _Lenght = 10,
                     _Height = 5,
                     Area = 50,
@@ -49,13 +49,13 @@ namespace MrEmilProjekt.Data
                     Area = 25,
                     _Lenght = 10,
                     _Height = 5,
-                    Perimeter = 10,
+                    Perimeter = 20,
                     Date = DateTime.Now
 
                 });
                 myContext.Shapes.Add(new Shape()
                 {
-                    _Name = "Rhombus",
+                    _Name = "Rhombus.",
                     _Height = 10,
                     _Lenght = 5,
                     Area = 50,
