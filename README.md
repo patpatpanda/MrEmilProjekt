@@ -23,15 +23,15 @@ Väljer du Shapes får du dessa val :
            
                                          |      ****          1:  Create Rectangle         **** |");
             
-                                          |      ****          2:  Create Parallellogram    **** |");
+                                          |      ****          2:   Create Parallelogram    **** |");
            
-                                          |      ****          3:  Create Triangele         **** |");
+                                          |      ****          3:  Create Triangle          **** |");
            
-                                          |      ****          4:  Create Romb              **** |");
+                                          |      ****          4:  Create Rhombus            **** |");
             
-                                         |      ****           5:  List                     **** |");
+                                          |      ****           5:  List                     **** |");
          
-                                          |      ****          6:  Update                   **** |");
+                                           |      ****          6:  Update                   **** |");
             
                                             |      ****        7:  Delete                   **** |");
             
