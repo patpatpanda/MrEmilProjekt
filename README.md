@@ -21,23 +21,23 @@ Detta är ett program där man får tre val. Dessa val består av Shapes,Calcula
 Väljer du Shapes får du dessa val :
 
            
-                                         |      ****          1:  Create Rectangle         **** |");
+                                                | ****      1:   Rectangle  **** |");
             
-                                          |      ****          2:  Create Parallelogram    **** |");
+                                                | ****   2: Parallelogram   **** |");
            
-                                          |      ****          3:  Create Triangle          **** |");
+                                                 | ****     3: Triangle     **** |");
            
-                                          |      ****          4:  Create Rhombus            **** |");
+                                                 | ****      4: Rhombus    **** |");
             
-                                          |      ****           5:  List                     **** |");
+                                                 | ****      5:  List       **** |");
          
-                                           |      ****          6:  Update                   **** |");
+                                                 | ****      6:  Update     **** |");
             
-                                            |      ****        7:  Delete                   **** |");
+                                                 | ****      7:  Delete       **** |");
             
-                                            |      ****        0:  Mainmenu                 **** |");
-
-                                            ---------------------------------------------------------
+                                                 |  ****      0:  Mainmen   **** |");
+                                                 -----------------------------------
+                                           
 Create + namn på form skapar en form och räknar ut dess omkrets och area.Detta gör du igenom att skriva in de längder som kommer upp på skärmen. List: listar alla former som finns i databasen. Update: Finns möjlighet att uppdatera datan som finns i en shape. Delete: Möjlighet att radera en shape.
 
 Väljer du Calculator får du dessa val: 
