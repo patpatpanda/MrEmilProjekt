@@ -51,7 +51,7 @@ Väljer du Calculator får du dessa val:
                                                  ---------------------------------------------
                                                  
 
-List,Update,Delete gör samma sak som dom gör i shapes fast med "Calculation datan".
+List,Update,Delete gör samma sak so i shapes fast med "Calculation datan".
 Väljer du Make Calculation får du dessa val:
 Du väljer vilken typ av uträkningen du vill göra genom att skriva in något av dessa tecken.
 
@@ -82,7 +82,7 @@ microsoft.entityframeworkcore.tools\6.0.0\ ---- microsoft.extensions.configurati
 
 # Patterns/Principer
 I programmet använder vi Strategy Pattern i Calculator delen. Dependency Injection finns också med. Programmet i helhet försöker hålla Single-principle responsibility.
-Inheritance, Använt mig av två interfaces. Encapsulation, några properties i Shapes är private som exempel på den principen.
+Inheritance/Interface. Encapsulation, några properties i Shapes är private som exempel på den principen.
 
 
 
@@ -93,7 +93,7 @@ Inheritance, Använt mig av två interfaces. Encapsulation, några properties i 
 
 
 
-
+![ogway](https://user-images.githubusercontent.com/113430950/213250630-60e75834-7161-42ea-8382-d3b1a428f0d5.jpg)
 
 
 
@@ -142,7 +142,7 @@ Metoder        | Kort beskrivning           |
 | SuccsessMessage() | Skriver ut ett lyckades meddelande. |
 | PlayGame() | Spelar RockPaperScissors. |
 | ShowGameStats() | Visar hur mycket spelaren vunnit i procent. |
-| GameStats() | Sparar all relevant iformation till databasen. |
+| SaveGameStats() | Sparar all relevant iformation till databasen. |
 | Average() | Räknar ut hur mycket spelaren vunnit i procent. |
 | WinMessage() | Visar att spelaren vunnit och frågar om den vill spela igen. |
 | LooseMessage() | Visar att spelaren förlorat och frågar om den vill spela igen. |
@@ -152,7 +152,7 @@ Metoder        | Kort beskrivning           |
 | AdditionCalculator() | Gör en addition uträkning av två tal. |
 | SubtractionCalculator() | Gör en subtraktion av två tal. |
 | DividedCalculator() | Gör en division av två tal. |
-| ModuloCalculator() | Räknar ut vad tal x modulo tal y blir. |
+| ModuloCalculator() | Räknar modulos på två tal. |
 | MultiplyCalculator() | Gör ut multiplikation av två tal. |
 | SqrtCalculator() | Räknar ut roten av ett tal. |
 | SaveCalcToDataBase() | Sparar en uträknings resultat och tid till databasen. |
