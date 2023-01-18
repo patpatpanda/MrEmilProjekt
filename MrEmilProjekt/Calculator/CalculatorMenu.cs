@@ -29,7 +29,7 @@ namespace MrEmilProjekt.Calculator
 
 
                     Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.ForegroundColor = ConsoleColor.Magenta;
                     Console.WriteLine("                                    ********  MENU  *******");
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine("                             -----------------------------------------");
@@ -69,8 +69,12 @@ namespace MrEmilProjekt.Calculator
                 }
                 catch (Exception e)
                 {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine(e);
-                    Console.ReadLine();
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("\nPress Any Key To Continue");
+                    Console.ReadKey();
                 }
                //
                    

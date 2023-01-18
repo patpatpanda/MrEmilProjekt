@@ -30,7 +30,7 @@ namespace MrEmilProjekt.Shapes
             
             Console.WriteLine("****************** All Shapes **********************");
             Console.WriteLine();
-           Console.WriteLine("Id\tNamn\t\t\tArea\t\tOmkrets");
+           Console.WriteLine("Id\tNamn\t\t\tArea\t\tPerimeter");
             Console.WriteLine("=====================================================");
             foreach (var shape in myContext.Shapes.OrderBy(x => x.ShapeId))
             {
