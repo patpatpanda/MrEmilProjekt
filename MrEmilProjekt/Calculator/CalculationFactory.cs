@@ -7,13 +7,13 @@ public class CalculationFactory
 {
     public CalculationFactory(MathOperators math, AppDbContext context, Calculator _calculator)
     {
-        myMath = math;
+        
         myContext = context;
         calculator = _calculator;
     }
 
     public AppDbContext myContext { get; set; }
-    public MathOperators myMath { get; set; }
+    
     public Calculator calculator { get; set; }
 
     public void AdditionCalculator()

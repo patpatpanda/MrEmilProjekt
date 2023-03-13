@@ -40,6 +40,7 @@ public class Main
                 {
                     Console.Clear();
                     Console.WriteLine("BYE!!!!!!!!!!!!!!!!");
+                    Console.WriteLine("BYE!!!!!!!!!!!!!!!!");
                     break;
                 }
             }

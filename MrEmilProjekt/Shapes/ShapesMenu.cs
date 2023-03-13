@@ -20,19 +20,19 @@ public class ShapesMenu
                 var controller = new ShapeController(myContext);
 
 
-                Console.ForegroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.Clear();
                 Console.WriteLine(
                     "                             -------------------------------------------------------");
                 Console.WriteLine(
-                    "                             |      ****         1:  Create Rectangle         **** |");
+                    "                             |      ****         1:  Rectangle                **** |");
                 Console.WriteLine(
-                    "                             |      ****         2:  Create Parallelogram     **** |");
+                    "                             |      ****         2:  Parallelogram            **** |");
                 Console.WriteLine(
-                    "                             |      ****         3:  Create Triangle          **** |");
+                    "                             |      ****         3:  Triangle                 **** |");
                 Console.WriteLine(
-                    "                             |      ****         4:  Create Rhombus           **** |");
+                    "                             |      ****         4:  Rhombus                  **** |");
                 Console.WriteLine(
                     "                             |      ****         5:  List                     **** |");
                 Console.WriteLine(
