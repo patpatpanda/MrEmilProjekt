@@ -14,6 +14,7 @@ namespace MrEmilProjekt.Game
         public int Lost { get; set; }
         public int Test  { get; set; }
         public int WinPercentage { get; set; }
+        public int WinPercentagee { get; set; }
         public DateTime Date { get; set; }
     }
 }

@@ -5,7 +5,7 @@ namespace MrEmilProjekt.Calculator;
 
 public class CalculationFactory
 {
-    public CalculationFactory(MathOperators math, AppDbContext context, Calculator _calculator)
+    public CalculationFactory( AppDbContext context, Calculator _calculator)
     {
         
         myContext = context;
